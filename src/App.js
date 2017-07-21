@@ -22,6 +22,10 @@ class App extends Component {
 
         </div>
 
+        {
+          // CONTENT ONE
+        }
+
         <div className="contentone">
           <center><h1 id="contentoneheading">A centralized hub for all your Planetary knowledge</h1></center>
           <hr className="whitehr" />
@@ -31,22 +35,47 @@ class App extends Component {
           <div className="row">
             <div className="col-md-4">
             <center><h2 className="boxheading">NEO TRACKER</h2></center>
-              <div className="box neobox">
-              
+              <div className="cont">
+                  <div className="box neobox">
+                  
+                  </div>
+                <div className="overlay">
+                  <center>
+                    Track Asteroids and other Near Earth Objects live in orbit while learning about their 
+                    composition and threat levels
+                  </center>
+                </div>
               </div>
             </div>
 
             <div className="col-md-4">
             <center><h2 className="boxheading">POLLUTION TRACKER</h2></center>
-              <div className="box pollbox">
-              
+
+            <div className="cont">
+                <div className="box pollbox">
+                
+                </div>
+              <div className="overlay">
+                  <center>
+                    Track real-time Air-Pollution levels of different cities and locales in the United States 
+                  </center>
               </div>
+            </div>
+
             </div>
 
             <div className="col-md-4">
             <center><h2 className="boxheading">OCEAN CLEANUP</h2></center>
-              <div className="box oceanbox">
-              
+              <div className="cont">
+                  <div className="box oceanbox">
+                  
+                  </div>
+                <div className="overlay">
+                    <center>
+                      Updates on the Ocean clean-up effort which is just beginning to kick-off in the Pacific
+                      Trash Vortex
+                    </center>
+                </div>
               </div>
             </div>
 
@@ -59,9 +88,13 @@ class App extends Component {
         </center>
         </div>
 
+        {
+          // CONTENT TWO
+        }
 
+        <div className="contenttwo"> 
 
-
+        </div>
 
 
 

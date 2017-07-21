@@ -92,7 +92,8 @@ html, body {
 .contentone {
   width: auto;
   height: auto;
-  background-color: #1a1a1a;
+  /*background-color: #1a1a1a;*/
+  background: linear-gradient(to bottom, #1a1a1a, black);
   padding: 40px; 
   font-family: 'PT Sans', sans-serif;
 }
@@ -111,7 +112,7 @@ html, body {
 
 .box {
   width: 300px;
-  height: 300px;
+  height: 250px;
   background-color: #f2f2f2;
   margin-top: 40px;
 }
@@ -157,6 +158,59 @@ html, body {
   transition: .5s;
 }
 
+.overlaydiv {
+  width: auto;
+  height: auto;
+  background-color: none;
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+.overlaydiv:hover {
+  width: auto;
+  height: auto;
+  display: initial;
+  background-color: black;
+  opacity: 0.8;
+  transition: 0.4s;
+}
+
+.cont {
+  position: relative;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  /*background-color: #008CBA;*/
+  background-color: black;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  padding: 80px 20px 20px 20px;
+  font-size: 20px;
+}
+
+.cont:hover .overlay {
+  opacity: 1;
+}
+
+.contenttwo {
+  width: auto;
+  height: 500px;
+  background-color: black;
+  background-image: url(https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg);
+  background-size: 80%;
+  background-position: center center;
+}
+
 
 @media only screen and (max-width: 1200px) {
   
@@ -180,6 +234,10 @@ html, body {
     margin-left: 5px;
     margin-right: 5px;
     display: none;
+  }
+
+  .contenttwo {
+    background-image: unset;
   }
 
 }
