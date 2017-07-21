@@ -93,7 +93,15 @@ class App extends Component {
         }
 
         <div className="contenttwo"> 
-
+          <p id="asttrackerheading">ASTEROID TRACKER</p>
+            <br />
+          <p id="asttrackersubheading">
+            Track Asteroids that are currently in orbit around the Earth. <br />
+            These NEOs have the potentialto hit Earth, which is why <br />
+            a close eye is kept on their relative trajectories. 
+          </p>
+          <br />
+          <button className="neobutton">NEO TRACKER</button>
         </div>
 
 

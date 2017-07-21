@@ -94,7 +94,7 @@ html, body {
   height: auto;
   /*background-color: #1a1a1a;*/
   background: linear-gradient(to bottom, #1a1a1a, black);
-  padding: 40px; 
+  padding: 40px 40px 0px 40px; 
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -204,13 +204,47 @@ html, body {
 
 .contenttwo {
   width: auto;
-  height: 500px;
+  height: auto;
   background-color: black;
   background-image: url(https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg);
   background-size: 80%;
   background-position: center center;
+  padding: 100px 40px 100px 40px;
 }
 
+#asttrackerheading {
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  /*float: left;*/
+  font-size: 50px;
+}
+
+#asttrackersubheading {
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: lighter;
+  /*float: left;*/
+  font-size: 20px;
+  line-height: 2em;
+}
+
+.neobutton {
+  width: auto;
+  padding: 10px 40px 10px 40px;
+  background-color: black;
+  border: 2px solid white;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 20px;
+  color: white;
+  transition: 1s;
+}
+
+.neobutton:hover {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
 
 @media only screen and (max-width: 1200px) {
   
@@ -237,7 +271,7 @@ html, body {
   }
 
   .contenttwo {
-    background-image: unset;
+    background-image: unset;  
   }
 
 }
