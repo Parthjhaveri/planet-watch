@@ -5,14 +5,28 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div>
+        <div className="mainbanner">
+
+        <center>
+          <ul className="staticnav">
+            <li className="staticnavli">NEO TRACKER</li>
+            <li className="staticnavli">POLLUTION TRACKER</li>
+            <li className="staticnavli">GEOPOLITICAL NEWS</li>
+            <li className="staticnavli">OCEAN CLEANUP</li>
+          </ul>
+        </center>
+
+          <p className="heading">PLANET WATCH</p>
+          <p className="subheading">A CONSOLIDATAED NARRATIVE ON<br />TOP GLOBAL & ASTRONOMICAL ISSUES</p>
+
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <div className="contentone">
+        </div>
+
+
+
       </div>
     );
   }

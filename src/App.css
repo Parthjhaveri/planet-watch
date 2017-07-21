@@ -1,24 +1,118 @@
-.App {
-  text-align: center;
+html, body {
+  overflow-x: hidden;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.mainbanner {
+  width: auto;
+  height: 100vh;
+  background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/06/earth-wallpapers-33.jpg);
+  background-size: 100%;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding: 100px 40px 40px 40px;
+  -webkit-animation: zoompic 40s infinite;
+  animation: zoompic 40s infinite;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.heading {
+  letter-spacing: 20px;
+  text-align: right;
+  margin-top: 200px;
+  font-size: 40px;
+  color: #0066ff;
+  font-weight: lighter;
+}
+
+.subheading {
+  letter-spacing: 5px;
+  text-align: right;
+  margin-top: 40px;
+  font-size: 16px;
+  color: silver;
+  font-weight: lighter;
+  text-align: right;
+  line-height: 2em;
+}
+
+.staticnav {
+  float: right;
+}
+
+.staticnavli {
+  display: block;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-left: 40px;
+  margin-right: 40px;
+  /*font-family: 'PT Sans', sans-serif;*/
+  font-family: 'Titillium Web', sans-serif;
+  color: silver;
+  letter-spacing: 1px;
+  text-align: right;
+  transition: .5s;
+  text-decoration: none;
+  float: right;
+}
+
+.staticnavli:hover {
+  font-weight: bolder;
+  transition: .5s;
   color: white;
+  position: relative;
 }
 
-.App-intro {
-  font-size: large;
+.staticnavli:after {
+  content: '';
+  position: relative;
+  width: 0%;
+  border-bottom: 2px solid white;
+  transition: 0.5s;
+  float: right;
+  margin-top: 5px;
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.staticnavli:hover:after {
+  width: 100%;
+  position: relative;
+  opacity: 1;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes zoompic {
+    0%   {background-size: 120%; background-position: center center;}
+    100% {background-size: 400%; background-position: center center;}
+}
+
+.contentone {
+  width: auto;
+  height: 400px;
+  background-color: #1a1a1a;
+}
+
+
+@media only screen and (max-width: 1200px) {
+  
+  .mainbanner {
+    background-image: unset;
+    padding-top: 50px;
+  }
+
+  .heading {
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .subheading {
+    text-align: center;
+    color: #1a1a1a;
+  }
+
+  .staticnavli {
+    color: #1a1a1a;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: none;
+  }
+
 }
