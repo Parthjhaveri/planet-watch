@@ -78,6 +78,11 @@ html, body {
   opacity: 1;
 }
 
+.boxheading {
+  font-family: 'Titillium Web', sans-serif;
+  color: #f2f2f2;
+}
+
 /* Safari 4.0 - 8.0 */
 @-webkit-keyframes zoompic {
     0%   {background-size: 120%; background-position: center center;}
@@ -86,8 +91,70 @@ html, body {
 
 .contentone {
   width: auto;
-  height: 400px;
+  height: auto;
   background-color: #1a1a1a;
+  padding: 40px; 
+  font-family: 'PT Sans', sans-serif;
+}
+
+#contentoneheading {
+  font-weight: lighter;
+  font-size: 40px;
+  color: white;
+}
+
+.whitehr {
+  width: auto;
+  border: 1px dotted silver;
+  margin-top: 40px;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: #f2f2f2;
+  margin-top: 40px;
+}
+
+.neobox {
+  background-image: url(https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg);
+  background-size: 200%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.pollbox {
+  background-image: url(http://mediad.publicbroadcasting.net/p/michigan/files/styles/x_large/public/201512/_Slider-Northeast-2005.jpg);
+  background-size: 230%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.oceanbox {
+  background-image: url(https://www.theoceancleanup.com/typo3temp/_processed_/csm_TOC_Computer_Renderings_Profileview_2942c52c93.jpg);
+  background-size: 230%;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.whitebox {
+  width: 80%;
+  height: auto;
+  padding: 20px;
+  font-size: 30px;
+  font-family: 'Titillium Web', sans-serif;
+  color: silver;
+  background-color: #1a1a1a;
+  border: 1px solid white;
+  font-weight: lighter;
+  margin-top: 40px;
+  transition: 1s;
+}
+
+.whitebox:hover {
+  background-color: white;
+  color: #1a1a1a;
+  transition: .5s;
 }
 
 

@@ -23,7 +23,51 @@ class App extends Component {
         </div>
 
         <div className="contentone">
+          <center><h1 id="contentoneheading">A centralized hub for all your Planetary knowledge</h1></center>
+          <hr className="whitehr" />
+          <br />
+
+        <center>
+          <div className="row">
+            <div className="col-md-4">
+            <center><h2 className="boxheading">NEO TRACKER</h2></center>
+              <div className="box neobox">
+              
+              </div>
+            </div>
+
+            <div className="col-md-4">
+            <center><h2 className="boxheading">POLLUTION TRACKER</h2></center>
+              <div className="box pollbox">
+              
+              </div>
+            </div>
+
+            <div className="col-md-4">
+            <center><h2 className="boxheading">OCEAN CLEANUP</h2></center>
+              <div className="box oceanbox">
+              
+              </div>
+            </div>
+
+          </div>
+ 
+          <div className="whitebox">
+            <center>VIEW ALL FEATURES</center>
+          </div>
+
+        </center>
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
 
