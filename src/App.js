@@ -104,6 +104,23 @@ class App extends Component {
           <button className="neobutton">NEO TRACKER</button>
         </div>
 
+        {
+          // CONTENT THREE
+        }
+
+        <div className="contentthree">
+        <img src="http://www.boeing.com/resources/boeingdotcom/space/international_space_station/images/iss_hero_lrg_1280x720.jpg" id="sspic" className="img-responsive" alt="Responsive image" />
+          <p id="livefromssheading">LIVE FROM THE SPACE STATION</p>
+            <br />
+          <p id="livefromsssubheading">
+            Watch live broadcasts from the International Space Station <br />
+            Track where the ISS is currently above Earth <br />
+            Learn more about current and future research!
+          </p>
+          <br />
+          <button className="neobutton">GO LIVE<span id="reddot">•</span></button>
+        </div>
+
 
 
 

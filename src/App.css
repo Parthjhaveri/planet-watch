@@ -27,6 +27,7 @@ html, body {
   letter-spacing: 5px;
   text-align: right;
   margin-top: 40px;
+  margin-right: 20px;
   font-size: 16px;
   color: silver;
   font-weight: lighter;
@@ -145,7 +146,7 @@ html, body {
   font-size: 30px;
   font-family: 'Titillium Web', sans-serif;
   color: silver;
-  background-color: #1a1a1a;
+  background-color: black;
   border: 1px solid white;
   font-weight: lighter;
   margin-top: 40px;
@@ -207,9 +208,10 @@ html, body {
   height: auto;
   background-color: black;
   background-image: url(https://www.jpl.nasa.gov/images/asteroid/20150126/asteroid20161103-16.jpg);
-  background-size: 80%;
+  background-size: 100%;
   background-position: center center;
   padding: 100px 40px 100px 40px;
+  background-attachment: fixed;
 }
 
 #asttrackerheading {
@@ -244,6 +246,42 @@ html, body {
   background-color: white;
   color: black;
   transition: 0.5s;
+}
+
+.contentthree {
+  width: auto;
+  height: auto;
+  background-color: black;
+  text-align: right;
+  padding: 100px 40px 100px 40px;
+}
+
+#livefromssheading {
+  color: #0066ff;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
+  /*float: left;*/
+  font-size: 50px;
+}
+
+#livefromsssubheading {
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: lighter;
+  /*float: left;*/
+  font-size: 20px;
+  line-height: 2em;
+}
+
+#reddot {
+  color: red;
+  margin-left: 10px;
+}
+
+#sspic {
+  width: 500px;
+  float: left;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 1200px) {
