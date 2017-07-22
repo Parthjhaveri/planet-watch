@@ -72,7 +72,7 @@ class App extends Component {
                   </div>
                 <div className="overlay">
                     <center>
-                      Updates on the Ocean clean-up effort which is just beginning to kick-off in the Pacific
+                      Updates on the Ocean clean-up effort which is just beginning to kick-off inside the Pacific
                       Trash Vortex
                     </center>
                 </div>
@@ -146,7 +146,7 @@ class App extends Component {
             <ul className="creditul">
               <li className="creditli"><img src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
               <li className="creditli"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
-              <li className="creditli"><img src="./images/waq" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+              <li className="creditli"><img src="http://aqicn.org/images/logo/fblogo.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
             </ul>
           </center>
         </div>

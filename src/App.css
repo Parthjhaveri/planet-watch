@@ -326,7 +326,7 @@ html, body {
 
 .thanksto {
   width: auto;
-  height: 600px;
+  height: auto;
   background-color: #1a1a1a;
   font-family: 'Titillium Web', sans-serif;
   font-size: 40px;
