@@ -254,10 +254,15 @@ html, body {
   background-color: black;
   text-align: right;
   padding: 100px 40px 100px 40px;
+  background-image: url(https://www.nasa.gov/sites/default/files/thumbnails/image/jsc2016e096370.jpg);
+  background-size: 130%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #livefromssheading {
-  color: #0066ff;
+  color: white;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
   /*float: left;*/

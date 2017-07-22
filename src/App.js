@@ -109,7 +109,7 @@ class App extends Component {
         }
 
         <div className="contentthree">
-        <img src="http://www.boeing.com/resources/boeingdotcom/space/international_space_station/images/iss_hero_lrg_1280x720.jpg" id="sspic" className="img-responsive" alt="Responsive image" />
+        
           <p id="livefromssheading">LIVE FROM THE SPACE STATION</p>
             <br />
           <p id="livefromsssubheading">
