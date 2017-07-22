@@ -133,9 +133,9 @@ html, body {
 }
 
 .oceanbox {
-  background-image: url(https://www.theoceancleanup.com/typo3temp/_processed_/csm_TOC_Computer_Renderings_Profileview_2942c52c93.jpg);
-  background-size: 230%;
-  background-position: center right;
+  background-image: url(https://www.theoceancleanup.com/fileadmin/media-archive/opengraph-toc.jpg);
+  background-size: 100%;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -291,16 +291,57 @@ html, body {
 
 .morefromdev {
   width: auto;
-  height: 500px;
+  height: auto;
   background-color: black;
-  padding: 40px;
+  padding: 100px 40px 100px 100px;
   font-family: 'Titillium Web', sans-serif;
   color: white;
+  background-image: url('./images/ocean.jpg');
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #spacedexpic {
   float: left;
   width: 300px;
+}
+
+.oceancleanuppic {
+  float: left;
+  width: 400px;
+  display: inline-block;
+}
+
+.oceantext {
+  /*float: right;*/ 
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: right;
+  margin-top: 40px;
+  line-height: 2em;
+}
+
+.thanksto {
+  width: auto;
+  height: 600px;
+  background-color: #1a1a1a;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 40px;
+  color: white;
+  padding: 100px 40px 100px 40px;
+}
+
+.creditli {
+  display: inline-block;
+}
+
+.creditlogopic {
+  width: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -329,6 +370,27 @@ html, body {
 
   .contenttwo {
     background-image: unset;  
+  }
+
+  .morefromdev {
+    width: auto;
+    height: auto;
+    background-color: black;
+    padding: 100px 40px 100px 40px;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    background-image: unset;
+  }
+
+  .oceantext {
+    /*float: right;*/ 
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: 40px;
+    line-height: 2em;
+    margin-left: 20px;
   }
 
 }

@@ -122,16 +122,34 @@ class App extends Component {
         </div>
 
         {
-          // MORE FROM THE DEVELOPER
+          // OCEAN CLEANUP
         }
 
         <div className="morefromdev">
-          <center><h1>MORE FROM THE DEVELOPER</h1></center>
-          <br />
-          <img src="./spacedex.jpg" id="spacedexpic" />  
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png"  className="img-responsive oceancleanuppic" alt="Responsive image" />
+          
+          <p className="oceantext">
+            Keep up with the largest clean-up effort in the history of Mankind <br />
+            Track Global Pollution Levels from the palm of your hand
+          </p>
+
         </div>
 
+        {
+          // THANKS TO
+        }
 
+        <div className="thanksto">
+        <center>A big thank you to our data sources</center>
+        <br />
+          <center>
+            <ul className="creditul">
+              <li className="creditli"><img src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+              <li className="creditli"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+              <li className="creditli"><img src="./images/waq" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+            </ul>
+          </center>
+        </div>
 
 
 
