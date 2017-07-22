@@ -109,7 +109,7 @@ class App extends Component {
         }
 
         <div className="contentthree">
-        
+
           <p id="livefromssheading">LIVE FROM THE SPACE STATION</p>
             <br />
           <p id="livefromsssubheading">
@@ -121,7 +121,15 @@ class App extends Component {
           <button className="neobutton">GO LIVE<span id="reddot">•</span></button>
         </div>
 
+        {
+          // MORE FROM THE DEVELOPER
+        }
 
+        <div className="morefromdev">
+          <center><h1>MORE FROM THE DEVELOPER</h1></center>
+          <br />
+          <img src="./spacedex.jpg" id="spacedexpic" />  
+        </div>
 
 
 

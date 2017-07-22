@@ -289,6 +289,20 @@ html, body {
   display: inline-block;
 }
 
+.morefromdev {
+  width: auto;
+  height: 500px;
+  background-color: black;
+  padding: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+#spacedexpic {
+  float: left;
+  width: 300px;
+}
+
 @media only screen and (max-width: 1200px) {
   
   .mainbanner {
