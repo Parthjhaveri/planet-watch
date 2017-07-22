@@ -85,8 +85,10 @@ html, body {
   width: auto;
   height: auto;
   background-color: black;
-  padding: 40px;
+  padding: 20px;
   display: none;
+  opacity: 0;
+  transition: 1s;
 }
 
 .mobilestaticnav {
@@ -107,6 +109,7 @@ html, body {
   transition: .5s;
   text-decoration: none;
   float: right;
+  font-weight: bolder;
 }
 
 .mobilestaticnavli:hover {
@@ -394,12 +397,14 @@ html, body {
 
 .creditli {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .creditlogopic {
   width: 150px;
   margin-left: 10px;
   margin-right: 10px;
+  vertical-align: top;
 }
 
 .footerDiv {

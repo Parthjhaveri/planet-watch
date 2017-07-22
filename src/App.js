@@ -159,6 +159,7 @@ class App extends Component {
           <center>
             <ul className="creditul">
               <li className="creditli"><img src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+              <li className="creditli"><img src="https://memex.jpl.nasa.gov/img/jpl-logo.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
               <li className="creditli"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
               <li className="creditli"><img src="http://aqicn.org/images/logo/fblogo.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
             </ul>
