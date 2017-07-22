@@ -79,6 +79,64 @@ html, body {
   opacity: 1;
 }
 
+/* --------------------------------- MOBILE STATIC NAV --------------------------------- */
+
+.mobilenavdiv {
+  width: auto;
+  height: auto;
+  background-color: black;
+  padding: 40px;
+  display: none;
+}
+
+.mobilestaticnav {
+  float: right;
+}
+
+.mobilestaticnavli {
+  display: block;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-left: 40px;
+  margin-right: 40px;
+  /*font-family: 'PT Sans', sans-serif;*/
+  font-family: 'Titillium Web', sans-serif;
+  color: silver;
+  letter-spacing: 1px;
+  text-align: right;
+  transition: .5s;
+  text-decoration: none;
+  float: right;
+}
+
+.mobilestaticnavli:hover {
+  font-weight: bolder;
+  transition: .5s;
+  color: white;
+  position: relative;
+}
+
+.mobilestaticnavli:after {
+  content: '';
+  position: relative;
+  width: 0%;
+  border-bottom: 2px solid white;
+  transition: 0.5s;
+  float: right;
+  margin-top: 5px;
+  opacity: 0;
+}
+
+.mobilestaticnavli:hover:after {
+  width: 100%;
+  position: relative;
+  opacity: 1;
+}
+
+/* --------------------------------- MOBILE STATIC NAV --------------------------------- */
+
+
+
 .boxheading {
   font-family: 'Titillium Web', sans-serif;
   color: #f2f2f2;
@@ -342,6 +400,12 @@ html, body {
   width: 150px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.footerDiv {
+  width: auto;
+  height: 200px;
+  background-color: #f2f2f2;
 }
 
 @media only screen and (max-width: 1200px) {

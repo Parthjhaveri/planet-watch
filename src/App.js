@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Footer from './footer.js';
+import './scripts.js';
+import {$,jQuery} from 'jquery';
 
 class App extends Component {
+
   render() {
     return (
       <div>
+
+        <div className="mobilenavdiv navbar-fixed-top">
+          <ul className="mobilestaticnav">
+            <li className="mobilestaticnavli">NEO TRACKER</li>
+            <li className="mobilestaticnavli">POLLUTION TRACKER</li>
+            <li className="mobilestaticnavli">GEOPOLITICAL NEWS</li>
+            <li className="mobilestaticnavli">OCEAN CLEANUP</li>
+          </ul>
+        </div>
+
         <div className="mainbanner">
 
         <center>
@@ -151,7 +165,7 @@ class App extends Component {
           </center>
         </div>
 
-
+        <Footer />
 
 
 
