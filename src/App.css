@@ -83,8 +83,9 @@ html, body {
 
 .mobilenavdiv {
   width: auto;
-  height: auto;
-  background-color: black;
+  height: 80px;
+  /*background-color: #0066ff;*/
+  background-color: red;
   padding: 20px;
   display: none;
   opacity: 0;
@@ -101,15 +102,16 @@ html, body {
   font-weight: lighter;
   margin-left: 40px;
   margin-right: 40px;
+  margin-top: 5px;
   /*font-family: 'PT Sans', sans-serif;*/
   font-family: 'Titillium Web', sans-serif;
-  color: silver;
+  color: white;
   letter-spacing: 1px;
   text-align: right;
   transition: .5s;
   text-decoration: none;
   float: right;
-  font-weight: bolder;
+  font-weight: lighter;
 }
 
 .mobilestaticnavli:hover {
@@ -389,10 +391,13 @@ html, body {
   width: auto;
   height: auto;
   background-color: #1a1a1a;
-  font-family: 'Titillium Web', sans-serif;
+  /*font-family: 'Titillium Web', sans-serif;*/
+  font-family: 'PT Sans', sans-serif;
   font-size: 40px;
   color: white;
   padding: 100px 40px 100px 40px;
+  /*letter-spacing: 2px;*/
+  font-weight: lighter;
 }
 
 .creditli {
@@ -409,15 +414,86 @@ html, body {
 
 .footerDiv {
   width: auto;
-  height: 200px;
+  height: auto;
   background-color: #f2f2f2;
+  padding: 40px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 30px;
+  color: black;
+}
+
+#heart {
+  color: red;
+  font-size: 20px;
+}
+
+a {
+  color: black;
+  font-weight: bolder;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.navDiv {
+  width: auto;
+  height: 80px;
+  background-color: #1a1a1a;
+  color: white;
+  display: none;
+  padding: 20px;
+}
+
+.ham {
+  float: right;
+  font-size: 40px;
+  color: red;
+  transition: 1s;
+}
+
+.mobilenavigationbar {
+  display: none;
+  list-style: none;
+  font-family: 'Titillium Web', sans-serif;
+  text-align: left;
+}
+
+.mobilenavli {
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#x {
+  display: none;
+  font-size: 40px;
+  color: red;
+  font-weight: bolder;
+  float: right;
+  transition: 1s;
+}
+
+#mobilenavigationbarid {
+  margin-top: 40px;
 }
 
 @media only screen and (max-width: 1200px) {
+
+  .mobilenavdiv {
+    visibility: hidden;
+    z-index: 1;
+  }
+
+  .navDiv {
+    display: inherit;
+  }
   
   .mainbanner {
     background-image: unset;
     padding-top: 50px;
+    margin-top: 80px;
   }
 
   .heading {
@@ -460,6 +536,18 @@ html, body {
     margin-top: 40px;
     line-height: 2em;
     margin-left: 20px;
+  }
+
+  .creditli {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 40px;
+  }
+
+  .mobilenavdiv {
+    display: none;
+    width: 0px;
+    height: 0px;
   }
 
 }
