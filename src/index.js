@@ -5,6 +5,16 @@ import App from './App';
 import './scripts.js';
 import registerServiceWorker from './registerServiceWorker';
 import {$,jQuery} from 'jquery';
+import { BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+
+	<BrowserRouter>
+		<App />
+	</BrowserRouter>,
+	document.getElementById('root')
+
+);
+
 registerServiceWorker();

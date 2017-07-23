@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
 import $ from 'jquery'; 
+import { BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class Navi extends Component {
   
@@ -9,7 +11,7 @@ class Navi extends Component {
   	
   	var hamButton = document.getElementById('hambut');
   	var navigationDiv = document.getElementById('mobnav');
-  	var navUl = document.getElementById('mobilenavigationbarid')
+  	var navUl = document.getElementById('mobilenavigationbarid');
   	var xButton = document.getElementById('x');
 
   	navigationDiv.style.height = "auto";
@@ -24,7 +26,7 @@ class Navi extends Component {
   	var hamButton = document.getElementById('hambut');
   	var xButton = document.getElementById('x');
   	var navigationDiv = document.getElementById('mobnav');
-  	var navUl = document.getElementById('mobilenavigationbarid')
+  	var navUl = document.getElementById('mobilenavigationbarid');
 
   	navigationDiv.style.height = "80px";
   	hamButton.style.display = "initial";
@@ -42,7 +44,7 @@ class Navi extends Component {
 
       	<center>
           <ul className="mobilenavigationbar" id="mobilenavigationbarid">
-            <li className="mobilenavli">NEO TRACKER</li>
+            <li className="mobilenavli"><a href="#">NEO TRACKER</a></li>
             <li className="mobilenavli">POLLUTION TRACKER</li>
             <li className="mobilenavli">GEOPOLITICAL NEWS</li>
             <li className="mobilenavli">OCEAN CLEANUP</li>
