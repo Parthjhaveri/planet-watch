@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
 import $ from 'jquery'; 
+import NeoTracker from './neotrack.js';
+import App from './App';
+import FirstPageCon from './firstPageContent.js';
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
@@ -44,7 +47,7 @@ class Navi extends Component {
 
       	<center>
           <ul className="mobilenavigationbar" id="mobilenavigationbarid">
-            <li className="mobilenavli"><a href="#">NEO TRACKER</a></li>
+            <li className="mobilenavli">NEO TRACKER</li>
             <li className="mobilenavli">POLLUTION TRACKER</li>
             <li className="mobilenavli">GEOPOLITICAL NEWS</li>
             <li className="mobilenavli">OCEAN CLEANUP</li>

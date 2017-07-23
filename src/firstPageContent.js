@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
 import $ from 'jquery'; 
+import NeoTracker from './neotrack.js'
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
@@ -13,6 +14,23 @@ class FirstPageCon extends Component {
         {
           // CONTENT ONE -----------------------------V
         }
+
+
+        <div className="mainbanner">
+
+          <center>
+            <ul className="staticnav">
+              <li className="staticnavli">NEO TRACKER</li>
+              <li className="staticnavli">POLLUTION TRACKER</li>
+              <li className="staticnavli">GEOPOLITICAL NEWS</li>
+              <li className="staticnavli">OCEAN CLEANUP</li>
+            </ul>
+          </center>
+
+            <p className="heading">PLANET WATCH</p>
+            <p className="subheading">A CONSOLIDATAED NARRATIVE ON<br />TOP GLOBAL & ASTRONOMICAL ISSUES</p>
+
+        </div>
 
         <div className="contentone">
           <center><h1 id="contentoneheading">A centralized hub for all your Planetary knowledge</h1></center>

@@ -12,7 +12,8 @@ const PageRoute = () => (
   <main>
     <Switch>
       <Route exact path='/home' component={App}/>
-      <Route path='/neo-tracker' component={NeoTracker}/>
+      <Route path='/firstPage' component={FirstPageCon} />
+      <Route path='/neo-tracker' component={NeoTracker} />
     </Switch>
   </main>
 )

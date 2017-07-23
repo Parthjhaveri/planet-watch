@@ -28,22 +28,7 @@ class App extends Component {
           </ul>
         </div>
 
-        <div className="mainbanner">
-
-        <center>
-          <ul className="staticnav">
-            <li className="staticnavli"><a href="#">NEO TRACKER</a></li>
-            <li className="staticnavli">POLLUTION TRACKER</li>
-            <li className="staticnavli">GEOPOLITICAL NEWS</li>
-            <li className="staticnavli">OCEAN CLEANUP</li>
-          </ul>
-        </center>
-
-          <p className="heading">PLANET WATCH</p>
-          <p className="subheading">A CONSOLIDATAED NARRATIVE ON<br />TOP GLOBAL & ASTRONOMICAL ISSUES</p>
-
-        </div>
-
+        <PageRoute />
         <FirstPageCon />
         <Footer />
 

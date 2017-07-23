@@ -24,6 +24,10 @@ class NeoTracker extends Component {
       <div className="neotrackerdiv">
 
         {this.state.text}
+        
+        {
+          //new Date().toLocaleTimeString()
+        }
 
       </div>
     );
