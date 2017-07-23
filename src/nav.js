@@ -13,6 +13,7 @@ class Navi extends Component {
   	var xButton = document.getElementById('x');
 
   	navigationDiv.style.height = "auto";
+  	navigationDiv.style.transition = 1;
   	hamButton.style.display = "none";
   	xButton.style.display = "initial";
   	navUl.style.display = "initial";

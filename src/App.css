@@ -85,7 +85,7 @@ html, body {
   width: auto;
   height: 80px;
   /*background-color: #0066ff;*/
-  background-color: red;
+  background-color: #00e6ac;
   padding: 20px;
   display: none;
   opacity: 0;
@@ -105,13 +105,13 @@ html, body {
   margin-top: 5px;
   /*font-family: 'PT Sans', sans-serif;*/
   font-family: 'Titillium Web', sans-serif;
-  color: white;
+  color: black;
   letter-spacing: 1px;
   text-align: right;
   transition: .5s;
   text-decoration: none;
   float: right;
-  font-weight: lighter;
+  font-weight: bolder;
 }
 
 .mobilestaticnavli:hover {
@@ -136,6 +136,10 @@ html, body {
   width: 100%;
   position: relative;
   opacity: 1;
+}
+
+.navDiv {
+  transition: 1s;
 }
 
 /* --------------------------------- MOBILE STATIC NAV --------------------------------- */
@@ -449,7 +453,7 @@ a:hover {
 .ham {
   float: right;
   font-size: 40px;
-  color: red;
+  color: #00e6ac;
   transition: 1s;
 }
 
@@ -469,7 +473,7 @@ a:hover {
 #x {
   display: none;
   font-size: 40px;
-  color: red;
+  color: #00e6ac;
   font-weight: bolder;
   float: right;
   transition: 1s;
