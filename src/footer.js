@@ -7,7 +7,7 @@ class Footer extends Component {
       <div className="footerDiv">
 
         <center><p>Made with <span className="glyphicon glyphicon-heart" id="heart"></span> in 40.7128° N, 74.0059° W</p></center>
-        <center><a id="me" href="https://parthjhaveri.github.io/" target="_blank"><p>Developer</p></a></center>
+        <center><a id="me" href="https://parthjhaveri.github.io/" target="_blank" rel="noopener noreferrer"><p>Developer</p></a></center>
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
-import $ from 'jquery'; 
-import NeoTracker from './neotrack.js';
-import { BrowserRouter } from 'react-router-dom';
+// import $ from 'jquery'; 
+// import NeoTracker from './neotrack.js';
+// import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Main from './Main.js';
+// import Main from './Main.js';
 
 class FirstPageCon extends Component {
 
@@ -133,7 +133,7 @@ class FirstPageCon extends Component {
         }
 
         <div className="morefromdev">
-          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png"  className="img-responsive oceancleanuppic" alt="Responsive image" />
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png"  className="img-responsive oceancleanuppic" alt="" />
           
           <p className="oceantext">
             Keep up with the largest clean-up effort in the history of Mankind <br />
@@ -151,10 +151,10 @@ class FirstPageCon extends Component {
         <br />
           <center>
             <ul className="creditul">
-              <li className="creditli"><img src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
-              <li className="creditli"><img src="https://memex.jpl.nasa.gov/img/jpl-logo.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
-              <li className="creditli"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
-              <li className="creditli"><img src="http://aqicn.org/images/logo/fblogo.png" className="img-responsive creditlogopic" alt="Responsive image" /></li>
+              <li className="creditli"><img src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png" className="img-responsive creditlogopic" alt="" /></li>
+              <li className="creditli"><img src="https://memex.jpl.nasa.gov/img/jpl-logo.png" className="img-responsive creditlogopic" alt="" /></li>
+              <li className="creditli"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png" className="img-responsive creditlogopic" alt="" /></li>
+              <li className="creditli"><img src="http://aqicn.org/images/logo/fblogo.png" className="img-responsive creditlogopic" alt="" /></li>
             </ul>
           </center>
         </div>

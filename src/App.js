@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import FirstPageCon from './firstPageContent.js';
 import Footer from './footer.js';
 import Navi from './nav.js';
-import NeoTracker from './neotrack.js';
+// import NeoTracker from './neotrack.js';
 import './scripts.js';
-import {$,jQuery} from 'jquery';
-import Main from './Main.js';
-import { BrowserRouter } from 'react-router-dom';
-import { Switch, Route } from 'react-router-dom';
+// import {$,jQuery} from 'jquery';
+// import Main from './Main.js';
+// import { BrowserRouter } from 'react-router-dom';
+// import { Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class App extends Component {

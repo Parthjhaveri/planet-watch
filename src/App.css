@@ -543,8 +543,41 @@ a:visited {
   font-family: 'Titillium Web', sans-serif;
   color: white;
   vertical-align: middle;
+  margin-top: 120px;
+  text-align: center;
+}
+
+#asttrackersubheading {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  vertical-align: middle;
   margin-top: 100px;
   text-align: center;
+}
+
+#gotrack {
+  width: auto;
+  height: auto;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 10px 40px 10px 40px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.trackingdiv {
+  width: auto;
+  height: 500px;
+  /*background-color: #27190c;*/
+  background-color: #1a1a1a;
+  padding: 40px 20px 20px 20px;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -627,6 +660,20 @@ a:visited {
 
   .nasawallpaper {
     background-image: none;
+  }
+
+  #asttrackerheading {
+    margin-top: 60px;
+  }
+
+  #asttrackersubheading {
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: 'Titillium Web', sans-serif;
+    color: white;
+    vertical-align: middle;
+    margin-top: 50px;
+    text-align: center;
   }
 
 }

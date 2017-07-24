@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
-import $ from 'jquery'; 
-import NeoTracker from './neotrack.js';
-import App from './App';
-import FirstPageCon from './firstPageContent.js';
-import { BrowserRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+// import $ from 'jquery'; 
+// import NeoTracker from './neotrack.js';
+// import App from './App';
+// import FirstPageCon from './firstPageContent.js';
+// import { BrowserRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom'
 
 class Navi extends Component {
   
