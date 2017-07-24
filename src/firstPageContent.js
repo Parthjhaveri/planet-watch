@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
 import $ from 'jquery'; 
-import NeoTracker from './neotrack.js'
+import NeoTracker from './neotrack.js';
 import { BrowserRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Main from './Main.js';
 
 class FirstPageCon extends Component {
 
@@ -20,7 +21,7 @@ class FirstPageCon extends Component {
 
           <center>
             <ul className="staticnav">
-              <li className="staticnavli">NEO TRACKER</li>
+              <li className="staticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
               <li className="staticnavli">POLLUTION TRACKER</li>
               <li className="staticnavli">GEOPOLITICAL NEWS</li>
               <li className="staticnavli">OCEAN CLEANUP</li>
