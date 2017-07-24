@@ -22,7 +22,7 @@ class App extends Component {
 
         <div className="mobilenavdiv navbar-fixed-top">
           <ul className="mobilestaticnav">
-            <li className="mobilestaticnavli">NEO TRACKER</li>
+            <li className="mobilestaticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
             <li className="mobilestaticnavli">POLLUTION TRACKER</li>
             <li className="mobilestaticnavli">GEOPOLITICAL NEWS</li>
             <li className="mobilestaticnavli">OCEAN CLEANUP</li>
