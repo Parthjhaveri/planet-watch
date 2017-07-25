@@ -615,7 +615,7 @@ a:visited {
   height: 400px;
   border: 1px solid white;
   text-align: left;
-  padding: 10px 10px 5px 10px;
+  padding: 40px 10px 40px 10px;
   color: white;
   font-size: 16px;
   overflow-y: scroll;
@@ -635,9 +635,26 @@ a:visited {
 
 .astListUl {
   list-style: none;
-  font-size: 20px;
+  font-size: 22px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
+}
+
+.asteroidNameLi {
+  color: white;
+  margin-bottom: 25px;
+}
+
+#loadmoreasts {
+  width: auto;
+  height: auto;
+  font-size: 18px;
+  font-family: 'Titillium Web', sans-serif;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid red;
+  color: white;
+  background-color: #1a1a1a;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 1200px) {

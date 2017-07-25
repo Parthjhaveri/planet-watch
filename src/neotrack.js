@@ -21,8 +21,12 @@ class NeoTracker extends Component {
 
     this.state = {
       asteroidName: "",
-      astNameArray: []
+      astNameArray: [],
+      secondAstNameArray: []
     }
+
+    // BIND THE FUNCTION TO THIS 
+    this.loadMoreAsteroids = this.loadMoreAsteroids.bind(this);
 
   }
 
@@ -35,7 +39,6 @@ class NeoTracker extends Component {
 
       url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=" + myApiKey,
       success: (data) => {
-        // console.log(data);
         
         // ARRAY FOR WEEK OF JULY 21st ASTEROIDS
         const july21Asteroids = data.near_earth_objects['2017-07-21'];
@@ -44,25 +47,60 @@ class NeoTracker extends Component {
           "So this is your array- ",  july21Asteroids
         );
 
-        // MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT)
+        /* 
+           MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE OF THE ASTEROID ARRAY TO
+           CONTAIN EACH ELEMENT WITHIN IT- WHERE IN THE UL BELOW, IT IS MAPPED OVER AND EVERY ASTEROID NAME 
+           IS RENDERED 
+        */
         july21Asteroids.map( (element, index) => {
 
-          that.state.astNameArray.push(element.name);
+          return (that.setState({astNameArray: that.state.astNameArray.concat(element.name)}));
 
-          // Object.keys(element).forEach(function(key) {
-          //     console.log(key, element[key]);
-          // });
         })
 
-        console.log(that.state.astNameArray);
-
+        console.log("AstName array -", that.state.astNameArray);
 
       } // ENDS SUCCESS FUNCTION
 
     }) // ENDS AJAX CALL
 
-
   } // ENDS COMPONENT DID MOUNT
+
+  loadMoreAsteroids() {
+
+    // ---------------------------------------------------------------------------------------------    
+    // AJAX CALL #2 --------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------    
+
+    const astListDiv = document.getElementById('listdiv');
+
+    const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+    const that = this;
+  
+    $.ajax({
+
+      url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=" + myApiKey,
+      success: (astdata) => {
+        
+      console.log(astdata.near_earth_objects["2017-07-10"]);
+
+      const secondBatchAsts = astdata.near_earth_objects["2017-07-10"];
+
+      /* 
+         MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
+         BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
+      */
+      secondBatchAsts.map( (elem, ind) => {
+
+        return (that.setState({secondAstNameArray: that.state.secondAstNameArray.concat(elem.name)}))
+
+      })
+
+      } // ENDS SUCCESS FUNCTION
+
+    }) // ENDS AJAX CALL
+
+  }
 
   render() {
     return (
@@ -123,21 +161,38 @@ class NeoTracker extends Component {
             
             <div className="col-md-4 nameSide">
 
+              <h2>LIST OF ASTEROIDS:</h2>
+              <br />
 
               <div id="listdiv">
                 <ul className="astListUl">
                   {
-                    this.state.astNameArray.map( (name,i) => {
-                      return (<li key={i} value={name}>{name}</li>)
-                    })
+                    this.state.astNameArray.map (
+                      (name, index) => {
+                        return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                      }
+                    )
+                  }
+
+                  { 
+                    this.state.secondAstNameArray.map (
+                      (name, index) => {
+                        return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                      }
+                    )
                   }
                 </ul>
               </div>
+
+                <button id="loadmoreasts" onClick={this.loadMoreAsteroids}>Load more Asteroids</button>
 
             </div>
 
             
             <div className="col-md-4 propertiesSide" >
+
+              <h2>ASTEROID PROPERTIES:</h2>
+              <br />
               
               <div id="propertiesDiv">
               </div>
