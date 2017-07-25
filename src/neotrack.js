@@ -32,8 +32,8 @@ class NeoTracker extends Component {
   
     $.ajax({
 
-      url: "https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=" + myApiKey,
-      success: function (data) {
+      url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=" + myApiKey,
+      success: (data) => {
         console.log(data);
       }
 
@@ -73,9 +73,9 @@ class NeoTracker extends Component {
           </ul>
         </div>
 
-          <p id="asttrackerheading">ASTEROID TRACKER</p>
+          <p id="astpageheading">ASTEROID TRACKER</p>
           <br />
-          <p id="asttrackersubheading">
+          <p id="astpagesubheading">
           From here, you can monitor Near Earth Object trajectories, properties <br />
           and close approaches
           </p>
@@ -96,7 +96,20 @@ class NeoTracker extends Component {
 
         <div className="trackingdiv">
 
+        <center>
+          <div className="row">
+            
+            <div className="col-md-6 propertiesSide">
+              <h1>Properties</h1>
+            </div>
 
+            
+            <div className="col-md-6">
+              sdf
+            </div>
+
+          </div>
+        </center>
 
         </div>
 
