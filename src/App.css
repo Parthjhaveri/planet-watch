@@ -592,7 +592,7 @@ a:visited {
 
 .trackingdiv {
   width: auto;
-  height: 500px;
+  height: auto;
   /*background-color: #27190c;*/
   background-color: #1a1a1a;
   padding: 40px;
@@ -600,8 +600,44 @@ a:visited {
   color: white;
 }
 
+.nameSide {
+  text-align: left;
+  color: red;
+}
+
 .propertiesSide {
   text-align: left;
+  color: red;
+}
+
+#listdiv {
+  width: 300px;
+  height: 400px;
+  border: 1px solid white;
+  text-align: left;
+  padding: 10px 10px 5px 10px;
+  color: white;
+  font-size: 16px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+#propertiesDiv {
+  width: 300px;
+  height: 400px;
+  border: 1px solid white;
+  text-align: left;
+  padding: 10px 10px 5px 10px;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.astListUl {
+  list-style: none;
+  font-size: 20px;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 @media only screen and (max-width: 1200px) {

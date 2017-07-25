@@ -20,7 +20,8 @@ class NeoTracker extends Component {
     super(props);
 
     this.state = {
-      videoURL: "./images/asteroidvid.mp4"
+      asteroidName: "",
+      astNameArray: []
     }
 
   }
@@ -28,19 +29,40 @@ class NeoTracker extends Component {
   componentDidMount() {
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
-    // const that = this;
+    const that = this;
   
     $.ajax({
 
       url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=" + myApiKey,
       success: (data) => {
-        console.log(data);
-      }
+        // console.log(data);
+        
+        // ARRAY FOR WEEK OF JULY 21st ASTEROIDS
+        const july21Asteroids = data.near_earth_objects['2017-07-21'];
 
-    })
+        console.log(
+          "So this is your array- ",  july21Asteroids
+        );
+
+        // MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT)
+        july21Asteroids.map( (element, index) => {
+
+          that.state.astNameArray.push(element.name);
+
+          // Object.keys(element).forEach(function(key) {
+          //     console.log(key, element[key]);
+          // });
+        })
+
+        console.log(that.state.astNameArray);
 
 
-  }
+      } // ENDS SUCCESS FUNCTION
+
+    }) // ENDS AJAX CALL
+
+
+  } // ENDS COMPONENT DID MOUNT
 
   render() {
     return (
@@ -99,13 +121,31 @@ class NeoTracker extends Component {
         <center>
           <div className="row">
             
-            <div className="col-md-6 propertiesSide">
-              <h1>Properties</h1>
+            <div className="col-md-4 nameSide">
+
+
+              <div id="listdiv">
+                <ul className="astListUl">
+                  {
+                    this.state.astNameArray.map( (name,i) => {
+                      return (<li key={i} value={name}>{name}</li>)
+                    })
+                  }
+                </ul>
+              </div>
+
             </div>
 
             
-            <div className="col-md-6">
-              sdf
+            <div className="col-md-4 propertiesSide" >
+              
+              <div id="propertiesDiv">
+              </div>
+
+            </div>
+
+            <div className="col-md-4">
+              This part will render the case scenarios
             </div>
 
           </div>
