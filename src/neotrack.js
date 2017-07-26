@@ -92,10 +92,13 @@ class NeoTracker extends Component {
 
     // DISPLAY GREEN SUCCESS BUTTON IF LOADED
     const successButt = document.getElementById('successbutton');
+    const listDivBorder = document.getElementById('listdiv');
 
     successButt.style.display = "inherit";
     successButt.style.opacity = 1;
     successButt.style.transition = "2s";
+
+    // listDivBorder.style.border = "1px solid #00cc66";
 
     // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
     const julyButton = document.getElementsByClassName('julybutt');
