@@ -613,7 +613,8 @@ a:visited {
 #listdiv {
   width: 300px;
   height: 400px;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
+  background-color: black;
   text-align: left;
   padding: 40px 10px 40px 10px;
   color: white;
@@ -656,6 +657,15 @@ a:visited {
   background-color: #1a1a1a;
   margin-top: 20px;
   display: block;
+}
+
+#archivesdesc {
+  line-height: 2em;
+  color: white;
+}
+
+#archhr {
+  width: auto;
 }
 
 @media only screen and (max-width: 1200px) {

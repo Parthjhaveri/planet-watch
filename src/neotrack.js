@@ -23,12 +23,14 @@ class NeoTracker extends Component {
       asteroidName: "",
       astNameArray: [],
       secondAstNameArray: [],
-      juneAsteroidsArray: []
+      juneAsteroidsArray: [],
+      mayAsteroidsArray: []
     }
 
     // BIND THE FUNCTION TO THIS 
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.juneAsteroids = this.juneAsteroids.bind(this);
+    this.mayAsteroids = this.mayAsteroids.bind(this);
 
   }
 
@@ -154,6 +156,47 @@ class NeoTracker extends Component {
 
   }
 
+mayAsteroids() {
+
+    // ---------------------------------------------------------------------------------------------    
+    // AJAX CALL #2 --------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------    
+
+    const astListDiv = document.getElementById('listdiv');
+
+    const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+    const that = this;
+
+    // BUTTON CLICK COUNTER
+    // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
+    // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
+
+        $.ajax({
+
+          url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
+          success: (astdata) => {
+
+          const mayAsteroids = astdata.near_earth_objects["2017-05-29"];
+
+          /* 
+             MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
+             BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
+          */
+          mayAsteroids.map( (elem, ind) => {
+
+            return (that.setState({mayAsteroidsArray: that.state.mayAsteroidsArray.concat(elem.name)}))
+
+          })
+        
+
+
+          } // ENDS SUCCESS FUNCTION
+
+        }) // ENDS AJAX CALL
+
+
+  }
+
   render() {
     return (
       <div className="neotrackerdiv">
@@ -214,9 +257,11 @@ class NeoTracker extends Component {
             <div className="col-md-4 nameSide">
 
               <h2>ARCHIVES</h2>
-              <br />
-              <button id="loadmoreasts" onClick={this.julyAsteroids}>JULY 2017</button>
-              <button id="loadmoreasts" onClick={this.juneAsteroids}>JUNE 2017</button>
+              <hr id="archhr" />
+              <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on when they were first detected</h4>
+              <button id="loadmoreasts" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
+              <button id="loadmoreasts" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
+              <button id="loadmoreasts" onClick={this.mayAsteroids}>MAY 2017 ASTEROIDS</button>
 
             </div>
 
@@ -246,6 +291,14 @@ class NeoTracker extends Component {
 
                     { 
                       this.state.juneAsteroidsArray.map (
+                        (name, index) => {
+                          return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                        }
+                      )
+                    }
+
+                    { 
+                      this.state.mayAsteroidsArray.map (
                         (name, index) => {
                           return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
                         }
