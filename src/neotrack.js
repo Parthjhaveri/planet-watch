@@ -26,7 +26,8 @@ class NeoTracker extends Component {
       secondAstNameArray: [],
       juneAsteroidsArray: [],
       mayAsteroidsArray: [],
-      aprilAsteroidsArray: []
+      aprilAsteroidsArray: [],
+      julyAsteroidsArray: []
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -34,6 +35,7 @@ class NeoTracker extends Component {
     this.juneAsteroids = this.juneAsteroids.bind(this);
     this.mayAsteroids = this.mayAsteroids.bind(this);
     this.aprilAsteroids = this.aprilAsteroids.bind(this);
+    this.julyAsteroids = this.julyAsteroids.bind(this);
 
   }
 
@@ -87,12 +89,20 @@ class NeoTracker extends Component {
     // BUTTON CLICK COUNTER
     // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
     // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
-    let pressCount = 0;
 
-    pressCount = pressCount + 1;
+    // DISPLAY GREEN SUCCESS BUTTON IF LOADED
+    const successButt = document.getElementById('successbutton');
 
-    // console.log(pressCount);
+    successButt.style.display = "inherit";
+    successButt.style.opacity = 1;
+    successButt.style.transition = "2s";
 
+    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+    const julyButton = document.getElementsByClassName('julybutt');
+
+    this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
+    
+    if (this.state.buttonClickCounter === 0) {
         $.ajax({
 
           url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=" + myApiKey,
@@ -115,7 +125,32 @@ class NeoTracker extends Component {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
+    } else if (this.state.buttonClickCounter != 0) {
 
+            const faliureButt = document.getElementById('faliurebutton');
+
+            faliureButt.style.display = "inherit";
+            faliureButt.style.opacity = 1;
+            faliureButt.style.transition = "2s";
+
+            const successButt = document.getElementById('successbutton');
+
+            successButt.style.display = "none";
+            successButt.style.opacity = 1;
+            successButt.style.transition = "2s";
+          
+          $.ajax({
+
+            url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
+            success: () => {
+
+            console.log("nothing");
+
+            } // ENDS SUCCESS FUNCTION
+
+          }) // ENDS AJAX CALL
+
+    }
 
   }
 
@@ -130,10 +165,23 @@ class NeoTracker extends Component {
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
 
+    // DISPLAY GREEN SUCCESS BUTTON IF LOADED
+    const successButt = document.getElementById('successbutton');
+
+    successButt.style.display = "inherit";
+    successButt.style.opacity = 1;
+    successButt.style.transition = "2s";
+
+    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+    const juneButton = document.getElementsByClassName('junebutt');
+
+    this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
+
     // BUTTON CLICK COUNTER
     // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
     // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
 
+    if (this.state.buttonClickCounter === 0) {
         $.ajax({
 
           url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
@@ -155,7 +203,32 @@ class NeoTracker extends Component {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
+    } else if (this.state.buttonClickCounter != 0) {
 
+            const faliureButt = document.getElementById('faliurebutton');
+
+            faliureButt.style.display = "inherit";
+            faliureButt.style.opacity = 1;
+            faliureButt.style.transition = "2s";
+
+            const successButt = document.getElementById('successbutton');
+
+            successButt.style.display = "none";
+            successButt.style.opacity = 1;
+            successButt.style.transition = "2s";
+          
+          $.ajax({
+
+            url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
+            success: () => {
+
+            console.log("nothing");
+
+            } // ENDS SUCCESS FUNCTION
+
+          }) // ENDS AJAX CALL
+
+    }
 
   }
 
@@ -170,10 +243,24 @@ mayAsteroids() {
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
 
+    // DISPLAY GREEN SUCCESS BUTTON IF LOADED
+    const successButt = document.getElementById('successbutton');
+
+    successButt.style.display = "inherit";
+    successButt.style.opacity = 1;
+    successButt.style.transition = "2s";
+
+
+    // IF THE BUTTON IS CLICKED, DISABLE ANY FURTHER AJAX CALLS
+    const mayButton = document.getElementsByClassName('maybutt');
+
+    this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
+
     // BUTTON CLICK COUNTER
     // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
     // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
 
+    if (this.state.buttonClickCounter === 0) {
         $.ajax({
 
           url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
@@ -194,7 +281,32 @@ mayAsteroids() {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
+      } else if (this.state.buttonClickCounter != 0) {
 
+            const faliureButt = document.getElementById('faliurebutton');
+
+            faliureButt.style.display = "inherit";
+            faliureButt.style.opacity = 1;
+            faliureButt.style.transition = "2s";
+
+            const successButt = document.getElementById('successbutton');
+
+            successButt.style.display = "none";
+            successButt.style.opacity = 1;
+            successButt.style.transition = "2s";
+          
+          $.ajax({
+
+            url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
+            success: () => {
+
+            console.log("nothing");
+
+            } // ENDS SUCCESS FUNCTION
+
+          }) // ENDS AJAX CALL
+
+      }
 
   }
 
@@ -208,6 +320,12 @@ aprilAsteroids() {
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
+
+    const successButt = document.getElementById('successbutton');
+
+    successButt.style.display = "inherit";
+    successButt.style.opacity = 1;
+    successButt.style.transition = "2s";
 
     // BUTTON CLICK COUNTER
     // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
@@ -246,10 +364,22 @@ aprilAsteroids() {
           }) // ENDS AJAX CALL
 
         } else if (this.state.buttonClickCounter != 0){
+
+            const faliureButt = document.getElementById('faliurebutton');
+
+            faliureButt.style.display = "inherit";
+            faliureButt.style.opacity = 1;
+            faliureButt.style.transition = "2s";
+
+            const successButt = document.getElementById('successbutton');
+
+            successButt.style.display = "none";
+            successButt.style.opacity = 1;
+            successButt.style.transition = "2s";
           
           $.ajax({
 
-            url: "", 
+            url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
             success: () => {
 
             console.log("nothing");
@@ -259,7 +389,6 @@ aprilAsteroids() {
           }) // ENDS AJAX CALL
 
         }
-
 
   }
 
@@ -325,11 +454,16 @@ aprilAsteroids() {
               <h2>ARCHIVES</h2>
               <hr id="archhr" />
               <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on their closest approach date to Earth</h4>
-              <button id="loadmoreasts" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
-              <button id="loadmoreasts" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
-              <button id="loadmoreasts" onClick={this.mayAsteroids}>MAY 2017 ASTEROIDS</button>
-              <button id="loadmoreasts" className="aprilbutt" onClick={this.aprilAsteroids.bind(this)}>APRIL 2017 ASTEROIDS</button>
-
+                
+              <div className="buttonBox">  
+                <button id="loadmoreasts" className="julybutt" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
+                <button id="loadmoreasts" className="junebutt" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
+                <button id="loadmoreasts" className="maybutt" onClick={this.mayAsteroids}>MAY 2017 ASTEROIDS</button>
+                <button id="loadmoreasts" className="aprilbutt" onClick={this.aprilAsteroids}>APRIL 2017 ASTEROIDS</button>
+              </div>
+              <br />
+              <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
+              <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
             </div>
 
             
