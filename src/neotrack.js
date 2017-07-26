@@ -22,11 +22,13 @@ class NeoTracker extends Component {
     this.state = {
       asteroidName: "",
       astNameArray: [],
-      secondAstNameArray: []
+      secondAstNameArray: [],
+      juneAsteroidsArray: []
     }
 
     // BIND THE FUNCTION TO THIS 
-    this.loadMoreAsteroids = this.loadMoreAsteroids.bind(this);
+    this.julyAsteroids = this.julyAsteroids.bind(this);
+    this.juneAsteroids = this.juneAsteroids.bind(this);
 
   }
 
@@ -43,9 +45,9 @@ class NeoTracker extends Component {
         // ARRAY FOR WEEK OF JULY 21st ASTEROIDS
         const july21Asteroids = data.near_earth_objects['2017-07-21'];
 
-        console.log(
-          "So this is your array- ",  july21Asteroids
-        );
+        // console.log(
+        //   "So this is your array- ",  july21Asteroids
+        // );
 
         /* 
            MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE OF THE ASTEROID ARRAY TO
@@ -58,7 +60,7 @@ class NeoTracker extends Component {
 
         })
 
-        console.log("AstName array -", that.state.astNameArray);
+        // console.log("AstName array -", that.state.astNameArray);
 
       } // ENDS SUCCESS FUNCTION
 
@@ -66,7 +68,7 @@ class NeoTracker extends Component {
 
   } // ENDS COMPONENT DID MOUNT
 
-  loadMoreAsteroids() {
+  julyAsteroids() {
 
     // ---------------------------------------------------------------------------------------------    
     // AJAX CALL #2 --------------------------------------------------------------------------------
@@ -76,29 +78,79 @@ class NeoTracker extends Component {
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
-  
-    $.ajax({
 
-      url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=" + myApiKey,
-      success: (astdata) => {
-        
-      console.log(astdata.near_earth_objects["2017-07-10"]);
+    // BUTTON CLICK COUNTER
+    // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
+    // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
+    let pressCount = 0;
 
-      const secondBatchAsts = astdata.near_earth_objects["2017-07-10"];
+    pressCount = pressCount + 1;
 
-      /* 
-         MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
-         BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
-      */
-      secondBatchAsts.map( (elem, ind) => {
+    // console.log(pressCount);
 
-        return (that.setState({secondAstNameArray: that.state.secondAstNameArray.concat(elem.name)}))
+        $.ajax({
 
-      })
+          url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=" + myApiKey,
+          success: (astdata) => {
+            
+          // console.log(astdata.near_earth_objects["2017-07-10"]);
 
-      } // ENDS SUCCESS FUNCTION
+          const secondBatchAsts = astdata.near_earth_objects["2017-07-10"];
 
-    }) // ENDS AJAX CALL
+          /* 
+             MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
+             BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
+          */
+          secondBatchAsts.map( (elem, ind) => {
+
+            return (that.setState({secondAstNameArray: that.state.secondAstNameArray.concat(elem.name)}))
+
+          })
+
+          } // ENDS SUCCESS FUNCTION
+
+        }) // ENDS AJAX CALL
+
+
+  }
+
+  juneAsteroids() {
+
+    // ---------------------------------------------------------------------------------------------    
+    // AJAX CALL #2 --------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------    
+
+    const astListDiv = document.getElementById('listdiv');
+
+    const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+    const that = this;
+
+    // BUTTON CLICK COUNTER
+    // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
+    // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
+
+        $.ajax({
+
+          url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
+          success: (astdata) => {
+
+          const juneAsteroids = astdata.near_earth_objects["2017-06-27"];
+
+          /* 
+             MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
+             BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
+          */
+          juneAsteroids.map( (elem, ind) => {
+
+            return (that.setState({juneAsteroidsArray: that.state.juneAsteroidsArray.concat(elem.name)}))
+
+          })
+
+
+          } // ENDS SUCCESS FUNCTION
+
+        }) // ENDS AJAX CALL
+
 
   }
 
@@ -161,46 +213,57 @@ class NeoTracker extends Component {
             
             <div className="col-md-4 nameSide">
 
-              <h2>LIST OF ASTEROIDS:</h2>
+              <h2>ARCHIVES</h2>
               <br />
-
-              <div id="listdiv">
-                <ul className="astListUl">
-                  {
-                    this.state.astNameArray.map (
-                      (name, index) => {
-                        return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
-                      }
-                    )
-                  }
-
-                  { 
-                    this.state.secondAstNameArray.map (
-                      (name, index) => {
-                        return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
-                      }
-                    )
-                  }
-                </ul>
-              </div>
-
-                <button id="loadmoreasts" onClick={this.loadMoreAsteroids}>Load more Asteroids</button>
+              <button id="loadmoreasts" onClick={this.julyAsteroids}>JULY 2017</button>
+              <button id="loadmoreasts" onClick={this.juneAsteroids}>JUNE 2017</button>
 
             </div>
 
             
             <div className="col-md-4 propertiesSide" >
 
+                <h2>LIST OF ASTEROIDS:</h2>
+                <br />
+
+                <div id="listdiv">
+                  <ul className="astListUl">
+                    {
+                      this.state.astNameArray.map (
+                        (name, index) => {
+                          return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                        }
+                      )
+                    }
+
+                    { 
+                      this.state.secondAstNameArray.map (
+                        (name, index) => {
+                          return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                        }
+                      )
+                    }
+
+                    { 
+                      this.state.juneAsteroidsArray.map (
+                        (name, index) => {
+                          return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                        }
+                      )
+                    }
+                  </ul>
+                </div>
+
+            </div>
+
+            <div className="col-md-4">
+              
               <h2>ASTEROID PROPERTIES:</h2>
               <br />
               
               <div id="propertiesDiv">
               </div>
 
-            </div>
-
-            <div className="col-md-4">
-              This part will render the case scenarios
             </div>
 
           </div>

@@ -655,6 +655,7 @@ a:visited {
   color: white;
   background-color: #1a1a1a;
   margin-top: 20px;
+  display: block;
 }
 
 @media only screen and (max-width: 1200px) {
