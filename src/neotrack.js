@@ -20,17 +20,20 @@ class NeoTracker extends Component {
     super(props);
 
     this.state = {
+      buttonClickCounter: 0,
       asteroidName: "",
       astNameArray: [],
       secondAstNameArray: [],
       juneAsteroidsArray: [],
-      mayAsteroidsArray: []
+      mayAsteroidsArray: [],
+      aprilAsteroidsArray: []
     }
 
     // BIND THE FUNCTION TO THIS 
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.juneAsteroids = this.juneAsteroids.bind(this);
     this.mayAsteroids = this.mayAsteroids.bind(this);
+    this.aprilAsteroids = this.aprilAsteroids.bind(this);
 
   }
 
@@ -188,11 +191,74 @@ mayAsteroids() {
 
           })
         
-
-
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
+
+
+  }
+
+aprilAsteroids() {
+
+    // ---------------------------------------------------------------------------------------------    
+    // AJAX CALL #2 --------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------    
+
+    const astListDiv = document.getElementById('listdiv');
+
+    const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+    const that = this;
+
+    // BUTTON CLICK COUNTER
+    // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
+    // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
+
+        // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+        const aprilButton = document.getElementsByClassName('aprilbutt');
+
+        this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
+
+        console.log("Add one- ", this.state.buttonClickCounter);
+
+        if (this.state.buttonClickCounter === 0) {
+
+          $.ajax({
+
+            url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
+            success: (astdata) => {
+
+            const aprilAsteroids = astdata.near_earth_objects["2017-05-27"];
+
+            console.log(aprilAsteroids);
+
+            /* 
+               MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
+               BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
+            */
+            aprilAsteroids.map( (elem, ind) => {
+
+              return (that.setState({aprilAsteroidsArray: that.state.aprilAsteroidsArray.concat(elem.name)}))
+
+            })
+
+            } // ENDS SUCCESS FUNCTION
+
+          }) // ENDS AJAX CALL
+
+        } else if (this.state.buttonClickCounter != 0){
+          
+          $.ajax({
+
+            url: "", 
+            success: () => {
+
+            console.log("nothing");
+
+            } // ENDS SUCCESS FUNCTION
+
+          }) // ENDS AJAX CALL
+
+        }
 
 
   }
@@ -258,10 +324,11 @@ mayAsteroids() {
 
               <h2>ARCHIVES</h2>
               <hr id="archhr" />
-              <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on when they were first detected</h4>
+              <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on their closest approach date to Earth</h4>
               <button id="loadmoreasts" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
               <button id="loadmoreasts" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
               <button id="loadmoreasts" onClick={this.mayAsteroids}>MAY 2017 ASTEROIDS</button>
+              <button id="loadmoreasts" className="aprilbutt" onClick={this.aprilAsteroids.bind(this)}>APRIL 2017 ASTEROIDS</button>
 
             </div>
 
@@ -299,6 +366,15 @@ mayAsteroids() {
 
                     { 
                       this.state.mayAsteroidsArray.map (
+                        (name, index) => {
+                          return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                        }
+                      )
+                    }
+
+
+                    { 
+                      this.state.aprilAsteroidsArray.map (
                         (name, index) => {
                           return (<li className="asteroidNameLi" key={index} value={name}>{name}</li>)
                         }
