@@ -81,7 +81,7 @@ class NeoTracker extends Component {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------    
 
-    const astListDiv = document.getElementById('listdiv');
+    // const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -92,7 +92,7 @@ class NeoTracker extends Component {
 
     // DISPLAY GREEN SUCCESS BUTTON IF LOADED
     const successButt = document.getElementById('successbutton');
-    const listDivBorder = document.getElementById('listdiv');
+    // const listDivBorder = document.getElementById('listdiv');
 
     successButt.style.display = "inherit";
     successButt.style.opacity = 1;
@@ -128,7 +128,7 @@ class NeoTracker extends Component {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
-    } else if (this.state.buttonClickCounter != 0) {
+    } else if (this.state.buttonClickCounter !== 0) {
 
             const faliureButt = document.getElementById('faliurebutton');
 
@@ -163,7 +163,7 @@ class NeoTracker extends Component {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------    
 
-    const astListDiv = document.getElementById('listdiv');
+    // const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -206,7 +206,7 @@ class NeoTracker extends Component {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
-    } else if (this.state.buttonClickCounter != 0) {
+    } else if (this.state.buttonClickCounter !== 0) {
 
             const faliureButt = document.getElementById('faliurebutton');
 
@@ -241,7 +241,7 @@ mayAsteroids() {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------    
 
-    const astListDiv = document.getElementById('listdiv');
+    // const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -284,7 +284,7 @@ mayAsteroids() {
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
-      } else if (this.state.buttonClickCounter != 0) {
+      } else if (this.state.buttonClickCounter !== 0) {
 
             const faliureButt = document.getElementById('faliurebutton');
 
@@ -319,7 +319,7 @@ aprilAsteroids() {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------    
 
-    const astListDiv = document.getElementById('listdiv');
+    // const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -366,7 +366,7 @@ aprilAsteroids() {
 
           }) // ENDS AJAX CALL
 
-        } else if (this.state.buttonClickCounter != 0){
+        } else if (this.state.buttonClickCounter !== 0){
 
             const faliureButt = document.getElementById('faliurebutton');
 
@@ -528,6 +528,44 @@ aprilAsteroids() {
               <br />
               
               <div id="propertiesDiv">
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Hazardous?</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>Estimated Diameter (Miles):</th>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>Orbiting body:</th>
+                      <td>-</td>
+                    </tr>   
+                    <tr>
+                      <th>Miss-distance (Miles):</th>
+                      <td>-</td>
+                    </tr>                    
+                    <tr>
+                      <th>Speed (MPH):</th>
+                      <td>-</td>
+                    </tr>                    
+                    <tr>
+                      <th>Speed (KMPH):</th>
+                      <td>-</td>
+                    </tr>                    
+                    <tr>
+                      <th>JPL URL:</th>
+                      <td>-</td>
+                    </tr>                    
+                    <tr>
+                      <th>NEO reference ID:</th>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+
               </div>
 
             </div>

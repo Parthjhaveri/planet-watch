@@ -624,14 +624,16 @@ a:visited {
 }
 
 #propertiesDiv {
-  width: 300px;
+  width: 350px;
   height: 400px;
-  border: 1px solid white;
+  /*border: 1px solid white;*/
+  background-color: black;
   text-align: left;
-  padding: 10px 10px 5px 10px;
+  padding: 20px;
   color: white;
   font-size: 16px;
   margin-bottom: 10px;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 .astListUl {
@@ -707,6 +709,27 @@ a:visited {
   opacity: 0.1;
   transition: 2s;
 }
+
+/* ------------------------------------- TABLE CSS ------------------------------------- */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+}
+
+th {
+    font-weight: bolder;
+    color: #00e6ac;
+    padding: 5px;
+}
+
+tr {
+  border: 1px solid red;
+  padding: 5px;
+}
+
+/* ------------------------------------- TABLE CSS ------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
 
