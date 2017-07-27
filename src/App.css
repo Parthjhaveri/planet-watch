@@ -729,6 +729,10 @@ tr {
   padding: 5px;
 }
 
+tr:hover {
+  background-color: #1a1a1a;
+}
+
 /* ------------------------------------- TABLE CSS ------------------------------------- */
 
 @media only screen and (max-width: 1200px) {

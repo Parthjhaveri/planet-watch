@@ -27,7 +27,8 @@ class NeoTracker extends Component {
       juneAsteroidsArray: [],
       mayAsteroidsArray: [],
       aprilAsteroidsArray: [],
-      julyAsteroidsArray: []
+      julyAsteroidsArray: [],
+      property: "Property"
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -465,7 +466,7 @@ aprilAsteroids() {
                 <button id="loadmoreasts" className="aprilbutt" onClick={this.aprilAsteroids}>APRIL 2017 ASTEROIDS</button>
               </div>
               <br />
-              <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
+              <div className="success" id="successbutton" role="alert">Success- Asteroids loaded</div>
               <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
             </div>
 
@@ -533,35 +534,35 @@ aprilAsteroids() {
                   <tbody>
                     <tr>
                       <th>Hazardous?</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>
                     <tr>
                       <th>Estimated Diameter (Miles):</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>
                     <tr>
                       <th>Orbiting body:</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>   
                     <tr>
                       <th>Miss-distance (Miles):</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>                    
                     <tr>
                       <th>Speed (MPH):</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>                    
                     <tr>
                       <th>Speed (KMPH):</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>                    
                     <tr>
                       <th>JPL URL:</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>                    
                     <tr>
                       <th>NEO reference ID:</th>
-                      <td>-</td>
+                      <td>{this.state.property}</td>
                     </tr>
                   </tbody>
                 </table>
