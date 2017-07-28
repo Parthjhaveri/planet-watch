@@ -775,6 +775,11 @@ tr:hover {
   margin-left: 40px;
 }
 
+#ishaz {
+  color: yellow;
+  font-size: 14px;
+}
+
 /* ------------------------------------- TABLE CSS ------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
