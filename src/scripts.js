@@ -1,21 +1,26 @@
 import $ from 'jquery'; 
-import './neotrack.js';
+import NeoTracker from './neotrack.js';
 
 // CLICK FUNCTIONALITY FOR MAPPING THE CLICK TO AJAX TO RENDER THE PROPERTIES
 
-$('body').click(function(e) {
+// $('body').click(function(e) {
 
-    var target = $(e.target);
-    var listItem = document.getElementsByClassName('asteroidNameLi');
+//     var target = $(e.target);
+//     var listItem = document.getElementsByClassName('asteroidNameLi');
 
-    if(target.is('.asteroidNameLi')) {
-        var target = e.target || e.srcElement;	
-		console.log(target.innerHTML); 
-    } else {
-       console.log("no")
-    }
+//     if(target.is('.asteroidNameLi')) {
+//         var target = e.target || e.srcElement;	
+// 		console.log(target.innerHTML, astProp); 
 
-})
+// 		// if (target.innerHTML )
+
+
+
+//     } else {
+//        console.log("no")
+//     }
+
+// })
 
 // --------------------------------------------------------------------------
 

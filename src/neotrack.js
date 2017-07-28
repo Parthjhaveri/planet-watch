@@ -30,7 +30,10 @@ class NeoTracker extends Component {
       julyAsteroidsArray: [],
       property: [],
       hazBool: "",
-      neoId: []
+      neoId: [],
+      asteroidList: [],
+      keyVals: {},
+      matchArray: []
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -40,6 +43,7 @@ class NeoTracker extends Component {
     this.aprilAsteroids = this.aprilAsteroids.bind(this);
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.viewProp = this.viewProp.bind(this);
+    this.bodyClick = this.bodyClick.bind(this);
 
   }
 
@@ -422,14 +426,21 @@ aprilAsteroids() {
 
             console.log("The State of the properties= ", that.state.property)
 
-            // SET NEO IDs
-            astProp.map( (element, index) => {
-              // console.log(element.neo_reference_id)
-              return (that.setState({neoId: that.state.neoId.concat(element.neo_reference_id)}))
+            // PUSH ASTEROIDS INTO LIST FOR REFERENCE
+            astProp.map( (element) => {
+              console.log("ELEMENT= ", element)
+
+             
+
+              return (that.setState({asteroidList: that.state.asteroidList.concat(element)}))
             })
-            
+            // console.log("AST LIST!!! ", this.state.asteroidList)
             // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
             // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
+
+            console.log("So, this is the element object: ", this.state.asteroidList)
+
+            const astListVar = this.state.asteroidList;
 
             // ------------------------------------------------------------------
 
@@ -437,6 +448,57 @@ aprilAsteroids() {
 
           }) // ENDS AJAX CALL
 
+  }
+
+  bodyClick(e) {
+  
+            var target = $(e.target);
+            var listItem = document.getElementsByClassName('asteroidNameLi');
+            const astListVar = this.state.asteroidList;
+
+            // CODE INSIDE HERE BECAUSE IT IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
+            if (target.is('.asteroidNameLi')) {
+                var target = e.target || e.srcElement;  
+                console.log("HTML TARGET ", target.innerHTML); 
+
+                    // DO AN AJAX CALL AND RETURN THE OBJECT
+
+                    const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+                    const that = this;
+
+                      
+                      // console.log("AST LIST!!! ", this.state.asteroidList)
+                      // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
+                      // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
+
+                      $.ajax({
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=' + myApiKey,
+                        success: (data) => {
+                          console.log("ListItem click data: ", data.near_earth_objects["2017-07-21"]);
+
+                          data.near_earth_objects["2017-07-21"].map( (el,idx) => {
+                            console.log(el)
+
+                            if(el.name === target.innerHTML) {
+                              console.log(el.is_potentially_hazardous_asteroid)
+                              return (that.setState({hazBool: that.state.hazBool.concat(el.is_potentially_hazardous_asteroid)}))
+                            } else {
+                              console.log("no")
+                            }
+
+                          })
+
+                        }
+                      })
+
+                      // ------------------------------------------------------------------
+
+
+
+            } else {
+               console.log("no")
+            }
+  
   }
 
   render() {
@@ -520,7 +582,7 @@ aprilAsteroids() {
                 <hr id="archhr" />
                 <h4 id="archivesdesc">Scroll down for a complete list of Asteroids. Click on an archive button for more NEOs <span className="glyphicon glyphicon-triangle-bottom" id="downarr"></span></h4>
 
-                <div id="listdiv">
+                <div id="listdiv" onClick={this.bodyClick}>
                   <ul className="astListUl">
                     {
                       this.state.astNameArray.map (
@@ -578,7 +640,7 @@ aprilAsteroids() {
                   <tbody>
                     <tr>
                       <th>Hazardous? <span className="glyphicon glyphicon-warning-sign" id="ishaz"></span></th>
-                      <td>{this.state.property}</td>
+                      <td>{this.state.hazBool}</td>
                     </tr>
                     <tr>
                       <th>Estimated Diameter (Miles):</th>
