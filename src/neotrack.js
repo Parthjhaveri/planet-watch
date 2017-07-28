@@ -430,17 +430,12 @@ aprilAsteroids() {
             
             // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
             // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
-            that.state.property.map( (el,idx) => {
-              console.log() 
-            } )
 
             // ------------------------------------------------------------------
 
             } // ENDS SUCCESS FUNCTION
 
           }) // ENDS AJAX CALL
-
-
 
   }
 
@@ -530,7 +525,7 @@ aprilAsteroids() {
                     {
                       this.state.astNameArray.map (
                         (name, index) => {
-                          return (<li onClick={(event) => {this.viewProp}} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
                         }
                       )
                     }

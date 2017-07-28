@@ -3,17 +3,11 @@ import './neotrack.js';
 
 // CLICK FUNCTIONALITY FOR MAPPING THE CLICK TO AJAX TO RENDER THE PROPERTIES
 
-$('body').click(function(e) {
+document.onclick = function(event) {
+    var target = event.target || event.srcElement;
 
-    var target = $(e.target);
-
-    if(target.is('.asteroidNameLi')) {
-       console.log("yes!")
-    } else {
-       console.log("no")
-    }
-
-})
+    console.log(target.innerHTML); 
+};
 
 // --------------------------------------------------------------------------
 
