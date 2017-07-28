@@ -28,7 +28,9 @@ class NeoTracker extends Component {
       mayAsteroidsArray: [],
       aprilAsteroidsArray: [],
       julyAsteroidsArray: [],
-      property: []
+      property: [],
+      hazBool: "",
+      neoId: []
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -407,25 +409,38 @@ aprilAsteroids() {
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=" + myApiKey,
             success: (astdata) => {
 
+            // THE ARRAY OF ASTEROIDS
             const astProp = astdata.near_earth_objects["2017-07-21"];
 
-            console.log(astProp);
+            console.log("Array list of Asteroids= ", astProp);
 
             // IS IT HAZARDOUS? -------------------------------------------------
-            var mapOverAstProp = astProp.map( (elem) => {
+            astProp.map( (elem) => {
               return (that.setState({property: that.state.property.concat(elem.is_potentially_hazardous_asteroid)}))
             }) // NOW WE HAVE THE STATE SET TO AN ARRAY OF BOOLEANS OUT OF WHICH WE MUST MAP THE ONE CLICKED
                // TO THE ACTUAL PROPERTIES OF THE ASTEROID
 
             console.log("The State of the properties= ", that.state.property)
 
+            // SET NEO IDs
+            astProp.map( (element, index) => {
+              // console.log(element.neo_reference_id)
+              return (that.setState({neoId: that.state.neoId.concat(element.neo_reference_id)}))
+            })
+            
+            // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
+            // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
+            that.state.property.map( (el,idx) => {
+              console.log() 
+            } )
 
             // ------------------------------------------------------------------
-
 
             } // ENDS SUCCESS FUNCTION
 
           }) // ENDS AJAX CALL
+
+
 
   }
 
@@ -515,7 +530,7 @@ aprilAsteroids() {
                     {
                       this.state.astNameArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={(event) => {this.viewProp}} className="asteroidNameLi" key={index} value={name}>{name}</li>)
                         }
                       )
                     }
@@ -523,7 +538,7 @@ aprilAsteroids() {
                     { 
                       this.state.secondAstNameArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
                         }
                       )
                     }
@@ -531,7 +546,7 @@ aprilAsteroids() {
                     { 
                       this.state.juneAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
                         }
                       )
                     }
@@ -539,7 +554,7 @@ aprilAsteroids() {
                     { 
                       this.state.mayAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
                         }
                       )
                     }
@@ -548,7 +563,7 @@ aprilAsteroids() {
                     { 
                       this.state.aprilAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
                         }
                       )
                     }
