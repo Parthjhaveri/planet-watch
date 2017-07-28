@@ -466,7 +466,7 @@ aprilAsteroids() {
                 <button id="loadmoreasts" className="aprilbutt" onClick={this.aprilAsteroids}>APRIL 2017 ASTEROIDS</button>
               </div>
               <br />
-              <div className="success" id="successbutton" role="alert">Success- Asteroids loaded</div>
+              <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
               <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
             </div>
 
@@ -474,7 +474,8 @@ aprilAsteroids() {
             <div className="col-md-4 propertiesSide" >
 
                 <h2>LIST OF ASTEROIDS:</h2>
-                <br />
+                <hr id="archhr" />
+                <h4 id="archivesdesc">Scroll down for a complete list of Asteroids. Click on an archive button for more NEOs <span className="glyphicon glyphicon-triangle-bottom" id="downarr"></span></h4>
 
                 <div id="listdiv">
                   <ul className="astListUl">

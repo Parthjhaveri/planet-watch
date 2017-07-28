@@ -99,7 +99,7 @@ a:visited {
 
 .mobilenavdiv {
   width: auto;
-  height: 80px;
+  height: auto;
   /*background-color: #0066ff;*/
   background-color: #00e6ac;
   /*background-color: #1a1a1a;*/
@@ -613,7 +613,7 @@ a:visited {
 #listdiv {
   width: 300px;
   height: 400px;
-  /*border: 1px solid white;*/
+  border: 1px solid transparent;
   background-color: black;
   text-align: left;
   padding: 40px 10px 40px 10px;
@@ -621,6 +621,20 @@ a:visited {
   font-size: 16px;
   overflow-y: scroll;
   margin-bottom: 10px;
+  z-index: 0;
+  /*border-right-color: #00e6ac;*/
+}
+
+#listdiv::-webkit-scrollbar { 
+    background-color: #1a1a1a;
+}
+
+#listdiv::-webkit-scrollbar-thumb { 
+    background-color: grey;
+}
+
+#listdiv::-webkit-scrollbar-button:vertical:decrement {
+    background-color: grey;
 }
 
 #propertiesDiv {
@@ -634,6 +648,7 @@ a:visited {
   font-size: 16px;
   margin-bottom: 10px;
   font-family: 'Titillium Web', sans-serif;
+  float: left;
 }
 
 .astListUl {
@@ -645,7 +660,13 @@ a:visited {
 
 .asteroidNameLi {
   color: white;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.asteroidNameLi:hover {
+  background-color: #1a1a1a;
+  cursor: pointer;
 }
 
 #loadmoreasts {
@@ -664,6 +685,7 @@ a:visited {
 #archivesdesc {
   line-height: 2em;
   color: white;
+  display: inline-block;
 }
 
 #archhr {
@@ -676,6 +698,18 @@ a:visited {
   padding: 10px 20px 10px 20px;
   background-color: black;
   overflow-y: scroll;
+}
+
+.buttonBox::-webkit-scrollbar { 
+    background-color: #1a1a1a;
+}
+
+.buttonBox::-webkit-scrollbar-thumb { 
+    background-color: grey;
+}
+
+.buttonBox::-webkit-scrollbar-button:vertical:decrement {
+    background-color: grey;
 }
 
 #successbutton {
@@ -731,6 +765,14 @@ tr {
 
 tr:hover {
   background-color: #1a1a1a;
+}
+
+#downarr {
+  color: #00e6ac;
+  display: inline-block;
+  font-size: 20px;
+  /*display: none;*/
+  margin-left: 40px;
 }
 
 /* ------------------------------------- TABLE CSS ------------------------------------- */
