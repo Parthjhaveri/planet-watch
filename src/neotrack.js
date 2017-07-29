@@ -435,8 +435,6 @@ aprilAsteroids() {
             astProp.map( (element) => {
               console.log("ELEMENT= ", element)
 
-             
-
               return (that.setState({asteroidList: that.state.asteroidList.concat(element)}))
             })
             // console.log("AST LIST!!! ", this.state.asteroidList)
@@ -461,17 +459,15 @@ aprilAsteroids() {
             var listItem = document.getElementsByClassName('asteroidNameLi');
             const astListVar = this.state.asteroidList;
 
-            // CODE INSIDE HERE BECAUSE IT IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
+            // CODE INSIDE HERE IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
             if (target.is('.asteroidNameLi')) {
                 var target = e.target || e.srcElement;  
                 console.log("HTML TARGET ", target.innerHTML); 
 
                     // DO AN AJAX CALL AND RETURN THE OBJECT
-
                     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
                     const that = this;
 
-                      
                       // console.log("AST LIST!!! ", this.state.asteroidList)
                       // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
                       // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
@@ -506,11 +502,43 @@ aprilAsteroids() {
 
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
+                      
+                      // ---------------------------------------------------------------------------------
 
-                      // ------------------------------------------------------------------
-            }   
-  
-  }
+                      $.ajax({
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=' + myApiKey,
+                        success: (data) => {
+                          console.log("ListItem click data: ", data.near_earth_objects["2017-07-10"]);
+
+                          // MAP
+                          data.near_earth_objects["2017-07-10"].map( (el,idx) => {
+                            console.log(el)
+
+                            if (el.name === target.innerHTML) {
+                              // console.log(el.is_potentially_hazardous_asteroid)
+                              return (
+                                that.setState({
+                                  hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
+                                  missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
+                                  speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
+                                  speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
+                                  jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
+                                  astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                })
+                              ) // ENDS RETURN
+
+                            } // ENDS IF STATEMENT 
+
+                          }) // ENDS MAP
+
+                        } // ENDS SUCCESS FUNCTION
+                      }) // ENDS AJAX CALL
+
+            } // ENDS THE PARENT IF STATEMENT   
+
+  } // ENDS THE MAIN BODYCLICK FUNCTION
 
   render() {
     return (
@@ -598,7 +626,7 @@ aprilAsteroids() {
                     {
                       this.state.astNameArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
                         }
                       )
                     }
@@ -606,7 +634,7 @@ aprilAsteroids() {
                     { 
                       this.state.secondAstNameArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
                         }
                       )
                     }
@@ -614,7 +642,7 @@ aprilAsteroids() {
                     { 
                       this.state.juneAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
                         }
                       )
                     }
@@ -622,7 +650,7 @@ aprilAsteroids() {
                     { 
                       this.state.mayAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
                         }
                       )
                     }
@@ -631,7 +659,7 @@ aprilAsteroids() {
                     { 
                       this.state.aprilAsteroidsArray.map (
                         (name, index) => {
-                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.neoId}>{name}</li>)
+                          return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
                         }
                       )
                     }
