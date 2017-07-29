@@ -493,6 +493,7 @@ aprilAsteroids() {
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                   astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                  asteroidName: that.state.asteroidName.replace(that.state.asteroidName, el.name),
                                 })
                               ) // ENDS RETURN
 
@@ -639,46 +640,9 @@ aprilAsteroids() {
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
 
-
-
-
-
-
             } // ENDS THE PARENT IF STATEMENT 
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
-
-  // launchModal(event) {
-
-  //           console.log("modal detected!")
-  //           // Get the modal
-  //           var modal = document.getElementById('myModal');
-
-  //           // Get the button that opens the modal
-  //           var btn = document.getElementById("hypohit");
-
-  //           // Get the <span> element that closes the modal
-  //           var span = document.getElementsByClassName("close")[0];
-
-  //           // When the user clicks the button, open the modal 
-  //           $(btn).click(function() {
-  //             modal.style.display = "inherit";
-  //             modal.style.display = "block";
-  //           })
-
-  //           $(span).click(function() {
-  //             modal.style.display = "none";
-  //           })
-
-  //           // When the user clicks anywhere outside of the modal, close it
-  //           $(window).click(function(event) {
-  //             if (event.target == modal) {
-  //                   modal.style.display = "none";
-  //               }
-  //           })
-
-  // }
-
 
   render() {
     return (
@@ -819,6 +783,10 @@ aprilAsteroids() {
                 <table>
                   <tbody>
                     <tr>
+                      <th>Name:</th>
+                      <td>{this.state.asteroidName}</td>
+                    </tr>
+                    <tr>
                       <th>Hazardous? <span className="glyphicon glyphicon-warning-sign" id="ishaz"></span></th>
                       <td>{this.state.hazBool}</td>
                     </tr>
@@ -859,7 +827,7 @@ aprilAsteroids() {
 
                       <div className="modal-content">
                         <span className="close">&times;</span>
-                        <p>Some text in the Modal..</p>
+                        <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
                       </div>
 
                     </div>
