@@ -539,6 +539,8 @@ aprilAsteroids() {
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
 
+                    // ---------------------------------------------------------------------------------
+
                     // CLICK FOR THE 2017 JUNE ASTEROIDS
                     $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=' + myApiKey,
@@ -571,8 +573,73 @@ aprilAsteroids() {
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
 
+                    // ---------------------------------------------------------------------------------
 
+                    // CLICK FOR THE 2017 MAY ASTEROIDS
+                    $.ajax({
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=' + myApiKey,
+                        success: (data) => {
+                          console.log("ListItem click data: ", data.near_earth_objects["2017-05-29"]);
 
+                          // MAP
+                          data.near_earth_objects["2017-05-29"].map( (el,idx) => {
+                            console.log(el)
+
+                            if (el.name === target.innerHTML) {
+                              // console.log(el.is_potentially_hazardous_asteroid)
+                              return (
+                                that.setState({
+                                  hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
+                                  missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
+                                  speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
+                                  speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
+                                  jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
+                                  astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                })
+                              ) // ENDS RETURN
+
+                            } // ENDS IF STATEMENT 
+
+                          }) // ENDS MAP
+
+                        } // ENDS SUCCESS FUNCTION
+                      }) // ENDS AJAX CALL
+
+                    // ---------------------------------------------------------------------------------
+
+                    // CLICK FOR THE 2017 APRIL ASTEROIDS
+                    $.ajax({
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=' + myApiKey,
+                        success: (data) => {
+                          console.log("ListItem click data: ", data.near_earth_objects["2017-05-27"]);
+
+                          // MAP
+                          data.near_earth_objects["2017-05-27"].map( (el,idx) => {
+                            console.log(el)
+
+                            if (el.name === target.innerHTML) {
+                              // console.log(el.is_potentially_hazardous_asteroid)
+                              return (
+                                that.setState({
+                                  hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
+                                  missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
+                                  speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
+                                  speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
+                                  jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
+                                  astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                })
+                              ) // ENDS RETURN
+
+                            } // ENDS IF STATEMENT 
+
+                          }) // ENDS MAP
+
+                        } // ENDS SUCCESS FUNCTION
+                      }) // ENDS AJAX CALL
 
 
 
