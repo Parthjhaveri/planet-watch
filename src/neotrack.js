@@ -642,8 +642,9 @@ aprilAsteroids() {
 
             <div className="col-md-4">
               
-              <h2>ASTEROID PROPERTIES:</h2>
-              <br />
+              <h2 id="astpropheading">ASTEROID PROPERTIES:</h2>
+              <hr id="archhr" />
+              <h4 id="archivesdesc">Click on an Asteroid to the left, and monitor their properties in the table below</h4>
               
               <div id="propertiesDiv">
 

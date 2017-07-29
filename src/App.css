@@ -687,6 +687,7 @@ a:visited {
   line-height: 2em;
   color: white;
   display: inline-block;
+  text-align: left;
 }
 
 #archhr {
@@ -786,6 +787,10 @@ tr:hover {
 #ishaz {
   color: yellow;
   font-size: 14px;
+}
+
+#astpropheading {
+  color: red;
 }
 
 /* ------------------------------------- TABLE CSS ------------------------------------- */
