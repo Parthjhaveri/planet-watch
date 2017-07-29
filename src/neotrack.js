@@ -30,6 +30,7 @@ class NeoTracker extends Component {
       julyAsteroidsArray: [],
       property: [],
       hazBool: "",
+      estDiam: "",
       neoId: [],
       asteroidList: [],
       keyVals: {},
@@ -475,27 +476,28 @@ aprilAsteroids() {
                         success: (data) => {
                           console.log("ListItem click data: ", data.near_earth_objects["2017-07-21"]);
 
+                          // MAP
                           data.near_earth_objects["2017-07-21"].map( (el,idx) => {
                             console.log(el)
 
-                            if(el.name === target.innerHTML) {
+                            if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
-                              return (that.setState({hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid)}))
+                              return (
+                                that.setState({
+                                  hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min)
+                                })
+                              ) // ENDS RETURN
 
-                            } else {
-                              return (that.setState({hazBool: that.state.hazBool.concat("")}))
-                            }
+                            } // ENDS IF STATEMENT 
 
-                          })
+                          }) // ENDS MAP
 
-                        }
-                      })
+                        } // ENDS SUCCESS FUNCTION
+                      }) // ENDS AJAX CALL
 
                       // ------------------------------------------------------------------
-
-            } else {
-               console.log("no")
-            }
+            }   
   
   }
 
@@ -642,7 +644,7 @@ aprilAsteroids() {
                     </tr>
                     <tr>
                       <th>Estimated Diameter (Miles):</th>
-                      <td>-</td>
+                      <td>{this.state.estDiam}</td>
                     </tr>
                     <tr>
                       <th>Orbiting body:</th>
