@@ -44,7 +44,6 @@ class NeoTracker extends Component {
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.viewProp = this.viewProp.bind(this);
     this.bodyClick = this.bodyClick.bind(this);
-
   }
 
   componentDidMount() {
@@ -480,10 +479,11 @@ aprilAsteroids() {
                             console.log(el)
 
                             if(el.name === target.innerHTML) {
-                              console.log(el.is_potentially_hazardous_asteroid)
-                              return (that.setState({hazBool: that.state.hazBool.concat(el.is_potentially_hazardous_asteroid)}))
+                              // console.log(el.is_potentially_hazardous_asteroid)
+                              return (that.setState({hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid)}))
+
                             } else {
-                              console.log("no")
+                              return (that.setState({hazBool: that.state.hazBool.concat("")}))
                             }
 
                           })
@@ -492,8 +492,6 @@ aprilAsteroids() {
                       })
 
                       // ------------------------------------------------------------------
-
-
 
             } else {
                console.log("no")
