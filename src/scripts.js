@@ -43,6 +43,8 @@ setTimeout(function() {
 
         $(listItem).click(function() {
         	$(btn).prop( "disabled", false );
+        	$(listItem).removeClass('selected');
+        	$(this).addClass('selected');
         })
 
         // When the user clicks the button, open the modal 

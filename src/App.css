@@ -665,6 +665,18 @@ a:visited {
   padding: 5px;
 }
 
+.asteroidNameLi:active {
+  background-color: #1a1a1a;
+}
+
+.asteroidNameLi:target {
+  background-color: #1a1a1a;
+}
+
+.asteroidNameLi.selected {
+  background-color: #1a1a1a;
+}
+
 .asteroidNameLi:hover {
   background-color: #1a1a1a;
   cursor: pointer;
