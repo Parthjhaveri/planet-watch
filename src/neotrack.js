@@ -778,7 +778,7 @@ aprilAsteroids() {
 
             </div>
 
-            <div className="col-md-4">
+            <div className="col-md-4 propDiv">
               
               <h2 id="astpropheading">ASTEROID PROPERTIES:</h2>
               <hr id="archhr" />
@@ -822,6 +822,10 @@ aprilAsteroids() {
                     </tr>
                   </tbody>
                 </table>
+
+                <center>
+                  <p id="poweredby">Powered by the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png" id="smlogo" /> Data Portal</p>
+                </center>
 
               </div>
 

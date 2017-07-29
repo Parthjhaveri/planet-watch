@@ -793,6 +793,15 @@ tr:hover {
   color: red;
 }
 
+#poweredby {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+#smlogo {
+  width: 50px;
+}
+
 /* ------------------------------------- TABLE CSS ------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
@@ -889,6 +898,10 @@ tr:hover {
     vertical-align: middle;
     margin-top: 50px;
     text-align: center;
+  }
+
+  .propDiv {
+    overflow-x: scroll;
   }
 
 }
