@@ -6,8 +6,6 @@ import Footer from './footer.js';
 import $ from 'jquery'; 
 // import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-// import Main from './Main.js';
-
 // REACT VIDEO
 // import { DefaultPlayer as Video } from 'react-html5video';
 // import 'react-html5video/dist/styles.css';
@@ -650,6 +648,38 @@ aprilAsteroids() {
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
 
+  // launchModal(event) {
+
+  //           console.log("modal detected!")
+  //           // Get the modal
+  //           var modal = document.getElementById('myModal');
+
+  //           // Get the button that opens the modal
+  //           var btn = document.getElementById("hypohit");
+
+  //           // Get the <span> element that closes the modal
+  //           var span = document.getElementsByClassName("close")[0];
+
+  //           // When the user clicks the button, open the modal 
+  //           $(btn).click(function() {
+  //             modal.style.display = "inherit";
+  //             modal.style.display = "block";
+  //           })
+
+  //           $(span).click(function() {
+  //             modal.style.display = "none";
+  //           })
+
+  //           // When the user clicks anywhere outside of the modal, close it
+  //           $(window).click(function(event) {
+  //             if (event.target == modal) {
+  //                   modal.style.display = "none";
+  //               }
+  //           })
+
+  // }
+
+
   render() {
     return (
       <div className="neotrackerdiv">
@@ -822,6 +852,19 @@ aprilAsteroids() {
                     </tr>
                   </tbody>
                 </table>
+                
+                <center><button onClick={this.launchModal} id="hypohit">Hypothetical hit</button></center>
+                
+                    <div id="myModal" className="modal">
+
+                      <div className="modal-content">
+                        <span className="close">&times;</span>
+                        <p>Some text in the Modal..</p>
+                      </div>
+
+                    </div>
+
+                <br />
 
                 <center>
                   <p id="poweredby">Enabled by the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png" id="smlogo" /> Data Portal</p>

@@ -1,26 +1,4 @@
 import $ from 'jquery'; 
-// import NeoTracker from './neotrack.js';
-
-// CLICK FUNCTIONALITY FOR MAPPING THE CLICK TO AJAX TO RENDER THE PROPERTIES
-
-// $('body').click(function(e) {
-
-//     var target = $(e.target);
-//     var listItem = document.getElementsByClassName('asteroidNameLi');
-
-//     if(target.is('.asteroidNameLi')) {
-//         var target = e.target || e.srcElement;	
-// 		console.log(target.innerHTML, astProp); 
-
-// 		// if (target.innerHTML )
-
-
-
-//     } else {
-//        console.log("no")
-//     }
-
-// })
 
 // --------------------------------------------------------------------------
 
@@ -50,5 +28,34 @@ setTimeout(function() {
 
 	});
 
-}, 500)
+	$(document).ready(function(){
+		
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("hypohit");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        $(btn).click(function() {
+          modal.style.display = "inherit";
+          modal.style.display = "block";
+        })
+
+        $(span).click(function() {
+          modal.style.display = "none";
+        })
+
+        // When the user clicks anywhere outside of the modal, close it
+        $(window).click(function(event) {
+          if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        })
+	}); // ENDS DOCUMENT.READY
+
+}, 500) // ENDS SET TIME-OUT FUNCTION
 
