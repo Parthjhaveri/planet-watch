@@ -528,6 +528,7 @@ aprilAsteroids() {
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                   astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                  asteroidName: that.state.asteroidName.replace(that.state.asteroidName, el.name),
                                 })
                               ) // ENDS RETURN
 
@@ -562,6 +563,7 @@ aprilAsteroids() {
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                   astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                  asteroidName: that.state.asteroidName.replace(that.state.asteroidName, el.name),
                                 })
                               ) // ENDS RETURN
 
@@ -596,6 +598,7 @@ aprilAsteroids() {
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                   astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                  asteroidName: that.state.asteroidName.replace(that.state.asteroidName, el.name),
                                 })
                               ) // ENDS RETURN
 
@@ -630,6 +633,7 @@ aprilAsteroids() {
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                   astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                  asteroidName: that.state.asteroidName.replace(that.state.asteroidName, el.name),
                                 })
                               ) // ENDS RETURN
 
