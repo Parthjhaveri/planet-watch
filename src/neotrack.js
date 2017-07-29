@@ -461,6 +461,7 @@ aprilAsteroids() {
 
             // CODE INSIDE HERE IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
             if (target.is('.asteroidNameLi')) {
+
                 var target = e.target || e.srcElement;  
                 console.log("HTML TARGET ", target.innerHTML); 
 
@@ -472,6 +473,7 @@ aprilAsteroids() {
                       // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
                       // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
 
+                      // CLICK FOR THE FIRST BATCH OF ASTEROIDS
                       $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=' + myApiKey,
                         success: (data) => {
@@ -505,6 +507,7 @@ aprilAsteroids() {
                       
                       // ---------------------------------------------------------------------------------
 
+                      // CLICK FOR THE JULY 2017 ASTEROIDS 
                       $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=' + myApiKey,
                         success: (data) => {
@@ -536,7 +539,47 @@ aprilAsteroids() {
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
 
-            } // ENDS THE PARENT IF STATEMENT   
+                    // CLICK FOR THE 2017 JUNE ASTEROIDS
+                    $.ajax({
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=' + myApiKey,
+                        success: (data) => {
+                          console.log("ListItem click data: ", data.near_earth_objects["2017-06-27"]);
+
+                          // MAP
+                          data.near_earth_objects["2017-06-27"].map( (el,idx) => {
+                            console.log(el)
+
+                            if (el.name === target.innerHTML) {
+                              // console.log(el.is_potentially_hazardous_asteroid)
+                              return (
+                                that.setState({
+                                  hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
+                                  missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
+                                  speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
+                                  speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
+                                  jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
+                                  astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
+                                })
+                              ) // ENDS RETURN
+
+                            } // ENDS IF STATEMENT 
+
+                          }) // ENDS MAP
+
+                        } // ENDS SUCCESS FUNCTION
+                      }) // ENDS AJAX CALL
+
+
+
+
+
+
+
+
+
+            } // ENDS THE PARENT IF STATEMENT 
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
 
