@@ -496,6 +496,7 @@ aprilAsteroids() {
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
                                   speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
                                   jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
+                                  astId: that.state.astId.replace(that.state.astId, el.neo_reference_id),
                                 })
                               ) // ENDS RETURN
 
@@ -678,7 +679,7 @@ aprilAsteroids() {
                     </tr>                    
                     <tr>
                       <th>NEO ID:</th>
-                      <td>-</td>
+                      <td>{this.state.astId}</td>
                     </tr>
                   </tbody>
                 </table>
