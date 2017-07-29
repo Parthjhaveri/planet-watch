@@ -37,7 +37,7 @@ class NeoTracker extends Component {
       orbitingBody: "",
       missDistance: "",
       speedMPH: "",
-      speedKMPH: "",
+      speedKMPS: "",
       jplURL: "",
       astId: "",
     }
@@ -493,6 +493,9 @@ aprilAsteroids() {
                                   estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
+                                  speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
+                                  speedKMPS: that.state.speedKMPS.replace(that.state.speedKMPS, el.close_approach_data[0].relative_velocity.kilometers_per_second),
+                                  jplURL: that.state.jplURL.replace(that.state.jplURL, el.nasa_jpl_url),
                                 })
                               ) // ENDS RETURN
 
@@ -650,7 +653,7 @@ aprilAsteroids() {
                       <td>{this.state.hazBool}</td>
                     </tr>
                     <tr>
-                      <th>Estimated Diameter (Miles):</th>
+                      <th>Diameter (Miles):</th>
                       <td>{this.state.estDiam}</td>
                     </tr>
                     <tr>
@@ -663,18 +666,18 @@ aprilAsteroids() {
                     </tr>                    
                     <tr>
                       <th>Speed (MPH):</th>
-                      <td>-</td>
+                      <td>{this.state.speedMPH}</td>
                     </tr>                    
                     <tr>
-                      <th>Speed (KMPH):</th>
-                      <td>-</td>
+                      <th>Speed (KMPS):</th>
+                      <td>{this.state.speedKMPS}</td>
                     </tr>                    
-                    <tr>
+                    <tr id="jpltr">
                       <th>JPL URL:</th>
-                      <td>-</td>
+                      <td><a href={this.state.jplURL} target="_blank">{this.state.jplURL}</a></td>
                     </tr>                    
                     <tr>
-                      <th>NEO reference ID:</th>
+                      <th>NEO ID:</th>
                       <td>-</td>
                     </tr>
                   </tbody>

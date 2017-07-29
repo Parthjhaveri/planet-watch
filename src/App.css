@@ -640,7 +640,7 @@ a:visited {
 
 #propertiesDiv {
   width: 350px;
-  height: 400px;
+  height: 500px;
   /*border: 1px solid white;*/
   background-color: black;
   text-align: left;
@@ -750,17 +750,24 @@ a:visited {
 table {
     border-collapse: collapse;
     width: 100%;
-    height: auto;
 }
 
 th {
     font-weight: bolder;
     color: #00e6ac;
     padding: 5px;
+    background-color: #1a1a1a;
+    width: 200px;
+}
+
+td {
+  text-align: right;
+  padding: 5px;
 }
 
 tr {
-  border: 1px solid red;
+  border: 1px solid black;
+  border-bottom-color: red;
   padding: 5px;
 }
 
