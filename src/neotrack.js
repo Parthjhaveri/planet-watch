@@ -29,12 +29,17 @@ class NeoTracker extends Component {
       aprilAsteroidsArray: [],
       julyAsteroidsArray: [],
       property: [],
-      hazBool: "",
-      estDiam: "",
-      neoId: [],
       asteroidList: [],
       keyVals: {},
-      matchArray: []
+      matchArray: [],
+      hazBool: "",
+      estDiam: "",
+      orbitingBody: "",
+      missDistance: "",
+      speedMPH: "",
+      speedKMPH: "",
+      jplURL: "",
+      astId: "",
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -485,7 +490,9 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min)
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
+                                  missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                 })
                               ) // ENDS RETURN
 
@@ -648,11 +655,11 @@ aprilAsteroids() {
                     </tr>
                     <tr>
                       <th>Orbiting body:</th>
-                      <td>-</td>
+                      <td>{this.state.orbitingBody}</td>
                     </tr>   
                     <tr>
                       <th>Miss-distance (Miles):</th>
-                      <td>-</td>
+                      <td>{this.state.missDistance}</td>
                     </tr>                    
                     <tr>
                       <th>Speed (MPH):</th>
