@@ -1,5 +1,5 @@
 import $ from 'jquery'; 
-import NeoTracker from './neotrack.js';
+// import NeoTracker from './neotrack.js';
 
 // CLICK FUNCTIONALITY FOR MAPPING THE CLICK TO AJAX TO RENDER THE PROPERTIES
 

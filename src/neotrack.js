@@ -663,7 +663,7 @@ aprilAsteroids() {
                       <td>{this.state.orbitingBody}</td>
                     </tr>   
                     <tr>
-                      <th>Miss-distance (Miles):</th>
+                      <th>Miss-distance (Mi):</th>
                       <td>{this.state.missDistance}</td>
                     </tr>                    
                     <tr>
