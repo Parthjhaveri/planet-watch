@@ -825,7 +825,7 @@ aprilAsteroids() {
                   </tbody>
                 </table>
                 
-                <center><button onClick={this.launchModal} id="hypohit">Hypothetical hit</button></center>
+                <center><button onClick={this.launchModal} id="hypohit" disabled="disabled">Hypothetical hit</button></center>
                 
                     <div id="myModal" className="modal">
 

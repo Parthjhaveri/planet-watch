@@ -39,14 +39,22 @@ setTimeout(function() {
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
+        var listItem = document.getElementsByClassName("asteroidNameLi")
+
+        $(listItem).click(function() {
+        	$(btn).prop( "disabled", false );
+        })
+
         // When the user clicks the button, open the modal 
         $(btn).click(function() {
           modal.style.display = "inherit";
           modal.style.display = "block";
+          btn.setAttribute("disabled", false);
         })
 
         $(span).click(function() {
           modal.style.display = "none";
+          btn.setAttribute("disabled", false);
         })
 
         // When the user clicks anywhere outside of the modal, close it
