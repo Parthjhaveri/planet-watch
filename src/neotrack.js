@@ -506,8 +506,10 @@ aprilAsteroids() {
 
                           }) // ENDS MAP
                                                                 
-                                  if (that.state.estDiam < 25) {
+                                  if (that.state.estDiam < 13) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "don't worry, you're in the safe-zone- just take cover")}))
+                                  } else if (that.state.estDiam > 13 && that.state.estDiam < 25) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take cover immediately, because on Feb. 15, 2013- a similar Aseroid hit a town in Russia called Chelyabinsk, injuring 1200 people")}))
                                   } else if (that.state.estDiam > 25 && that.state.estDiam < 35) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to get as far away from it as possible, because it would be a Town-killer")}))
                                   } else if (that.state.estDiam > 35 && that.state.estDiam < 65) {
