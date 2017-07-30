@@ -507,11 +507,19 @@ aprilAsteroids() {
                           }) // ENDS MAP
                                                                 
                                   if (that.state.estDiam < 25) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Safe-Zone")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "don't worry, you're in the safe-zone")}))
                                   } else if (that.state.estDiam > 25 && that.state.estDiam < 35) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Town-killer")}))
-                                  } else {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "-")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to get as far away from it as possible, because it would be a Town-killer")}))
+                                  } else if (that.state.estDiam > 35 && that.state.estDiam < 65) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "City-killer")}))
+                                  } else if (that.state.estDiam > 65 && that.state.estDiam < 110) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Metro-region-killer")}))
+                                  } else if (that.state.estDiam > 110 && that.state.estDiam < 130) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "State-disruption")}))
+                                  } else if (that.state.estDiam > 130 && that.state.estDiam < 200) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Country-disruption")}))
+                                  } else if (that.state.estDiam > 200 && that.state.estDiam < 250) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Sub-Continent-disruption")}))
                                   }
 
                                   console.log(that.state.damageState)                                
@@ -870,7 +878,8 @@ aprilAsteroids() {
                           This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
                           at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH)} MPH</span>.
                           <br />
-                          <u>Category:</u> {this.state.damageState}
+                          <br />
+                          If you were anywhere close to the impact area, {this.state.damageState}.
 
                         </p>
                       </div>
