@@ -38,6 +38,10 @@ class NeoTracker extends Component {
       speedKMPS: "",
       jplURL: "",
       astId: "",
+      catOne: "",
+      catTwo: "",
+      catThree: "",
+      catFour: "",
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -486,7 +490,7 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.meters.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
@@ -521,7 +525,7 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.meters.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
@@ -556,7 +560,7 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.meters.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
@@ -591,7 +595,7 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.meters.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
@@ -626,7 +630,7 @@ aprilAsteroids() {
                               return (
                                 that.setState({
                                   hazBool: that.state.hazBool.replace(that.state.hazBool, el.is_potentially_hazardous_asteroid),
-                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.miles.estimated_diameter_min),
+                                  estDiam: that.state.estDiam.replace(that.state.estDiam, el.estimated_diameter.meters.estimated_diameter_min),
                                   orbitingBody: that.state.orbitingBody.replace(that.state.orbitingBody, el.close_approach_data[0].orbiting_body),
                                   missDistance: that.state.missDistance.replace(that.state.missDistance, el.close_approach_data[0].miss_distance.miles),
                                   speedMPH: that.state.speedMPH.replace(that.state.speedMPH, el.close_approach_data[0].relative_velocity.miles_per_hour),
@@ -645,6 +649,12 @@ aprilAsteroids() {
                       }) // ENDS AJAX CALL
 
             } // ENDS THE PARENT IF STATEMENT 
+
+            if (this.state.estDiam < 25) {
+              this.setState({catOne: this.state.catOne.concat("Safe-Zone")})
+            } else if (this.state.estDiam < 40) {
+              this.setState({catOne: this.state.catOne.concat("Town/Suburb killer!")})
+            }
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
 
@@ -795,7 +805,7 @@ aprilAsteroids() {
                       <td>{this.state.hazBool}</td>
                     </tr>
                     <tr>
-                      <th>Diameter (Miles):</th>
+                      <th>Diameter (Meters):</th>
                       <td>{this.state.estDiam}</td>
                     </tr>
                     <tr>
@@ -832,6 +842,13 @@ aprilAsteroids() {
                       <div className="modal-content">
                         <span className="close">&times;</span>
                         <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
+                        <hr />
+                        <p id="hitdesc">
+                          This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters going
+                          at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH)} MPH</span>.
+                          <br />
+                          
+                        </p>
                       </div>
 
                     </div>

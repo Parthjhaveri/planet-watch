@@ -864,6 +864,9 @@ tr:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: 400px;
+    text-align: center;
+    font-weight: bolder;
 }
 
 /* The Close Button */
@@ -882,6 +885,15 @@ tr:hover {
 }
 
 /* --------------------------------------- MODAL --------------------------------------- */
+
+#hitdesc {
+  font-size: 24px;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.modalprop {
+  color: red;
+}
 
 /* ------------------------------------- TABLE CSS ------------------------------------- */
 
