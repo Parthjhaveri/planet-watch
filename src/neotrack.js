@@ -42,6 +42,7 @@ class NeoTracker extends Component {
       catTwo: "",
       catThree: "",
       catFour: "",
+      damageState: ""
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -162,7 +163,7 @@ class NeoTracker extends Component {
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
             success: () => {
 
-            console.log("nothing");
+            // console.log("nothing");
 
             } // ENDS SUCCESS FUNCTION
 
@@ -240,7 +241,7 @@ class NeoTracker extends Component {
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
             success: () => {
 
-            console.log("nothing");
+            // console.log("nothing");
 
             } // ENDS SUCCESS FUNCTION
 
@@ -318,7 +319,7 @@ mayAsteroids() {
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
             success: () => {
 
-            console.log("nothing");
+            // console.log("nothing");
 
             } // ENDS SUCCESS FUNCTION
 
@@ -354,7 +355,7 @@ aprilAsteroids() {
 
         this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
-        console.log("Add one- ", this.state.buttonClickCounter);
+        // console.log("Add one- ", this.state.buttonClickCounter);
 
         if (this.state.buttonClickCounter === 0) {
 
@@ -365,7 +366,7 @@ aprilAsteroids() {
 
             const aprilAsteroids = astdata.near_earth_objects["2017-05-27"];
 
-            console.log(aprilAsteroids);
+            // console.log(aprilAsteroids);
 
             /* 
                MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
@@ -400,7 +401,7 @@ aprilAsteroids() {
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
             success: () => {
 
-            console.log("nothing");
+            // console.log("nothing");
 
             } // ENDS SUCCESS FUNCTION
 
@@ -423,7 +424,7 @@ aprilAsteroids() {
             // THE ARRAY OF ASTEROIDS
             const astProp = astdata.near_earth_objects["2017-07-21"];
 
-            console.log("Array list of Asteroids= ", astProp);
+            // console.log("Array list of Asteroids= ", astProp);
 
             // IS IT HAZARDOUS? -------------------------------------------------
             astProp.map( (elem) => {
@@ -431,11 +432,11 @@ aprilAsteroids() {
             }) // NOW WE HAVE THE STATE SET TO AN ARRAY OF BOOLEANS OUT OF WHICH WE MUST MAP THE ONE CLICKED
                // TO THE ACTUAL PROPERTIES OF THE ASTEROID
 
-            console.log("The State of the properties= ", that.state.property)
+            // console.log("The State of the properties= ", that.state.property)
 
             // PUSH ASTEROIDS INTO LIST FOR REFERENCE
             astProp.map( (element) => {
-              console.log("ELEMENT= ", element)
+              // console.log("ELEMENT= ", element)
 
               return (that.setState({asteroidList: that.state.asteroidList.concat(element)}))
             })
@@ -443,7 +444,7 @@ aprilAsteroids() {
             // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
             // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
 
-            console.log("So, this is the element object: ", this.state.asteroidList)
+            // console.log("So, this is the element object: ", this.state.asteroidList)
 
             const astListVar = this.state.asteroidList;
 
@@ -465,7 +466,7 @@ aprilAsteroids() {
             if (target.is('.asteroidNameLi')) {
 
                 var target = e.target || e.srcElement;  
-                console.log("HTML TARGET ", target.innerHTML); 
+                // console.log("HTML TARGET ", target.innerHTML); 
 
                     // DO AN AJAX CALL AND RETURN THE OBJECT
                     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
@@ -479,11 +480,11 @@ aprilAsteroids() {
                       $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=' + myApiKey,
                         success: (data) => {
-                          console.log("ListItem click data: ", data.near_earth_objects["2017-07-21"]);
+                          // console.log("ListItem click data: ", data.near_earth_objects["2017-07-21"]);
 
                           // MAP
                           data.near_earth_objects["2017-07-21"].map( (el,idx) => {
-                            console.log(el)
+                            // console.log(el)
 
                             if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
@@ -504,6 +505,16 @@ aprilAsteroids() {
                             } // ENDS IF STATEMENT 
 
                           }) // ENDS MAP
+                                                                
+                                  if (that.state.estDiam < 25) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Safe-Zone")}))
+                                  } else if (that.state.estDiam > 25 && that.state.estDiam < 35) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Town-killer")}))
+                                  } else {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "-")}))
+                                  }
+
+                                  console.log(that.state.damageState)                                
 
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
@@ -514,11 +525,11 @@ aprilAsteroids() {
                       $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=' + myApiKey,
                         success: (data) => {
-                          console.log("ListItem click data: ", data.near_earth_objects["2017-07-10"]);
+                          // console.log("ListItem click data: ", data.near_earth_objects["2017-07-10"]);
 
                           // MAP
                           data.near_earth_objects["2017-07-10"].map( (el,idx) => {
-                            console.log(el)
+                            // console.log(el)
 
                             if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
@@ -549,11 +560,11 @@ aprilAsteroids() {
                     $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=' + myApiKey,
                         success: (data) => {
-                          console.log("ListItem click data: ", data.near_earth_objects["2017-06-27"]);
+                          // console.log("ListItem click data: ", data.near_earth_objects["2017-06-27"]);
 
                           // MAP
                           data.near_earth_objects["2017-06-27"].map( (el,idx) => {
-                            console.log(el)
+                            // console.log(el)
 
                             if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
@@ -584,11 +595,11 @@ aprilAsteroids() {
                     $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=' + myApiKey,
                         success: (data) => {
-                          console.log("ListItem click data: ", data.near_earth_objects["2017-05-29"]);
+                          // console.log("ListItem click data: ", data.near_earth_objects["2017-05-29"]);
 
                           // MAP
                           data.near_earth_objects["2017-05-29"].map( (el,idx) => {
-                            console.log(el)
+                            // console.log(el)
 
                             if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
@@ -619,11 +630,11 @@ aprilAsteroids() {
                     $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=' + myApiKey,
                         success: (data) => {
-                          console.log("ListItem click data: ", data.near_earth_objects["2017-05-27"]);
+                          // console.log("ListItem click data: ", data.near_earth_objects["2017-05-27"]);
 
                           // MAP
                           data.near_earth_objects["2017-05-27"].map( (el,idx) => {
-                            console.log(el)
+                            // console.log(el)
 
                             if (el.name === target.innerHTML) {
                               // console.log(el.is_potentially_hazardous_asteroid)
@@ -650,13 +661,25 @@ aprilAsteroids() {
 
             } // ENDS THE PARENT IF STATEMENT 
 
-            if (this.state.estDiam < 25) {
-              this.setState({catOne: this.state.catOne.concat("Safe-Zone")})
-            } else if (this.state.estDiam < 40) {
-              this.setState({catOne: this.state.catOne.concat("Town/Suburb killer!")})
-            }
+            // if (this.state.estDiam < 25) {
+            //   this.setState({catOne: this.state.catOne.concat("Safe-Zone")})
+            // } else if (this.state.estDiam < 40) {
+            //   this.setState({catOne: this.state.catOne.concat("Town/Suburb killer!")})
+            // }
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
+
+// impactProps() {
+
+//     if (this.state.estDiam < 25) {
+//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Safe-Zone")})
+//     } else if (this.state.estDiam > 30 && this.state.estDiam < 40) {
+//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Town-killer")})
+//     }
+
+//     console.log(this.state.damageState)
+
+// }
 
   render() {
     return (
@@ -835,7 +858,7 @@ aprilAsteroids() {
                   </tbody>
                 </table>
                 
-                <center><button onClick={this.launchModal} id="hypohit" disabled="disabled">Hypothetical hit</button></center>
+                <center><button onClick={this.launchModal, this.impactProps} id="hypohit" disabled="disabled">Hypothetical hit</button></center>
                 
                     <div id="myModal" className="modal">
 
@@ -844,10 +867,11 @@ aprilAsteroids() {
                         <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
                         <hr />
                         <p id="hitdesc">
-                          This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters going
+                          This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
                           at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH)} MPH</span>.
                           <br />
-                          
+                          <u>Category:</u> {this.state.damageState}
+
                         </p>
                       </div>
 

@@ -1,4 +1,17 @@
+import React from 'react';
 import $ from 'jquery'; 
+import './neotrack.js';
+
+// function impactProps() {
+
+//     if (this.state.estDiam < 25) {
+//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Safe-Zone")})
+//     } else if (this.state.estDiam > 30 && this.state.estDiam < 40) {
+//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Town-killer")})
+//     }
+
+// }
+
 
 // --------------------------------------------------------------------------
 
