@@ -868,7 +868,7 @@ aprilAsteroids() {
                         <hr />
                         <p id="hitdesc">
                           This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
-                          at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH)} MPH</span>.
+                          at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MPH</span>.
                           <br />
                           <br />
                           If you were anywhere close to the impact area, {this.state.damageState}.
