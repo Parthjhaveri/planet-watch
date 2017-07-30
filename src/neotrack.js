@@ -507,11 +507,11 @@ aprilAsteroids() {
                           }) // ENDS MAP
                                                                 
                                   if (that.state.estDiam < 25) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "don't worry, you're in the safe-zone")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "don't worry, you're in the safe-zone- just take cover")}))
                                   } else if (that.state.estDiam > 25 && that.state.estDiam < 35) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to get as far away from it as possible, because it would be a Town-killer")}))
                                   } else if (that.state.estDiam > 35 && that.state.estDiam < 65) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "City-killer")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a City-killer")}))
                                   } else if (that.state.estDiam > 65 && that.state.estDiam < 110) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Metro-region-killer")}))
                                   } else if (that.state.estDiam > 110 && that.state.estDiam < 130) {
@@ -521,8 +521,6 @@ aprilAsteroids() {
                                   } else if (that.state.estDiam > 200 && that.state.estDiam < 250) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Sub-Continent-disruption")}))
                                   }
-
-                                  console.log(that.state.damageState)                                
 
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
@@ -669,25 +667,7 @@ aprilAsteroids() {
 
             } // ENDS THE PARENT IF STATEMENT 
 
-            // if (this.state.estDiam < 25) {
-            //   this.setState({catOne: this.state.catOne.concat("Safe-Zone")})
-            // } else if (this.state.estDiam < 40) {
-            //   this.setState({catOne: this.state.catOne.concat("Town/Suburb killer!")})
-            // }
-
   } // ENDS THE MAIN BODYCLICK FUNCTION
-
-// impactProps() {
-
-//     if (this.state.estDiam < 25) {
-//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Safe-Zone")})
-//     } else if (this.state.estDiam > 30 && this.state.estDiam < 40) {
-//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Town-killer")})
-//     }
-
-//     console.log(this.state.damageState)
-
-// }
 
   render() {
     return (
