@@ -866,7 +866,7 @@ tr:hover {
     width: 80%;
     height: 500px;
     text-align: left;
-    font-weight: bolder;
+    font-weight: lighter;
     line-height: 2em;
     overflow-y: scroll;
 }
@@ -889,7 +889,7 @@ tr:hover {
 /* --------------------------------------- MODAL --------------------------------------- */
 
 #hitdesc {
-  font-size: 24px;
+  font-size: 22px;
   font-family: 'PT Sans', sans-serif;
 }
 

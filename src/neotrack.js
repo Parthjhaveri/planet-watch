@@ -515,13 +515,23 @@ aprilAsteroids() {
                                   } else if (that.state.estDiam > 35 && that.state.estDiam < 65) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a City-killer")}))
                                   } else if (that.state.estDiam > 65 && that.state.estDiam < 110) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Metro-region-killer")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a Metro-region-killer")}))
                                   } else if (that.state.estDiam > 110 && that.state.estDiam < 130) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "State-disruption")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a State-disruption")}))
                                   } else if (that.state.estDiam > 130 && that.state.estDiam < 200) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Country-disruption")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a Country-disruption")}))
                                   } else if (that.state.estDiam > 200 && that.state.estDiam < 250) {
-                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "Sub-Continent-disruption")}))
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a Sub-Continent-disruption")}))
+                                  } else if (that.state.estDiam > 250 && that.state.estDiam < 500) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "you would want to take immediate cover (perhaps under a desk, or behind something solid) because this type of Asteroid is a Civilization threat/disruption")}))
+                                  } else if (that.state.estDiam > 500 && that.state.estDiam < 800) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "survival would be questionable, because this type of Asteroid is an extintion-level Asteroid")}))
+                                  } else if (that.state.estDiam > 800 && that.state.estDiam < 1300) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "survival would be questionable, because this type of Asteroid would be so devastating that it would cause the entire climate to change/overturn")}))
+                                  } else if (that.state.estDiam > 1300 && that.state.estDiam < 2000) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "survival would be questionable, because this type of Asteroid would be so devastating that it would cause regional extinction")}))
+                                  } else if (that.state.estDiam > 2000 ) {
+                                      return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "no one would survive, because this type of Asteroid is an apocalyptic one, which will cause complete planetary sterilization")}))
                                   }
 
                         } // ENDS SUCCESS FUNCTION
@@ -848,7 +858,7 @@ aprilAsteroids() {
                   </tbody>
                 </table>
                 
-                <center><button onClick={this.launchModal, this.impactProps} id="hypohit" disabled="disabled">Hypothetical hit</button></center>
+                <center><button onClick={this.launchModal, this.impactProps} id="hypohit">Hypothetical hit</button></center>
                 
                     <div id="myModal" className="modal">
 

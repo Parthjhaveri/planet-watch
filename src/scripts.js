@@ -55,7 +55,7 @@ setTimeout(function() {
         var listItem = document.getElementsByClassName("asteroidNameLi")
 
         $(listItem).click(function() {
-        	$(btn).prop( "disabled", false );
+        	// $(btn).prop( "disabled", false );
         	$(listItem).removeClass('selected');
         	$(this).addClass('selected');
         })
@@ -64,12 +64,12 @@ setTimeout(function() {
         $(btn).click(function() {
           modal.style.display = "inherit";
           modal.style.display = "block";
-          btn.setAttribute("disabled", false);
+          // btn.setAttribute("disabled", false);
         })
 
         $(span).click(function() {
           modal.style.display = "none";
-          btn.setAttribute("disabled", false);
+          // btn.setAttribute("disabled", false);
         })
 
         // When the user clicks anywhere outside of the modal, close it
