@@ -521,7 +521,7 @@ aprilAsteroids() {
                           }) // ENDS MAP
                                   // console.log(typeof that.state.hazBool)
                                   if (that.state.hazBool === "true") {
-                                    (that.setState({modalHazBool: that.state.modalHazBool.replace(that.state.modalHazBool, "This asteroid poses an active threat to Earth!")}))
+                                    (that.setState({modalHazBool: that.state.modalHazBool.replace(that.state.modalHazBool, "Attention: This asteroid poses an active threat to Earth")}))
                                   } else if (that.state.hazBool === "false") {
                                     (that.setState({modalHazBool: that.state.modalHazBool.replace(that.state.modalHazBool, "Don't loose sleep over it, this Asteroid currently poses no threat to Earth!")}))
                                   }
@@ -885,18 +885,28 @@ aprilAsteroids() {
                       <div className="modal-content">
                         <span className="close">&times;</span>
                         <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
-                        <hr />
+                        <hr id="modalhr"/>
                         <p id="hitdesc">
-                          This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
-                          at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MPH</span>.
-                          <br />
-                          <br />
-                          If you were anywhere close to the impact area, {this.state.damageState}.
-                          <br />
-                          <br />
-                          {this.state.modalHazBool}
+
+                          <div className="row">
+                            
+                            <div className="col-md-6">
+                              This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
+                              at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MPH</span>.
+                            </div>
+
+                            
+                            <div className="col-md-6" id="whatYouShouldDo">
+                              If you were anywhere close to the impact area, {this.state.damageState}.
+                            </div>
+
+                          </div>
 
                         </p>
+
+                        <div id="message">
+                          <center>{this.state.modalHazBool}</center>
+                        </div>
                       </div>
 
                     </div>
