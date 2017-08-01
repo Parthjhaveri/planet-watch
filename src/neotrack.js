@@ -31,6 +31,7 @@ class NeoTracker extends Component {
       keyVals: {},
       matchArray: [],
       hazBool: "",
+      modalHazBool: "",
       estDiam: "",
       orbitingBody: "",
       missDistance: "",
@@ -53,6 +54,7 @@ class NeoTracker extends Component {
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.viewProp = this.viewProp.bind(this);
     this.bodyClick = this.bodyClick.bind(this);
+    this.stateBool = this.stateBool.bind(this);
   }
 
   componentDidMount() {
@@ -456,6 +458,16 @@ aprilAsteroids() {
 
   }
 
+  stateBool() {
+        
+        // // IF STATE IS TRUE/FALSE
+        // if (this.state.hazBool === "true") { 
+        //     return (this.setState({modalHazBool: this.state.modalHazBool.replace(this.state.modalHazBool, "This asteroid poses an active threat to Earth!")}))
+        // } else if (this.state.hazBool === "false") {
+        //     return (this.setState({modalHazBool: this.state.modalHazBool.replace(this.state.modalHazBool, "Don't loose sleep over it, this Asteroid currently poses no threat to Earth!")}))
+        // }
+  }
+
   bodyClick(e) {
   
             var target = $(e.target);
@@ -502,10 +514,18 @@ aprilAsteroids() {
                                 })
                               ) // ENDS RETURN
 
+
                             } // ENDS IF STATEMENT 
+                                  
 
                           }) // ENDS MAP
-                                                                
+                                  // console.log(typeof that.state.hazBool)
+                                  if (that.state.hazBool === "true") {
+                                    (that.setState({modalHazBool: that.state.modalHazBool.replace(that.state.modalHazBool, "This asteroid poses an active threat to Earth!")}))
+                                  } else if (that.state.hazBool === "false") {
+                                    (that.setState({modalHazBool: that.state.modalHazBool.replace(that.state.modalHazBool, "Don't loose sleep over it, this Asteroid currently poses no threat to Earth!")}))
+                                  }
+
                                   if (that.state.estDiam < 13) {
                                       return (that.setState({damageState: that.state.damageState.replace(that.state.damageState, "don't worry, you're in the safe-zone- just take cover")}))
                                   } else if (that.state.estDiam > 13 && that.state.estDiam < 25) {
@@ -872,6 +892,9 @@ aprilAsteroids() {
                           <br />
                           <br />
                           If you were anywhere close to the impact area, {this.state.damageState}.
+                          <br />
+                          <br />
+                          {this.state.modalHazBool}
 
                         </p>
                       </div>
