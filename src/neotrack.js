@@ -43,7 +43,7 @@ class NeoTracker extends Component {
       catTwo: "",
       catThree: "",
       catFour: "",
-      damageState: ""
+      damageState: "",
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -54,7 +54,7 @@ class NeoTracker extends Component {
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.viewProp = this.viewProp.bind(this);
     this.bodyClick = this.bodyClick.bind(this);
-    this.stateBool = this.stateBool.bind(this);
+    // this.stateBool = this.stateBool.bind(this);
   }
 
   componentDidMount() {
@@ -64,11 +64,11 @@ class NeoTracker extends Component {
   
     $.ajax({
 
-      url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=" + myApiKey,
+      url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2011-07-14&end_date=2011-07-21&api_key=" + myApiKey,
       success: (data) => {
-        
+        console.log("DATA", data)
         // ARRAY FOR WEEK OF JULY 21st ASTEROIDS
-        const july21Asteroids = data.near_earth_objects['2017-07-21'];
+        const july21Asteroids = data.near_earth_objects["2011-07-14"];
 
         // console.log(
         //   "So this is your array- ",  july21Asteroids
@@ -458,16 +458,6 @@ aprilAsteroids() {
 
   }
 
-  stateBool() {
-        
-        // // IF STATE IS TRUE/FALSE
-        // if (this.state.hazBool === "true") { 
-        //     return (this.setState({modalHazBool: this.state.modalHazBool.replace(this.state.modalHazBool, "This asteroid poses an active threat to Earth!")}))
-        // } else if (this.state.hazBool === "false") {
-        //     return (this.setState({modalHazBool: this.state.modalHazBool.replace(this.state.modalHazBool, "Don't loose sleep over it, this Asteroid currently poses no threat to Earth!")}))
-        // }
-  }
-
   bodyClick(e) {
   
             var target = $(e.target);
@@ -490,12 +480,12 @@ aprilAsteroids() {
 
                       // CLICK FOR THE FIRST BATCH OF ASTEROIDS
                       $.ajax({
-                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-14&end_date=2017-07-21&api_key=' + myApiKey,
+                        url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2011-07-14&end_date=2011-07-21&api_key=' + myApiKey,
                         success: (data) => {
                           // console.log("ListItem click data: ", data.near_earth_objects["2017-07-21"]);
 
                           // MAP
-                          data.near_earth_objects["2017-07-21"].map( (el,idx) => {
+                          data.near_earth_objects["2011-07-14"].map( (el,idx) => {
                             // console.log(el)
 
                             if (el.name === target.innerHTML) {
@@ -886,7 +876,7 @@ aprilAsteroids() {
                         <span className="close">&times;</span>
                         <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
                         <hr id="modalhr"/>
-                        <p id="hitdesc">
+                        <span id="hitdesc">
 
                           <div className="row">
                             
@@ -902,7 +892,7 @@ aprilAsteroids() {
 
                           </div>
 
-                        </p>
+                        </span>
 
                         <div id="message">
                           <center>{this.state.modalHazBool}</center>

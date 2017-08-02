@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import $ from 'jquery'; 
-import './neotrack.js';
+// import './neotrack.js';
 
 // function impactProps() {
 
