@@ -890,7 +890,7 @@ aprilAsteroids() {
                     <div className="arrone">
                     </div>
                   </center>
-                    View all the properties for each asteroid here and view a 'Hypothetical Hit' below.
+                    View all the properties for each Asteroid here.
                 </div>
 
               <div id="propertiesDiv">
