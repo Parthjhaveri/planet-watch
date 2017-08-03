@@ -466,7 +466,9 @@ aprilAsteroids() {
             const astListVar = this.state.asteroidList;
             var hypoPopBox = document.getElementById('hypopop');
 
-            hypoPopBox.style.opacity = 1;
+            setTimeout(function() {
+              hypoPopBox.style.opacity = 1;
+            }, 3000)
 
 
             // CODE INSIDE HERE IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED

@@ -962,6 +962,10 @@ tr:hover {
   font-family: 'PT Sans', sans-serif;
 }
 
+.hypopopx:hover {
+  cursor: pointer;
+}
+
 .pophypo {
   width: 350px;
   height: 150px;
