@@ -1,17 +1,18 @@
-// import React from 'react';
 import $ from 'jquery'; 
-// import './neotrack.js';
 
-// function impactProps() {
+$(document).bind("scroll", function(){    
 
-//     if (this.state.estDiam < 25) {
-//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Safe-Zone")})
-//     } else if (this.state.estDiam > 30 && this.state.estDiam < 40) {
-//       this.setState({damageState: this.state.damageState.replace(this.state.damageState, "Town-killer")})
-//     }
+  // ONCE THE SCREEN GOES PAST 400 PIXELS
+    if ($(document).scrollTop() >= 630) {
+       
+       var popOne = document.getElementById('popone');
 
-// }
+       popOne.style.opacity = 1;
 
+
+    }
+
+})
 
 // --------------------------------------------------------------------------
 

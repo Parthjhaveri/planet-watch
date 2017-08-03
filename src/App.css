@@ -1,5 +1,6 @@
 html, body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .mainbanner {
@@ -915,6 +916,41 @@ tr:hover {
   font-size: 30px;
   margin-top: 100px;
   font-weight: bold;
+}
+
+#popone {
+  width: 350px;
+  height: 120px;
+  background-color: #b30047;
+  border-radius: 5px;
+  z-index: 1;
+  position: absolute;
+  padding: 20px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  opacity: 0;
+  transition: 1s;
+  text-align: center;
+}
+
+#arrone {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 25px solid #b30047;
+  margin-top: -40px;
+  margin-bottom: 20px;
+}
+
+#xpop {
+  float: right;
+  vertical-align: bottom;
+  display: block;
+  margin-top: 60px;
+  font-family: 'PT Sans', sans-serif;
 }
 
 @media only screen and (max-width: 1200px) {

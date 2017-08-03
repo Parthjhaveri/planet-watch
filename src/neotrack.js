@@ -691,6 +691,16 @@ aprilAsteroids() {
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
 
+  buttScroll() {
+
+        setTimeout(function(){ 
+        
+          window.scroll(0, 630);
+
+        }, 1000);
+
+  }
+
   render() {
     return (
       <div className="neotrackerdiv">
@@ -730,7 +740,7 @@ aprilAsteroids() {
           </p>
 
           <center>
-            <button id="gotrack">GO TRACK</button>
+            <button id="gotrack" onClick={this.buttScroll}>GO TRACK</button>
           </center>
 
         </div>
@@ -749,7 +759,7 @@ aprilAsteroids() {
           <div className="row">
             
             <div className="col-md-4 nameSide">
-
+              
               <h2>ARCHIVES</h2>
               <hr id="archhr" />
               <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on their closest approach date to Earth</h4>
@@ -771,6 +781,15 @@ aprilAsteroids() {
                 <h2>LIST OF ASTEROIDS:</h2>
                 <hr id="archhr" />
                 <h4 id="archivesdesc">Scroll down for a complete list of Asteroids. Click on an archive button for more NEOs <span className="glyphicon glyphicon-triangle-bottom" id="downarr"></span></h4>
+
+                <div id="popone">
+                  <span id="xpop">x</span>
+                  <center>
+                    <div id="arrone">
+                    </div>
+                  </center>
+                    Start here by selecting an Asteroid from the list.
+                </div>
 
                 <div id="listdiv" onClick={this.bodyClick}>
                   <ul className="astListUl">
