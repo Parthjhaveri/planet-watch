@@ -464,6 +464,10 @@ aprilAsteroids() {
             var target = $(e.target);
             var listItem = document.getElementsByClassName('asteroidNameLi');
             const astListVar = this.state.asteroidList;
+            var hypoPopBox = document.getElementById('hypopop');
+
+            hypoPopBox.style.opacity = 1;
+
 
             // CODE INSIDE HERE IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
             if (target.is('.asteroidNameLi')) {
@@ -733,6 +737,14 @@ aprilAsteroids() {
 
   }
 
+  hypoClose() {
+
+    var closeHypo = document.getElementsByClassName('pophypo')[0];
+
+    closeHypo.style.display = "none";
+
+  }
+
   render() {
     return (
       <div className="neotrackerdiv">
@@ -802,7 +814,7 @@ aprilAsteroids() {
                   <div className="arrone">
                   </div>
                 </center>
-                  Click on either button below to load more Asteroids into the list.
+                  Lastly, click on either button below to load more Asteroids into the list.
               </div>
 
               <div className="buttonBox">  
@@ -937,8 +949,18 @@ aprilAsteroids() {
                   </tbody>
                 </table>
                 
+                                
+                <div className="pophypo" id="hypopop">
+                  <span className="hypopopx" id="hypoclose" onClick={this.hypoClose.bind(this)}>x</span>
+                    Click this button to view see what would happen if this Asteroid hit Earth.
+                  <center>
+                    <div className="arrhypo">
+                    </div>
+                  </center>
+                </div>
+               
                 <center><button onClick={this.launchModal, this.impactProps} id="hypohit">Hypothetical hit</button></center>
-                
+
                     <div id="myModal" className="modal">
 
                       <div className="modal-content">
