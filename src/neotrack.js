@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
+// import './neoscripts.js';
 import Navi from './nav.js';
 import Footer from './footer.js';
 import $ from 'jquery'; 

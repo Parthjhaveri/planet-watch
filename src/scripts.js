@@ -2,6 +2,10 @@ import $ from 'jquery';
 
 $(document).bind("scroll", function(){    
 
+// ONLY IF THE URL IS AT THE NEO TRACKER COMPONENT 
+if (window.location.href.indexOf("/neo-tracker") > -1) {
+
+
   // ONCE THE SCREEN GOES PAST 400 PIXELS
     if ($(document).scrollTop() >= 600) {
        
@@ -14,6 +18,7 @@ $(document).bind("scroll", function(){
        popOne.style.opacity = 1;
 
     }
+}
 
 })
 
