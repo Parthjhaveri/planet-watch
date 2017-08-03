@@ -829,7 +829,6 @@ aprilAsteroids() {
               <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
               <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
             </div>
-
             
             <div className="col-md-4 propertiesSide" >
 
@@ -1006,6 +1005,11 @@ aprilAsteroids() {
 
           </div>
         </center>
+
+        <br />
+
+            <div className="graphbox">
+            </div>
 
         </div>
 
