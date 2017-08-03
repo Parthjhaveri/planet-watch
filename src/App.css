@@ -825,6 +825,7 @@ tr:hover {
   border-radius: 5px;
   margin-top: 40px;
   font-size: 18px;
+  font-weight: bolder;
 }
 
 #hypohit:disabled {
@@ -918,7 +919,7 @@ tr:hover {
   font-weight: bold;
 }
 
-#popone {
+.popone {
   width: 350px;
   height: 120px;
   background-color: #b30047;
@@ -935,7 +936,7 @@ tr:hover {
   text-align: center;
 }
 
-#arrone {
+.arrone {
   width: 0; 
   height: 0; 
   border-left: 20px solid transparent;
@@ -945,12 +946,16 @@ tr:hover {
   margin-bottom: 20px;
 }
 
-#xpop {
+.xpop {
   float: right;
   vertical-align: bottom;
   display: block;
   margin-top: 60px;
   font-family: 'PT Sans', sans-serif;
+}
+
+#secondpop {
+  height: 135px;
 }
 
 @media only screen and (max-width: 1200px) {

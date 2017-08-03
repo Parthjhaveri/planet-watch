@@ -701,6 +701,37 @@ aprilAsteroids() {
 
   }
 
+  nextInst() {
+
+    var closeButton = document.getElementsByClassName('xpop')[0];
+    var firstPopBox = document.getElementById('firstpop');
+    var secondPopBox = document.getElementById('secondpop');
+
+    firstPopBox.style.display = "none";
+    secondPopBox.style.opacity = 1;
+
+  }  
+
+  goToArchives() {
+
+    var closeButton = document.getElementsByClassName('xpop')[0];
+    var firstPopBox = document.getElementById('firstpop');
+    var secondPopBox = document.getElementById('secondpop');
+    var thirdPopBox = document.getElementById('thirdpop');
+
+    thirdPopBox.style.opacity = 1;
+    secondPopBox.style.display = "none";
+
+  }  
+
+  closeOut() {
+
+    var thirdPopBox = document.getElementById('thirdpop');
+
+    thirdPopBox.style.display = "none";
+
+  }
+
   render() {
     return (
       <div className="neotrackerdiv">
@@ -763,7 +794,16 @@ aprilAsteroids() {
               <h2>ARCHIVES</h2>
               <hr id="archhr" />
               <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on their closest approach date to Earth</h4>
-                
+              
+              <div className="popone" id="thirdpop">
+                <span className="xpop" onClick={this.closeOut.bind(this)}>x</span>
+                <center>
+                  <div className="arrone">
+                  </div>
+                </center>
+                  Click on either button below to load more Asteroids into the list.
+              </div>
+
               <div className="buttonBox">  
                 <button id="loadmoreasts" className="julybutt" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
                 <button id="loadmoreasts" className="junebutt" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
@@ -782,10 +822,10 @@ aprilAsteroids() {
                 <hr id="archhr" />
                 <h4 id="archivesdesc">Scroll down for a complete list of Asteroids. Click on an archive button for more NEOs <span className="glyphicon glyphicon-triangle-bottom" id="downarr"></span></h4>
 
-                <div id="popone">
-                  <span id="xpop">x</span>
+                <div className="popone" id="firstpop">
+                  <span className="xpop" onClick={this.nextInst.bind(this)}>x</span>
                   <center>
-                    <div id="arrone">
+                    <div className="arrone">
                     </div>
                   </center>
                     Start here by selecting an Asteroid from the list.
@@ -844,6 +884,15 @@ aprilAsteroids() {
               <hr id="archhr" />
               <h4 id="archivesdesc">Click on an Asteroid to the left, and monitor their properties in the table below</h4>
               
+                <div className="popone" id="secondpop">
+                  <span className="xpop" onClick={this.goToArchives.bind(this)}>x</span>
+                  <center>
+                    <div className="arrone">
+                    </div>
+                  </center>
+                    View all the properties for each asteroid here and view a 'Hypothetical Hit' below.
+                </div>
+
               <div id="propertiesDiv">
 
                 <table>
