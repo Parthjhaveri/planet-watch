@@ -13,7 +13,7 @@ Planet Watch is an educational app that consolidates various global topics and s
 ### Gallery:
 ![](gallery/neoone.png)
 
-##'Hypothetical Hit' Modal click view:
+## 'Hypothetical Hit' Modal click view:
 
 ![](gallery/neotwo.png)
 
