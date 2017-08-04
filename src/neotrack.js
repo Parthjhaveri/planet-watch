@@ -846,11 +846,11 @@ aprilAsteroids() {
               <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
               <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
 
-            <div className="whitebox">
+            <div className="whiteboxtwo">
               <h1>Live from the ISS</h1>
               <br />
               <p>
-                Live video from aboard the International Space Station
+                Live video from aboard the <br /> International Space Station
               </p>
             </div>
 
