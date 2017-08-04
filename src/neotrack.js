@@ -1022,6 +1022,31 @@ aprilAsteroids() {
                         <div id="message">
                           <center>{this.state.modalHazBool}</center>
                         </div>
+                        <br />
+
+                        <div className="row">
+                          
+                          <div className="col-md-6">
+                              <h1>So where do these Asteroids come from?</h1>
+                              <hr id="modalhr"/>
+                              Many of these Asteroids come from deep space, light years away from our Solar-System.
+                              Encompassing our solar system, is something known as the Ort Cloud- a giant shell of 
+                              icy debris and comets floting in synchrony. 
+                              <br />
+                              <br />
+                              <strong>NASA's formal explanation:</strong> The Oort Cloud is believed to be a thick 
+                              bubble of icy debris that surrounds our solar system. This distant cloud may extend a 
+                              third of the way from our sun to the next star -- between 5,000 and 100,000 astronomical 
+                              units. Earth is about one astronomical unit from the sun (roughly 93 million miles or 
+                              150 million kilometers).
+                          </div>
+
+                          <div className="col-md-6">
+                            <img src="http://space-facts.com/wp-content/uploads/oort-cloud.png" className="img-responsive"/>
+                          </div>
+
+                        </div>
+
                       </div>
 
                     </div>
