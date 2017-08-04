@@ -56,7 +56,8 @@ class NeoTracker extends Component {
     this.viewProp = this.viewProp.bind(this);
     this.bodyClick = this.bodyClick.bind(this);
     this.goToArchives = this.goToArchives.bind(this);
-    this.spaceSounds = this.spaceSounds.bind(this);
+    this.launchModal = this.launchModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -745,22 +746,35 @@ aprilAsteroids() {
 
   }
 
-  // SPACE SOUNDS FUNCTION
-  spaceSounds() {
+  // LAUNCH MODAL FUNCTION
+  launchModal() {
 
-    // // DO AN AJAX CALL AND RETURN THE OBJECT
-    // const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
-    // const that = this;
+        // Get the modal
+        let modal = document.getElementById('myModal');
 
-    // $.ajax({ // ---------------------------------------------------------
-    //   url: "//api.nasa.gov/planetary/sounds?q=apollo&api_key=" + myApiKey,
-    //   dataType: 'jsonp',
+        // Get the button that opens the modal
+        let btn = document.getElementById("hypohit");
 
-    //   success: (soundData) => {
-    //     console.log(soundData)
-    //   }
+        // Get the <span> element that closes the modal
+        // let span = document.getElementsByClassName("close")[0];
 
-    // }) // ENDS AJAX CALL ------------------------------------------------
+        let listItem = document.getElementsByClassName("asteroidNameLi")[0];
+
+        modal.style.display = "initial";
+        modal.style.display = "block";
+
+  }
+
+  // CLOSE MODAL FUNCTION
+  closeModal() {
+
+        // Get the modal
+        let modal = document.getElementById('myModal');
+
+        // Get the <span> element that closes the modal
+        let span = document.getElementsByClassName("close")[0];
+
+        modal.style.display = "none";
 
   }
 
@@ -993,12 +1007,12 @@ aprilAsteroids() {
                   </center>
                 </div>
                
-                <center><button onClick={this.launchModal, this.impactProps} id="hypohit">Hypothetical hit</button></center>
+                <center><button onClick={this.launchModal} id="hypohit">Hypothetical hit</button></center>
 
                     <div id="myModal" className="modal">
 
                       <div className="modal-content">
-                        <span className="close">&times;</span>
+                        <span className="close" onClick={this.closeModal}>&times;</span>
                         <h1>Hypothetical scenario if {this.state.asteroidName} hit Earth</h1>
                         <hr id="modalhr"/>
                         <span id="hitdesc">
@@ -1031,7 +1045,7 @@ aprilAsteroids() {
                               <hr id="modalhr"/>
                               Many of these Asteroids come from deep space, light years away from our Solar-System.
                               Encompassing our solar system, is something known as the Ort Cloud- a giant shell of 
-                              icy debris and comets floting in synchrony. 
+                              icy debris and comets floating in synchrony. 
                               <br />
                               <br />
                               <strong>NASA's formal explanation:</strong> The Oort Cloud is believed to be a thick 

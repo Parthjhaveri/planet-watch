@@ -6,7 +6,7 @@ import Footer from './footer.js';
 import Navi from './nav.js';
 // import NeoTracker from './neotrack.js';
 import './scripts.js';
-// import {$,jQuery} from 'jquery';
+import $ from 'jquery';
 // import Main from './Main.js';
 // import { BrowserRouter } from 'react-router-dom';
 // import { Switch, Route } from 'react-router-dom';

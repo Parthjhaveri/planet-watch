@@ -1,13 +1,31 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
-// import $ from 'jquery'; 
-// import NeoTracker from './neotrack.js';
-// import { BrowserRouter } from 'react-router-dom';
+import $ from 'jquery'; 
 import { Link } from 'react-router-dom';
-// import Main from './Main.js';
 
 class FirstPageCon extends Component {
+
+  constructor(props) {
+
+    super(props);
+
+    this.state = {
+      // scrTop: $(window).scrollTop()
+    }
+
+  }
+
+  componentDidMount() {
+
+    // // LAZY LOADING FOR IMAGES FOR EACH DIV
+    let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
+    
+    if (contentThreeDiv >= window.innerHeight) {
+      contentThreeDiv.style.backgroundImage = "none";
+    }
+
+  }
 
   render() {
     return (
