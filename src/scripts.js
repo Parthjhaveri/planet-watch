@@ -76,7 +76,7 @@ setTimeout(function() {
         // $(listItem).click(function() {
         //   // $(btn).prop( "disabled", false );
         //   $(this).addClass('selected');
-        //   // $(listItem).removeClass('selected');
+        //   $(listItem).removeClass('selected');
         // })
 
         // // When the user clicks the button, open the modal 

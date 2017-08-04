@@ -102,7 +102,7 @@ class NeoTracker extends Component {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------    
 
-    // const astListDiv = document.getElementById('listdiv');
+    const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -122,7 +122,7 @@ class NeoTracker extends Component {
     // listDivBorder.style.border = "1px solid #00cc66";
 
     // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
-    // const julyButton = document.getElementsByClassName('julybutt');
+    const julyButton = document.getElementsByClassName('julybutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
     
@@ -197,7 +197,7 @@ class NeoTracker extends Component {
     successButt.style.transition = "2s";
 
     // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
-    // const juneButton = document.getElementsByClassName('junebutt');
+    const juneButton = document.getElementsByClassName('junebutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
@@ -276,7 +276,7 @@ mayAsteroids() {
 
 
     // IF THE BUTTON IS CLICKED, DISABLE ANY FURTHER AJAX CALLS
-    // const mayButton = document.getElementsByClassName('maybutt');
+    const mayButton = document.getElementsByClassName('maybutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
@@ -755,9 +755,6 @@ aprilAsteroids() {
         // Get the button that opens the modal
         let btn = document.getElementById("hypohit");
 
-        // Get the <span> element that closes the modal
-        // let span = document.getElementsByClassName("close")[0];
-
         let listItem = document.getElementsByClassName("asteroidNameLi")[0];
 
         modal.style.display = "initial";
@@ -773,6 +770,14 @@ aprilAsteroids() {
 
         // Get the <span> element that closes the modal
         let span = document.getElementsByClassName("close")[0];
+
+        let windowElement = window;
+
+        // $(window).click(function(event) {
+        //   if (event.target === modal) {
+        //         modal.style.display = "none";
+        //     }
+        // })
 
         modal.style.display = "none";
 
@@ -932,7 +937,7 @@ aprilAsteroids() {
 
             <div className="soundsbox">
               <div id="framewrapper">
-                <iframe id="vid" src="http://www.n2yo.com/space-station/" scrolling="no" autoplay="true"></iframe>        
+                <iframe id="vid" src="http://www.n2yo.com/space-station/" scrolling="no"></iframe>        
               </div>
               <center><h3 id="live">Live from Space {new Date().toLocaleTimeString()} EST</h3></center>
             </div>
