@@ -55,7 +55,8 @@ class NeoTracker extends Component {
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.viewProp = this.viewProp.bind(this);
     this.bodyClick = this.bodyClick.bind(this);
-    // this.stateBool = this.stateBool.bind(this);
+    this.goToArchives = this.goToArchives.bind(this);
+    this.spaceSounds = this.spaceSounds.bind(this);
   }
 
   componentDidMount() {
@@ -67,7 +68,7 @@ class NeoTracker extends Component {
 
       url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2011-07-14&end_date=2011-07-21&api_key=" + myApiKey,
       success: (data) => {
-        console.log("DATA", data)
+        // console.log("DATA", data)
         // ARRAY FOR WEEK OF JULY 21st ASTEROIDS
         const july21Asteroids = data.near_earth_objects["2011-07-14"];
 
@@ -120,7 +121,7 @@ class NeoTracker extends Component {
     // listDivBorder.style.border = "1px solid #00cc66";
 
     // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
-    const julyButton = document.getElementsByClassName('julybutt');
+    // const julyButton = document.getElementsByClassName('julybutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
     
@@ -195,7 +196,7 @@ class NeoTracker extends Component {
     successButt.style.transition = "2s";
 
     // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
-    const juneButton = document.getElementsByClassName('junebutt');
+    // const juneButton = document.getElementsByClassName('junebutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
@@ -274,7 +275,7 @@ mayAsteroids() {
 
 
     // IF THE BUTTON IS CLICKED, DISABLE ANY FURTHER AJAX CALLS
-    const mayButton = document.getElementsByClassName('maybutt');
+    // const mayButton = document.getElementsByClassName('maybutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
@@ -354,7 +355,7 @@ aprilAsteroids() {
     // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
 
         // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
-        const aprilButton = document.getElementsByClassName('aprilbutt');
+        // const aprilButton = document.getElementsByClassName('aprilbutt');
 
         this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
 
@@ -449,7 +450,7 @@ aprilAsteroids() {
 
             // console.log("So, this is the element object: ", this.state.asteroidList)
 
-            const astListVar = this.state.asteroidList;
+            // const astListVar = this.state.asteroidList;
 
             // ------------------------------------------------------------------
 
@@ -462,8 +463,8 @@ aprilAsteroids() {
   bodyClick(e) {
   
             var target = $(e.target);
-            var listItem = document.getElementsByClassName('asteroidNameLi');
-            const astListVar = this.state.asteroidList;
+            // var listItem = document.getElementsByClassName('asteroidNameLi');
+            // const astListVar = this.state.asteroidList;
             var hypoPopBox = document.getElementById('hypopop');
 
             setTimeout(function() {
@@ -710,7 +711,6 @@ aprilAsteroids() {
 
   nextInst() {
 
-    var closeButton = document.getElementsByClassName('xpop')[0];
     var firstPopBox = document.getElementById('firstpop');
     var secondPopBox = document.getElementById('secondpop');
 
@@ -721,8 +721,6 @@ aprilAsteroids() {
 
   goToArchives() {
 
-    var closeButton = document.getElementsByClassName('xpop')[0];
-    var firstPopBox = document.getElementById('firstpop');
     var secondPopBox = document.getElementById('secondpop');
     var thirdPopBox = document.getElementById('thirdpop');
 
@@ -744,6 +742,25 @@ aprilAsteroids() {
     var closeHypo = document.getElementsByClassName('pophypo')[0];
 
     closeHypo.style.display = "none";
+
+  }
+
+  // SPACE SOUNDS FUNCTION
+  spaceSounds() {
+
+    // // DO AN AJAX CALL AND RETURN THE OBJECT
+    // const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
+    // const that = this;
+
+    // $.ajax({ // ---------------------------------------------------------
+    //   url: "//api.nasa.gov/planetary/sounds?q=apollo&api_key=" + myApiKey,
+    //   dataType: 'jsonp',
+
+    //   success: (soundData) => {
+    //     console.log(soundData)
+    //   }
+
+    // }) // ENDS AJAX CALL ------------------------------------------------
 
   }
 
@@ -828,6 +845,15 @@ aprilAsteroids() {
               <br />
               <div className="success" id="successbutton" role="alert">Asteroids loaded</div>
               <div className="faliure" id="faliurebutton" role="alert">ALREADY LOADED!</div>
+
+            <div className="whitebox">
+              <h1>Live from the ISS</h1>
+              <br />
+              <p>
+                Live video from aboard the International Space Station
+              </p>
+            </div>
+
             </div>
             
             <div className="col-md-4 propertiesSide" >
@@ -890,6 +916,13 @@ aprilAsteroids() {
                   </ul>
                 </div>
 
+            <div className="soundsbox">
+              <div id="framewrapper">
+                <iframe id="vid" src="http://www.n2yo.com/space-station/" scrolling="no" autoplay="true"></iframe>        
+              </div>
+              <center><h3 id="live">Live from Space {new Date().toLocaleTimeString()} EST</h3></center>
+            </div>
+
             </div>
 
             <div className="col-md-4 propDiv">
@@ -899,7 +932,7 @@ aprilAsteroids() {
               <h4 id="archivesdesc">Click on an Asteroid to the left, and monitor their properties in the table below</h4>
               
                 <div className="popone" id="secondpop">
-                  <span className="xpop" onClick={this.goToArchives.bind(this)}>x</span>
+                  <span className="xpop" onClick={this.goToArchives}>x</span>
                   <center>
                     <div className="arrone">
                     </div>
@@ -996,7 +1029,7 @@ aprilAsteroids() {
                 <br />
 
                 <center>
-                  <p id="poweredby">Enabled by the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png" id="smlogo" /> Data Portal</p>
+                  <p id="poweredby">Enabled by the <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/200px-NASA_logo.svg.png" id="smlogo" alt="SmallNASALogo" /> Data Portal</p>
                 </center>
 
               </div>
@@ -1005,11 +1038,6 @@ aprilAsteroids() {
 
           </div>
         </center>
-
-        <br />
-
-            <div className="graphbox">
-            </div>
 
         </div>
 
