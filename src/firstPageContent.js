@@ -48,7 +48,8 @@ class FirstPageCon extends Component {
 
             <p className="heading">PLANET WATCH</p>
             <p className="subheading">A CONSOLIDATAED NARRATIVE ON<br />TOP GLOBAL & ASTRONOMICAL ISSUES</p>
-
+            <br />
+            <h1><div className="glyphicon glyphicon-menu-down" id="fpchr"></div></h1>
         </div>
 
         <div className="contentone">

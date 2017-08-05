@@ -1065,6 +1065,12 @@ tr:hover {
   margin-top: 20px;
 }
 
+#fpchr {
+  float: right;
+  color: white;
+  margin-right: 20px;
+}
+
 @media only screen and (max-width: 1200px) {
 
   .mobilenavdiv {
