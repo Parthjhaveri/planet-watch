@@ -19,11 +19,10 @@ class FirstPageCon extends Component {
   componentDidMount() {
 
     // // LAZY LOADING FOR IMAGES FOR EACH DIV
-    let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
-    
-    if (contentThreeDiv >= window.innerHeight) {
-      contentThreeDiv.style.backgroundImage = "none";
-    }
+    // let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
+
+    // console.log("Window's inner height: ", window.innerHeight);
+
 
   }
 

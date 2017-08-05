@@ -2,31 +2,36 @@ import $ from 'jquery';
 
 $(document).bind("scroll", function(){    
 
-// ONLY IF THE URL IS AT THE NEO TRACKER COMPONENT 
-if (window.location.href.indexOf("/neo-tracker") > -1) {
+    // ONLY IF THE URL IS AT THE NEO TRACKER COMPONENT 
+    if (window.location.href.indexOf("/neo-tracker") > -1) {
 
 
-  // ONCE THE SCREEN GOES PAST 400 PIXELS
-    if ($(document).scrollTop() >= 600) {
-       
-       var popOne = document.getElementById('firstpop');
-       var popTwo = document.getElementById('secondpop');
-       var popThree = document.getElementById('thirdpop');
+        // ONCE THE SCREEN GOES PAST 400 PIXELS
+        if ($(document).scrollTop() >= 600) {
+           
+           var popOne = document.getElementById('firstpop');
+           var popTwo = document.getElementById('secondpop');
+           var popThree = document.getElementById('thirdpop');
 
-       popTwo.style.opacity = 0;
-       popThree.style.opacity = 0;
-       popOne.style.opacity = 1;
+           popTwo.style.opacity = 0;
+           popThree.style.opacity = 0;
+           popOne.style.opacity = 1;
 
+        }
     }
-}
 
-      // -------------------------------------------------------------------
 
-     // let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
+    // // ONLY IF THE URL IS AT THE HOME PAGE COMPONENT 
+    // if (window.location.href.indexOf("/neo-tracker") < 0) {
 
-     //  if( $(contentThreeDiv).inView() ) {
-     //    contentThreeDiv.style.backgroundImage = "none";
-     //  }
+    //     // ONCE THE SCREEN GOES PAST 1500 PIXELS, LOAD IMAGE
+    //     if ($(document).scrollTop() >= 1500) {
+           
+    //       let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
+
+    //        contentThreeDiv.style.opacity = 1;
+    //     }
+    // }
 
 })
 
@@ -61,40 +66,19 @@ setTimeout(function() {
 }, 500) // ENDS SET TIME-OUT FUNCTION
 
   $(document).ready(function(){
+
+        // var contentThreeDiv = document.getElementsByClassName('contentthree')[0];
+
+        // if (contentThreeDiv.offsetTop <= 50) {
+        //   alert("there you go!")
+        // }
         
-        // // Get the modal
-        // var modal = document.getElementById('myModal');
+        // WINDOW CLICK TO ESCAPE MODAL ------------------------------------------------------------
+        var modal = document.getElementById('myModal');
 
-        // // Get the button that opens the modal
-        // var btn = document.getElementById("hypohit");
-
-        // // Get the <span> element that closes the modal
-        // var span = document.getElementsByClassName("close")[0];
-
-        // var listItem = document.getElementsByClassName("asteroidNameLi")[0];
-
-        // $(listItem).click(function() {
-        //   // $(btn).prop( "disabled", false );
-        //   $(this).addClass('selected');
-        //   $(listItem).removeClass('selected');
-        // })
-
-        // // When the user clicks the button, open the modal 
-        // $(btn).on("click", function() {
-        //   modal.style.display = "initial";
-        //   modal.style.display = "block";
-        //   // btn.setAttribute("disabled", false);
-        // })
-
-        // $(span).click(function() {
-        //   modal.style.display = "none";
-        //   // btn.setAttribute("disabled", false);
-        // })
-
-        // // When the user clicks anywhere outside of the modal, close it
-        // $(window).click(function(event) {
-        //   if (event.target === modal) {
-        //         modal.style.display = "none";
-        //     }
-        // })
+        $(window).click(function(event) {
+          if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        })
   }); // ENDS DOCUMENT.READY
