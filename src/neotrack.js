@@ -1165,7 +1165,35 @@ aprilAsteroids() {
           // ASTEROID MINING
         }
         <div className="astroMiningDiv">
-          <center><h2>Benefits of Asteroid-tracking</h2></center>
+          <center><h1>Benefits of Asteroid-tracking</h1></center>
+          <hr id="modalhr"/>
+          <p id="miningdesc">
+            <span id="intropar">You're probably reading this through a laptop or a smart-phone- one that is metallic by 
+            composition. You may be surprised to learn that many of the elements in these devices are 
+            thought to be brought to Earth by Asteroids which crashed down billions and billions of years
+            ago. You may be <em>even more</em> perplexed by the idea that many scientists think that water
+            was brought to earth by an asteroid.</span> 
+            <hr />
+            <br />
+            • According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
+            AstronomySource</a>, there are around 9,000 known asteroids travelling in an orbit close to 
+            Earth- with over 1000s of new ones being discovered every year. Most of the asteroids near Earth are C-type asteroids, which contain the 
+            most water as a part of their composition. C-type asteroids, on average, are more than 20% water. The rest of the 
+            elements are common ones found here on earth. 
+            <br />
+            <br />
+            • Since these asteroids are relatively close, and much smaller than the Moon- they are a lot easier
+            to mount and un-mount. Because of their smaller size, their compositions are a lot more
+            concentrated than found anywhere on Earth. According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
+            AstronomySource</a>, for instance, it has been estimated that a one kilometer diameter asteroid 
+            could contain about 7,500 tons of platinum, worth more than $150 billion. Discoveries like these
+            bring enticing opportunities for the global marketplace where more and more resources are becoming 
+            scarce due to comsumption and enviornmental degredation. Asteroid mining could open up the next 
+            frontier in driving infrastructural and scientific development here on earth and in space.
+
+
+          </p>
+
         </div>
 
         <Footer />
