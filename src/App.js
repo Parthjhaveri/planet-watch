@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
+// import AstroMining from './astroMining.js';
 import FirstPageCon from './firstPageContent.js';
 import Footer from './footer.js';
 import Navi from './nav.js';
