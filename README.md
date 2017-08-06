@@ -2,6 +2,8 @@
 
 ### To run, please clone this repo, cd into it and run `npm start`
 
+![](gallery/homepic.png)
+
 ### What is Planet Watch?
 
 Planet Watch is an educational app that consolidates various global topics and simplifies the data that persists elsewhere on the internet. Instead of having to read pages upon pages of articles, Planet Watch provides an interactive style of learning- filled with visuals and hands-on learning. 
