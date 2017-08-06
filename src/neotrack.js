@@ -1067,6 +1067,82 @@ aprilAsteroids() {
 
                         </div>
 
+                        {
+                          // SO WHAT ARE THESE ASTEROIDS MADE OF?
+                        }
+                        <center><h1>What are these Asteroids made out of?</h1></center>
+                        <hr id="modalhr"/>
+                        <h2>There are 3 types of Asteroids:</h2>
+
+                        <div className="row">
+                          
+                          <div className="col-md-4">
+                            <center><h3><strong>C Type</strong></h3></center>
+                            <hr />
+                            <p>
+                              This class include asteroids that look dark through a telescope and have 
+                              spectra indicating they are composed of carbon compounds.  They are 
+                              therefore called carbonaceous asteroids and are believed to be made of the 
+                              same sort of material as the carbonaceous chondrite meteorites.  The dwarf 
+                              planet Ceres has a spectrum like a carbonaceous asteroid (at least on its 
+                                surface).  C Type accounts for about 75% of all asteroids.  They formed 
+                              in the outer portions of the asteroid belt closer to the frost line where 
+                              it was cooler so carbon compounds could condense.  They also contain hydrated 
+                              minerals so we can get lots of water out of them.  Some estimates are that we 
+                              can get over 20% of the mass of the asteroid out in the form of water.  Since 
+                              chondrites are undifferentiated they also contain primitive metals, sometimes 
+                              as much as 40% by mass.  These would be extremely good asteroids to mine, having 
+                              water, metals, and carbon compounds, all three in one.  Because they are dark, 
+                              they are rather hard to find.
+                            </p>
+                          </div>
+
+                          
+                          <div className="col-md-4">
+                            <center><h3><strong>M Type</strong></h3></center>
+                            <hr />
+                            <p>
+                              M Type asteroids are moderately bright and are usually metal but sometimes 
+                              metal-stone mixtures. Some of them are surely the same composition as the 
+                              iron meteorites that have fallen to Earth.  They are believed to have come 
+                              from the cores of differentiated planetoids that were later broken apart.  
+                              These asteroids are interesting for mining because a pure metal asteroid is 
+                              a lot of metal and can be made into a lot of spacecraft.  A quick estimate 
+                              shows that the asteroid belt has a billion times more metal than all the high 
+                              grade metal ore in the crust of the Earth.
+                            </p>
+                            <br />
+                            <blockquote>
+                              <h1>
+                                Credit: <a href="http://www.philipmetzger.com/blog/type-of-asteroid-to-mine-part-3/" target="_blank">PhilipMetzger.com</a>
+                              </h1>
+                            </blockquote>
+                          </div>
+
+                          
+                          <div className="col-md-4">
+                            <center><h3><strong>S Type</strong></h3></center>
+                            <hr />
+                            <p>
+                              These asteroids are rather brighter than the C Types and appear to be “stony” 
+                              in composition.  They can be either primitive — having chondrites (usually) — 
+                              or from differentiated bodies — so not having chondrites.  The LL chondrite 
+                              meteorites are especially interesting for platinum mining because, although the 
+                              LL means “Low iron content and Low total metal” they nevertheless are wonderfully 
+                              high in platinum content.  That could be important if we plan to bring the mined 
+                              metals back to Earth to sell on the terrestrial metals market.  If we can find a 
+                              way to reduce the launch and landing costs, then this could be a quick revenue 
+                              stream to support the space mining company.  However, if we plan to use the metal 
+                              in space then there is no need to go after just platinum.  It would make better 
+                              sense to go after a different class of S Type asteroid, those in the H chondrite 
+                              family since H means “high” metal content.  Or better yet we would go after an M 
+                              Type asteroid.
+                            </p>
+                          </div>
+
+                        </div>
+
+
                       </div>
 
                     </div>
