@@ -1195,7 +1195,7 @@ aprilAsteroids() {
                 //this.state.tagLine
               }
 
-              <p className="benefittagline a">New market-place frointier <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline a">New market-place frontier <span className="glyphicon glyphicon-ok"></span></p>
               <p className="benefittagline b">Abundant resources <span className="glyphicon glyphicon-ok"></span></p>
               <p className="benefittagline c">Technological innovation <span className="glyphicon glyphicon-ok"></span></p>
               <p className="benefittagline d">New Water supplies <span className="glyphicon glyphicon-ok"></span></p>
@@ -1231,7 +1231,7 @@ aprilAsteroids() {
             concentrated than found anywhere on Earth. According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
             AstronomySource</a>, for instance, it has been estimated that a one kilometer diameter asteroid 
             could contain about 7,500 tons of platinum, worth more than $150 billion. Discoveries like these
-            bring enticing opportunities for the global marketplace where more and more resources are becoming 
+            bring enticing opportunities for the global marketplace where resources are becoming 
             scarce due to comsumption and enviornmental degredation. Asteroid mining could open up the next 
             frontier in driving infrastructural and scientific development here on earth and in space.
           </p>
@@ -1242,6 +1242,14 @@ aprilAsteroids() {
               <center>
                 <p>
                   So how the heck will we get there?
+                </p>
+                <br />
+
+                <p id="gettheresubheading">
+                  There are a growing number of private space agencies in the United States as well as 
+                  in other countries which are teaming up with NASA and other agencies to begin our venture
+                  towards these Asteroids to reap their benefits. These missions will take place in carefully
+                  planned phases, of which the beginning phases have already begun.
                 </p>
 
                 <img id="astpic" src="http://www.technovelgy.com/graphics/content12/Arkyd-Interceptor.jpg" className="img-responsive" />

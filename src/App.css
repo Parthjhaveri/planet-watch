@@ -1195,8 +1195,8 @@ tr:hover {
   opacity: 0;
   transition: 1s;
   position: absolute;
-  animation: fadeC 8s infinite;
-  -webkit-animation: fadeC 8s infinite;  
+  animation: fadeD 8s infinite;
+  -webkit-animation: fadeD 8s infinite;  
 }
 
 /*KEYFRAME FOR D*/
@@ -1213,8 +1213,8 @@ tr:hover {
   opacity: 0;
   transition: 1s;
   position: absolute;
-  animation: fadeC 8s infinite;
-  -webkit-animation: fadeC 8s infinite;  
+  animation: fadeE 8s infinite;
+  -webkit-animation: fadeE 8s infinite;  
 }
 
 /*KEYFRAME FOR E*/
@@ -1231,8 +1231,8 @@ tr:hover {
   opacity: 0;
   transition: 1s;
   position: absolute;
-  animation: fadeC 8s infinite;
-  -webkit-animation: fadeC 8s infinite; 
+  animation: fadeF 8s infinite;
+  -webkit-animation: fadeF 8s infinite; 
 }
 
 /*KEYFRAME FOR F*/
@@ -1242,6 +1242,13 @@ tr:hover {
   33.333% { opacity: 1}
   66.666% { opacity: 0}
   100% { opacity: 1}
+}
+
+#gettheresubheading {
+  font-size: 20px;
+  color: #00e6ac;
+  text-align: center;
+  line-height: 2em;
 }
 
 
