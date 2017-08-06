@@ -44,6 +44,7 @@ class NeoTracker extends Component {
       catThree: "",
       catFour: "",
       damageState: "",
+      tagLine: "",
     }
 
     // BIND THE FUNCTION TO THIS 
@@ -60,6 +61,24 @@ class NeoTracker extends Component {
   }
 
   componentDidMount() {
+
+    // // JS FOR TAGLINE 
+    // let tagArray = [];
+
+    // var tagGroup = document.getElementsByClassName('benefittagline');
+
+    // for (var i = 0; i < tagGroup.length; i++) {
+    //   tagArray.push(tagGroup[i].innerHTML);
+    // }
+
+    // console.log(tagArray);
+
+    // this.setState({tagLine: this.state.tagLine.replace(this.state.tagLine, Math.floor(Math.random() * tagArray.length))})
+
+    // console.log(this.state.tagLine);
+
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
@@ -1165,14 +1184,39 @@ aprilAsteroids() {
           // ASTEROID MINING
         }
         <div className="astroMiningDiv">
-          <center><h1>Benefits of Asteroid-tracking</h1></center>
-          <hr id="modalhr"/>
-          <p id="miningdesc">
-            <span id="intropar">You're probably reading this through a laptop or a smart-phone- one that is metallic by 
-            composition. You may be surprised to learn that many of the elements in these devices are 
-            thought to be brought to Earth by Asteroids which crashed down billions and billions of years
-            ago. You may be <em>even more</em> perplexed by the idea that many scientists think that water
-            was brought to earth by an asteroid.</span> 
+          
+          <div className="row">
+
+            <div className="col-md-6" id="benefitsheading">
+              <center><p>Benefits of Asteroid-tracking</p></center>
+              <br />
+
+              {
+                //this.state.tagLine
+              }
+
+              <p className="benefittagline a">New market-place frointier <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline b">Abundant resources <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline c">Technological innovation <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline d">New Water supplies <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline e">Easy to go to <span className="glyphicon glyphicon-ok"></span></p>
+              <p className="benefittagline f">Nickle, Copper & tons of more elements <span className="glyphicon glyphicon-ok"></span></p>
+
+            </div>
+            
+            <div className="col-md-6">
+              <span id="intropar">
+                You're probably reading this through a laptop or a smart-phone- one that is metallic by 
+                composition. You may be surprised to learn that many of the elements in these devices are 
+                thought to be brought to Earth by Asteroids which crashed down billions and billions of years
+                ago. You may be <em>even more</em> perplexed by the idea that many scientists think that water
+                was brought to earth by an asteroid.
+              </span> 
+            </div>
+
+          </div>
+
+            <p id="miningdesc">
             <hr />
             <br />
             • According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
