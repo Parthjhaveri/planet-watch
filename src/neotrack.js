@@ -1190,9 +1190,64 @@ aprilAsteroids() {
             bring enticing opportunities for the global marketplace where more and more resources are becoming 
             scarce due to comsumption and enviornmental degredation. Asteroid mining could open up the next 
             frontier in driving infrastructural and scientific development here on earth and in space.
-
-
           </p>
+          <hr />
+          <div className="row">
+            
+            <div className="col-md-6" id="sohow">
+              <center>
+                <p>
+                  So how the heck will we get there?
+                </p>
+
+                <img id="astpic" src="http://www.technovelgy.com/graphics/content12/Arkyd-Interceptor.jpg" className="img-responsive" />
+              </center>
+            </div>
+
+            <div className="col-md-6" id="sohowdesc">
+              <p>
+                <span className="whitespan"><strong>The Arkyd Series 100 – Leo Space Telescope</strong></span>
+                <br />
+                <br />
+                Due for launch within the next two years, 
+                its job will be to analyse NEOs in order to determine the most likely candidates for future 
+                xploitation. Techniques such as spectroscopy and radar technology will be used to determine 
+                properties such as the asteroid’s chemical composition, orbit, rotation, size, shape and metal 
+                concentration. Due to its relatively low cost and its potential usefulness in a vast number of 
+                applications, the Leo will be of interest to the scientist and private citizen alike. The sale of 
+                these crafts will therefore enable Planetary Resources to gain revenue in order to achieve its 
+                future objectives.
+                <br />
+                <br />
+                <span className="whitespan"><strong>The Arkyd Series 200 – Interceptor</strong></span>
+                <br />
+                <br />
+                 The intention is for this craft to hitch a ride on
+                 a geostationary satellite in order to analyse asteroids at more close quarters. Future 
+                 advancements in micro-propulsion and imaging techniques will be utilised to enable the craft 
+                 to get close enough to obtain high resolution data. Two or more Interceptors working together 
+                 will ensure that the data is collected as quickly and efficiently as possible.
+                <br />
+                <br />
+                <span className="whitespan"><strong>The Arkyd Series 300 – Rendezvous Prospector</strong></span>
+                <br />
+                <br />
+                This phase of the project will involve focusing on asteroids much deeper in space. Laser communication technology will be used  
+                to determine shape, rotation, density, and surface and sub-surface composition. The Prospector’s 
+                capability as a low cost interplanetary spacecraft should also attract customers such as 
+                NASA and other scientific establishments.
+              </p>
+
+              <blockquote>
+                <h1>
+                  Credit: <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">AstronomySource.com</a>
+                </h1>
+              </blockquote>
+              <h6><em>IMG credit: <a href="http://www.technovelgy.com/graphics/content12/Arkyd-Interceptor.jpg" target="_blank">http://www.technovelgy.com/graphics/content12/Arkyd-Interceptor.jpg</a></em></h6>
+
+            </div>
+
+          </div>
 
         </div>
 
