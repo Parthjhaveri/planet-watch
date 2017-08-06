@@ -1072,7 +1072,7 @@ aprilAsteroids() {
                         }
                         <center><h1>What are these Asteroids made out of?</h1></center>
                         <hr id="modalhr"/>
-                        <h2>There are 3 types of Asteroids:</h2>
+                        <h2>Lets break it down- there are 3 types of Asteroids:</h2>
 
                         <div className="row">
                           
@@ -1113,9 +1113,9 @@ aprilAsteroids() {
                             </p>
                             <br />
                             <blockquote>
-                              <h1>
+                              <p id="bq">
                                 Credit: <a href="http://www.philipmetzger.com/blog/type-of-asteroid-to-mine-part-3/" target="_blank">PhilipMetzger.com</a>
-                              </h1>
+                              </p>
                             </blockquote>
                           </div>
 

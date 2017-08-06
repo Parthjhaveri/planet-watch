@@ -1062,7 +1062,7 @@ tr:hover {
 #live {
   color: red;
   font-family: 'Titillium Web', sans-serif;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 #fpchr {
@@ -1071,7 +1071,15 @@ tr:hover {
   margin-right: 20px;
 }
 
+#bq {
+  font-size: 35px;
+}
+
 @media only screen and (max-width: 1200px) {
+
+  #bq {
+    font-size: 20px;
+  }
 
   .mobilenavdiv {
     visibility: hidden;
