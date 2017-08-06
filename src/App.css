@@ -1251,6 +1251,29 @@ tr:hover {
   line-height: 2em;
 }
 
+.astimagesdiv {
+  width: auto;
+  height: auto;
+  background-color: #1a1a1a;
+  padding: 40px;
+}
+
+#astimgheading {
+  font-family: 'Titillium Web', sans-serif; 
+  color: white;
+}
+
+#astimgsubheading {
+  font-family: 'Titillium Web', sans-serif; 
+  color: #00e6ac;
+}
+
+.astImg {
+  width: 200px;
+  display: inline-block;
+  margin-left: 2%;
+  margin-right: 2%;
+}
 
 @media only screen and (max-width: 1200px) {
 

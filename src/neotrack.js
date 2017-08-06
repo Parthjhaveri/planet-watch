@@ -1303,6 +1303,26 @@ aprilAsteroids() {
 
         </div>
 
+        {
+          // ASTEROID IMAGES
+        }
+
+        <div className="astimagesdiv">
+
+          <center><h1 id="astimgheading">So what do these Asteroids look like anyways?</h1></center>
+          <center><h3 id="astimgsubheading">Take a look at this gallery:</h3></center>
+          <hr id="modalhr"/>
+
+          <center>
+            <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
+            <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
+            <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
+            <img src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
+          </center>
+
+
+        </div>
+
         <Footer />
 
       </div>
