@@ -1365,4 +1365,18 @@ tr:hover {
     /*display: none;*/
   }
 
+  .a {
+    display: none;
+  }.b {
+    display: none;
+  }.c {
+    display: none;
+  }.d {
+    display: none;
+  }.e {
+    display: none;
+  }.f {
+    display: none;
+  }
+
 }
