@@ -29,5 +29,9 @@ Planet Watch is an educational app that consolidates various global topics and s
 
 ![](gallery/neofour.png)
 
+### Lazy loading for optimized performance
+![](gallery/neofive.png)
+
+
 
 
