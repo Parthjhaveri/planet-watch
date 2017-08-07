@@ -1254,18 +1254,20 @@ tr:hover {
 .astimagesdiv {
   width: auto;
   height: auto;
-  background-color: #1a1a1a;
+  background-color: white;
   padding: 40px;
 }
 
 #astimgheading {
   font-family: 'Titillium Web', sans-serif; 
-  color: white;
+  color: #1a1a1a;
+  font-weight: bolder;
 }
 
 #astimgsubheading {
   font-family: 'Titillium Web', sans-serif; 
   color: #00e6ac;
+  font-weight: bolder;
 }
 
 .astImg {

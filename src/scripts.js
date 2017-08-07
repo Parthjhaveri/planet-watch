@@ -1,6 +1,60 @@
 import $ from 'jquery'; 
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//                                  DOCUMENT . READY 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  $(document).ready(function(){
+        
+        // WINDOW CLICK TO ESCAPE MODAL -------------------------------
+        var modal = document.getElementById('myModal');
+
+        $(window).click(function(event) {
+          if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        })
+  }); // ENDS DOCUMENT.READY
+
+
+  // LAZY LOADING IMAGE GALLERY ---------------------------------------
+
+  function lazyload() {
+
+    let galleryImage = document.getElementsByClassName('astImg');
+
+    for (var i = 0; i < galleryImage.length; i++) {
+        
+      if (elementInViewport(galleryImage[i])) {
+        galleryImage[i].setAttribute('src', galleryImage[i].getAttribute('data-src'));
+      }
+
+    }
+
+  } // END LAZY LOAD
+
+  function elementInViewport (el) {
+
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    )
+
+  } // END ELEMENT IN VIEWPORT
+
+
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//                                  DOCUMENT . BIND
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 $(document).bind("scroll", function(){    
+
+    lazyload();
 
     // ONLY IF THE URL IS AT THE NEO TRACKER COMPONENT 
     if (window.location.href.indexOf("/neo-tracker") > -1) {
@@ -20,22 +74,11 @@ $(document).bind("scroll", function(){
         }
     }
 
-
-    // // ONLY IF THE URL IS AT THE HOME PAGE COMPONENT 
-    // if (window.location.href.indexOf("/neo-tracker") < 0) {
-
-    //     // ONCE THE SCREEN GOES PAST 1500 PIXELS, LOAD IMAGE
-    //     if ($(document).scrollTop() >= 1500) {
-           
-    //       let contentThreeDiv = document.getElementsByClassName('contentthree')[0];
-
-    //        contentThreeDiv.style.opacity = 1;
-    //     }
-    // }
-
 })
 
-// --------------------------------------------------------------------------
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//                                  SET TIMEOUT FUNCTION
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 setTimeout(function() {
 
@@ -65,20 +108,7 @@ setTimeout(function() {
 
 }, 500) // ENDS SET TIME-OUT FUNCTION
 
-  $(document).ready(function(){
 
-        // var contentThreeDiv = document.getElementsByClassName('contentthree')[0];
 
-        // if (contentThreeDiv.offsetTop <= 50) {
-        //   alert("there you go!")
-        // }
-        
-        // WINDOW CLICK TO ESCAPE MODAL ------------------------------------------------------------
-        var modal = document.getElementById('myModal');
 
-        $(window).click(function(event) {
-          if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        })
-  }); // ENDS DOCUMENT.READY
+
