@@ -1294,31 +1294,29 @@ aprilAsteroids() {
         <div className="astimagesdiv">
 
           <center><h1 id="astimgheading">So what do these Asteroids look like anyways?</h1></center>
-          <center><h3 id="astimgsubheading">Take a look at this gallery:</h3></center>
+          <center><h3 id="astimgsubheading">Take a look at this gallery:</h3> <em>IMG Credit: <a href="https://www.nasa.gov/mission_pages/asteroids/images/index.html" target="_blank">NASA.gov/Mission_Pages</a></em></center>
           <hr id="modalhr"/>
 
           <center>
           
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/Dawn_Parting_720.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
-          
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19093_r-2.jpg" className="img-responsive astImg" />
+            
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19095-main_perihelion-cliff.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19092_r-1.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta20170321.gif" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia21259_neowise20161220.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
-
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
-          
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
-            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
-
+            
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/slideshow/PIA14316_835.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/galleries/Vesta_Parting_732X520.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/galleries/Lutetia_Closest_br.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/697015main_pia16211_full_720.jpg" className="img-responsive astImg" />
+            <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/Hayabusa_Itokawa_708.jpg" className="img-responsive astImg" />
+            
           </center>
 
 

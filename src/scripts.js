@@ -5,15 +5,19 @@ import $ from 'jquery';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
   $(document).ready(function(){
-        
-        // WINDOW CLICK TO ESCAPE MODAL -------------------------------
-        var modal = document.getElementById('myModal');
+    
+  // ------------------------------------------------------------------------------
+  // WINDOW CLICK TO ESCAPE MODAL -------------------------------------------------
+  // ------------------------------------------------------------------------------
+    
+    var modal = document.getElementById('myModal');
 
-        $(window).click(function(event) {
-          if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        })
+    $(window).click(function(event) {
+      if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    })
+
   }); // ENDS DOCUMENT.READY
 
   // ------------------------------------------------------------------------------
@@ -36,7 +40,8 @@ import $ from 'jquery';
 
   function elementInViewport (el) {
 
-    var rect = el.getBoundingClientRect();
+    let rect = el.getBoundingClientRect();
+    
     return (
       rect.top >= 0 &&
       rect.left >= 0 &&
@@ -45,9 +50,6 @@ import $ from 'jquery';
     )
 
   } // END ELEMENT IN VIEWPORT
-
-
-
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 //                                  DOCUMENT . BIND
