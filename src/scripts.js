@@ -37,7 +37,7 @@ import $ from 'jquery';
     }
 
   } // END LAZY LOAD
-
+  
   function elementInViewport (el) {
 
     let rect = el.getBoundingClientRect();
