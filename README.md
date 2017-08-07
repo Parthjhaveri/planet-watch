@@ -12,6 +12,12 @@ Planet Watch is an educational app that consolidates various global topics and s
 
 - **An NEO Tracker (Near Earth Object Tracker)**, which has information about Asteroids that are currently orbiting Earth. The information provided will help you understand where these asteroids come from, how fast they are travelling and the effects (with advice) if they potentially will hit Earth. All this information is derived from the NASA open APIs data portal, which Planet Watch simplifies for you to comprehend in English.
 
+## Tech specs:
+- Built in React JS
+- Fully responsive (Mobile, Tablet)
+- Fully optimized to improve run-time using JavaScript lazy loading techniques
+- Carefully designed and curated UI/UX with animated help bubbles to guide user for a seamless experience
+
 ### NEO Tracker gallery:
 ![](gallery/neoone.png)
 
