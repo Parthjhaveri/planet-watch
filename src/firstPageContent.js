@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
-import $ from 'jquery'; 
+import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 class FirstPageCon extends Component {
@@ -29,7 +29,7 @@ class FirstPageCon extends Component {
           <center>
             <ul className="staticnav">
               <li className="staticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
-              <li className="staticnavli">POLLUTION TRACKER</li>
+              <li className="staticnavli"><Link to='/pollution-tracker'>POLLUTION TRACKER</Link></li>
               <li className="staticnavli">GEOPOLITICAL NEWS</li>
               <li className="staticnavli">OCEAN CLEANUP</li>
             </ul>
@@ -52,11 +52,11 @@ class FirstPageCon extends Component {
             <center><h2 className="boxheading">NEO TRACKER</h2></center>
               <div className="cont">
                   <div className="box neobox">
-                  
+
                   </div>
                 <div className="overlay">
                   <center>
-                    Track Asteroids and other Near Earth Objects live in orbit while learning about their 
+                    Track Asteroids and other Near Earth Objects live in orbit while learning about their
                     composition and threat levels
                   </center>
                 </div>
@@ -68,11 +68,11 @@ class FirstPageCon extends Component {
 
             <div className="cont">
                 <div className="box pollbox">
-                
+
                 </div>
               <div className="overlay">
                   <center>
-                    Track real-time Air-Pollution levels of different cities and locales in the United States 
+                    Track real-time Air-Pollution levels of different cities and locales in the United States
                   </center>
               </div>
             </div>
@@ -83,7 +83,7 @@ class FirstPageCon extends Component {
             <center><h2 className="boxheading">OCEAN CLEANUP</h2></center>
               <div className="cont">
                   <div className="box oceanbox">
-                  
+
                   </div>
                 <div className="overlay">
                     <center>
@@ -95,7 +95,7 @@ class FirstPageCon extends Component {
             </div>
 
           </div>
- 
+
           <div className="whitebox">
             <center>VIEW ALL FEATURES</center>
           </div>
@@ -107,13 +107,13 @@ class FirstPageCon extends Component {
           // CONTENT TWO
         }
 
-        <div className="contenttwo"> 
+        <div className="contenttwo">
           <p id="asttrackerheading">ASTEROID TRACKER</p>
             <br />
           <p id="asttrackersubheading">
             Track Asteroids that are currently in orbit around the Earth. <br />
             These NEOs have the potential to hit Earth, which is why <br />
-            a close eye is kept on their relative trajectories. 
+            a close eye is kept on their relative trajectories.
           </p>
           <br />
           <button className="neobutton">NEO TRACKER</button>
@@ -142,7 +142,7 @@ class FirstPageCon extends Component {
 
         <div className="morefromdev">
           <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/78/The_Ocean_Cleanup_logo.svg/1200px-The_Ocean_Cleanup_logo.svg.png"  className="img-responsive oceancleanuppic" alt="" />
-          
+
           <p className="oceantext">
             Keep up with the largest clean-up effort in the history of Mankind <br />
             Track Global Pollution Levels from the palm of your hand

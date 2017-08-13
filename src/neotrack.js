@@ -3,7 +3,7 @@ import './App.css';
 import './scripts.js';
 import Navi from './nav.js';
 import Footer from './footer.js';
-import $ from 'jquery'; 
+import $ from 'jquery';
 // import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 // REACT VIDEO
@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 class NeoTracker extends Component {
 
   constructor(props) {
-    
+
     super(props);
 
     this.state = {
@@ -47,7 +47,7 @@ class NeoTracker extends Component {
       tagLine: "",
     }
 
-    // BIND THE FUNCTION TO THIS 
+    // BIND THE FUNCTION TO THIS
     this.julyAsteroids = this.julyAsteroids.bind(this);
     this.juneAsteroids = this.juneAsteroids.bind(this);
     this.mayAsteroids = this.mayAsteroids.bind(this);
@@ -62,11 +62,11 @@ class NeoTracker extends Component {
 
   componentDidMount() {
 
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
-  
+
     $.ajax({
 
       url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2011-07-14&end_date=2011-07-21&api_key=" + myApiKey,
@@ -79,10 +79,10 @@ class NeoTracker extends Component {
         //   "So this is your array- ",  july21Asteroids
         // );
 
-        /* 
+        /*
            MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE OF THE ASTEROID ARRAY TO
-           CONTAIN EACH ELEMENT WITHIN IT- WHERE IN THE UL BELOW, IT IS MAPPED OVER AND EVERY ASTEROID NAME 
-           IS RENDERED 
+           CONTAIN EACH ELEMENT WITHIN IT- WHERE IN THE UL BELOW, IT IS MAPPED OVER AND EVERY ASTEROID NAME
+           IS RENDERED
         */
         july21Asteroids.map( (element, index) => {
 
@@ -100,9 +100,9 @@ class NeoTracker extends Component {
 
   julyAsteroids() {
 
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
     // AJAX CALL #2 --------------------------------------------------------------------------------
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
 
     const astListDiv = document.getElementById('listdiv');
 
@@ -123,22 +123,22 @@ class NeoTracker extends Component {
 
     // listDivBorder.style.border = "1px solid #00cc66";
 
-    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML
     const julyButton = document.getElementsByClassName('julybutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
-    
+
     if (this.state.buttonClickCounter === 0) {
         $.ajax({
 
           url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=" + myApiKey,
           success: (astdata) => {
-            
+
           // console.log(astdata.near_earth_objects["2017-07-10"]);
 
           const secondBatchAsts = astdata.near_earth_objects["2017-07-10"];
 
-          /* 
+          /*
              MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
              BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
           */
@@ -164,7 +164,7 @@ class NeoTracker extends Component {
             successButt.style.display = "none";
             successButt.style.opacity = 1;
             successButt.style.transition = "2s";
-          
+
           $.ajax({
 
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
@@ -182,9 +182,9 @@ class NeoTracker extends Component {
 
   juneAsteroids() {
 
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
     // AJAX CALL #2 --------------------------------------------------------------------------------
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
 
     // const astListDiv = document.getElementById('listdiv');
 
@@ -198,7 +198,7 @@ class NeoTracker extends Component {
     successButt.style.opacity = 1;
     successButt.style.transition = "2s";
 
-    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+    // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML
     const juneButton = document.getElementsByClassName('junebutt');
 
     this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
@@ -215,7 +215,7 @@ class NeoTracker extends Component {
 
           const juneAsteroids = astdata.near_earth_objects["2017-06-27"];
 
-          /* 
+          /*
              MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
              BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
           */
@@ -242,7 +242,7 @@ class NeoTracker extends Component {
             successButt.style.display = "none";
             successButt.style.opacity = 1;
             successButt.style.transition = "2s";
-          
+
           $.ajax({
 
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-06-23&end_date=2017-06-30&api_key=" + myApiKey,
@@ -260,9 +260,9 @@ class NeoTracker extends Component {
 
 mayAsteroids() {
 
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
     // AJAX CALL #2 --------------------------------------------------------------------------------
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
 
     // const astListDiv = document.getElementById('listdiv');
 
@@ -294,7 +294,7 @@ mayAsteroids() {
 
           const mayAsteroids = astdata.near_earth_objects["2017-05-29"];
 
-          /* 
+          /*
              MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
              BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
           */
@@ -303,7 +303,7 @@ mayAsteroids() {
             return (that.setState({mayAsteroidsArray: that.state.mayAsteroidsArray.concat(elem.name)}))
 
           })
-        
+
           } // ENDS SUCCESS FUNCTION
 
         }) // ENDS AJAX CALL
@@ -320,7 +320,7 @@ mayAsteroids() {
             successButt.style.display = "none";
             successButt.style.opacity = 1;
             successButt.style.transition = "2s";
-          
+
           $.ajax({
 
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
@@ -338,9 +338,9 @@ mayAsteroids() {
 
 aprilAsteroids() {
 
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
     // AJAX CALL #2 --------------------------------------------------------------------------------
-    // ---------------------------------------------------------------------------------------------    
+    // ---------------------------------------------------------------------------------------------
 
     // const astListDiv = document.getElementById('listdiv');
 
@@ -357,7 +357,7 @@ aprilAsteroids() {
     // BASED ON THE NUMBER OF CLICKS, IT FIRES A DIFFERENT AJAX CALL FOR EACH BUTTON PRESS, WHICH IN TURN
     // LOADS A DIFFERENT SET OF ASTEROIDS FOR THE USER
 
-        // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML 
+        // IF THE BUTTON IS CLICKED, REMOVE THE ONCLICK COMMAND FROM THE BUTTON HTML
         // const aprilButton = document.getElementsByClassName('aprilbutt');
 
         this.setState({buttonClickCounter: this.state.buttonClickCounter + 1})
@@ -375,7 +375,7 @@ aprilAsteroids() {
 
             // console.log(aprilAsteroids);
 
-            /* 
+            /*
                MAP OVER EACH ELEMENT IN THE ARRAY (WHICH IS AN OBJECT), SET STATE, WHEN BUTTON IS PRESSED DOWN
                BELOW, IT FIRES AN AJAX CALL TO RETREIVE MORE ASTEROIDS AND LOAD THEM INTO THE UL
             */
@@ -402,7 +402,7 @@ aprilAsteroids() {
             successButt.style.display = "none";
             successButt.style.opacity = 1;
             successButt.style.transition = "2s";
-          
+
           $.ajax({
 
             url: "https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-05-23&end_date=2017-05-30&api_key=" + myApiKey,
@@ -448,7 +448,7 @@ aprilAsteroids() {
               return (that.setState({asteroidList: that.state.asteroidList.concat(element)}))
             })
             // console.log("AST LIST!!! ", this.state.asteroidList)
-            // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
+            // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE
             // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
 
             // console.log("So, this is the element object: ", this.state.asteroidList)
@@ -464,7 +464,7 @@ aprilAsteroids() {
   }
 
   bodyClick(e) {
-  
+
             var target = $(e.target);
             // var listItem = document.getElementsByClassName('asteroidNameLi');
             // const astListVar = this.state.asteroidList;
@@ -478,15 +478,15 @@ aprilAsteroids() {
             // CODE INSIDE HERE IS CONDITIONED TO WORK ONLY IF THE 'li' IS CLICKED
             if (target.is('.asteroidNameLi')) {
 
-                var target = e.target || e.srcElement;  
-                // console.log("HTML TARGET ", target.innerHTML); 
+                var target = e.target || e.srcElement;
+                // console.log("HTML TARGET ", target.innerHTML);
 
                     // DO AN AJAX CALL AND RETURN THE OBJECT
                     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
                     const that = this;
 
                       // console.log("AST LIST!!! ", this.state.asteroidList)
-                      // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE 
+                      // ON BUTTON PRESS, IF THE 'is_potentially_hazardous' IN THE OBJECT EQUALS THE ELEMENT IN THE
                       // BOOLEAN ARRAY, SET THE STATE OF THE HAZARDOUS PROP TO TRUE
 
                       // CLICK FOR THE FIRST BATCH OF ASTEROIDS
@@ -516,8 +516,8 @@ aprilAsteroids() {
                               ) // ENDS RETURN
 
 
-                            } // ENDS IF STATEMENT 
-                                  
+                            } // ENDS IF STATEMENT
+
 
                           }) // ENDS MAP
                                   // console.log(typeof that.state.hazBool)
@@ -557,10 +557,10 @@ aprilAsteroids() {
 
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
-                      
+
                       // ---------------------------------------------------------------------------------
 
-                      // CLICK FOR THE JULY 2017 ASTEROIDS 
+                      // CLICK FOR THE JULY 2017 ASTEROIDS
                       $.ajax({
                         url: 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2017-07-6&end_date=2017-07-13&api_key=' + myApiKey,
                         success: (data) => {
@@ -586,7 +586,7 @@ aprilAsteroids() {
                                 })
                               ) // ENDS RETURN
 
-                            } // ENDS IF STATEMENT 
+                            } // ENDS IF STATEMENT
 
                           }) // ENDS MAP
 
@@ -621,7 +621,7 @@ aprilAsteroids() {
                                 })
                               ) // ENDS RETURN
 
-                            } // ENDS IF STATEMENT 
+                            } // ENDS IF STATEMENT
 
                           }) // ENDS MAP
 
@@ -656,7 +656,7 @@ aprilAsteroids() {
                                 })
                               ) // ENDS RETURN
 
-                            } // ENDS IF STATEMENT 
+                            } // ENDS IF STATEMENT
 
                           }) // ENDS MAP
 
@@ -691,21 +691,21 @@ aprilAsteroids() {
                                 })
                               ) // ENDS RETURN
 
-                            } // ENDS IF STATEMENT 
+                            } // ENDS IF STATEMENT
 
                           }) // ENDS MAP
 
                         } // ENDS SUCCESS FUNCTION
                       }) // ENDS AJAX CALL
 
-            } // ENDS THE PARENT IF STATEMENT 
+            } // ENDS THE PARENT IF STATEMENT
 
   } // ENDS THE MAIN BODYCLICK FUNCTION
 
   buttScroll() {
 
-        setTimeout(function(){ 
-        
+        setTimeout(function(){
+
           window.scroll(0, 630);
 
         }, 1000);
@@ -720,7 +720,7 @@ aprilAsteroids() {
     firstPopBox.style.display = "none";
     secondPopBox.style.opacity = 1;
 
-  }  
+  }
 
   goToArchives() {
 
@@ -730,7 +730,7 @@ aprilAsteroids() {
     thirdPopBox.style.opacity = 1;
     secondPopBox.style.display = "none";
 
-  }  
+  }
 
   closeOut() {
 
@@ -801,7 +801,7 @@ aprilAsteroids() {
             <ul className="staticnav" id="astnav">
               <li className="aststaticnavli"><Link to='/'>HOME</Link></li>
               <li className="aststaticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
-              <li className="aststaticnavli">POLLUTION TRACKER</li>
+              <li className="aststaticnavli"><Link to='/pollution-tracker'>POLLUTION TRACKER</Link></li>
               <li className="aststaticnavli">GEOPOLITICAL NEWS</li>
               <li className="aststaticnavli">OCEAN CLEANUP</li>
             </ul>
@@ -810,7 +810,7 @@ aprilAsteroids() {
         <div className="mobilenavdiv navbar-fixed-top">
           <ul className="mobilestaticnav">
             <li className="mobilestaticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
-            <li className="mobilestaticnavli">POLLUTION TRACKER</li>
+            <li className="mobilestaticnavli"><Link to='/pollution-tracker'>POLLUTION TRACKER</Link></li>
             <li className="mobilestaticnavli">GEOPOLITICAL NEWS</li>
             <li className="mobilestaticnavli">OCEAN CLEANUP</li>
           </ul>
@@ -828,7 +828,7 @@ aprilAsteroids() {
           </center>
 
         </div>
-        
+
         {
           //new Date().toLocaleTimeString()
         }
@@ -841,13 +841,13 @@ aprilAsteroids() {
 
         <center>
           <div className="row">
-            
+
             <div className="col-md-4 nameSide">
-              
+
               <h2>ARCHIVES</h2>
               <hr id="archhr" />
               <h4 id="archivesdesc">The list of Asteroids below are segregated by date, based on their closest approach date to Earth</h4>
-              
+
               <div className="popone" id="thirdpop">
                 <span className="xpop" onClick={this.closeOut.bind(this)}>x</span>
                 <center>
@@ -857,7 +857,7 @@ aprilAsteroids() {
                   Lastly, click on either button below to load more Asteroids into the list.
               </div>
 
-              <div className="buttonBox">  
+              <div className="buttonBox">
                 <button id="loadmoreasts" className="julybutt" onClick={this.julyAsteroids}>JULY 2017 ASTEROIDS</button>
                 <button id="loadmoreasts" className="junebutt" onClick={this.juneAsteroids}>JUNE 2017 ASTEROIDS</button>
                 <button id="loadmoreasts" className="maybutt" onClick={this.mayAsteroids}>MAY 2017 ASTEROIDS</button>
@@ -876,7 +876,7 @@ aprilAsteroids() {
             </div>
 
             </div>
-            
+
             <div className="col-md-4 propertiesSide" >
 
                 <h2>LIST OF ASTEROIDS:</h2>
@@ -902,7 +902,7 @@ aprilAsteroids() {
                       )
                     }
 
-                    { 
+                    {
                       this.state.secondAstNameArray.map (
                         (name, index) => {
                           return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
@@ -910,7 +910,7 @@ aprilAsteroids() {
                       )
                     }
 
-                    { 
+                    {
                       this.state.juneAsteroidsArray.map (
                         (name, index) => {
                           return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
@@ -918,7 +918,7 @@ aprilAsteroids() {
                       )
                     }
 
-                    { 
+                    {
                       this.state.mayAsteroidsArray.map (
                         (name, index) => {
                           return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
@@ -927,7 +927,7 @@ aprilAsteroids() {
                     }
 
 
-                    { 
+                    {
                       this.state.aprilAsteroidsArray.map (
                         (name, index) => {
                           return (<li onClick={this.viewProp} className="asteroidNameLi" key={index} value={name} title={this.state.astId}>{name}</li>)
@@ -939,7 +939,7 @@ aprilAsteroids() {
 
             <div className="soundsbox">
               <div id="framewrapper">
-                <iframe id="vid" src="https://www.youtube-nocookie.com/embed/RtU_mdL2vBM?rel=0&amp;controls=0&amp;showinfo=0" scrolling="no"></iframe>        
+                <iframe id="vid" src="https://www.youtube-nocookie.com/embed/RtU_mdL2vBM?rel=0&amp;controls=0&amp;showinfo=0" scrolling="no"></iframe>
               </div>
               <center><h3 id="live">Live from Space {new Date().toLocaleTimeString()} EST</h3></center>
             </div>
@@ -947,11 +947,11 @@ aprilAsteroids() {
             </div>
 
             <div className="col-md-4 propDiv">
-              
+
               <h2 id="astpropheading">ASTEROID PROPERTIES:</h2>
               <hr id="archhr" />
               <h4 id="archivesdesc">Click on an Asteroid to the left, and monitor their properties in the table below</h4>
-              
+
                 <div className="popone" id="secondpop">
                   <span className="xpop" onClick={this.goToArchives}>x</span>
                   <center>
@@ -980,31 +980,31 @@ aprilAsteroids() {
                     <tr>
                       <th>Orbiting body:</th>
                       <td>{this.state.orbitingBody}</td>
-                    </tr>   
+                    </tr>
                     <tr>
                       <th>Miss-distance (Mi):</th>
                       <td>{this.state.missDistance}</td>
-                    </tr>                    
+                    </tr>
                     <tr>
                       <th>Speed (MPH):</th>
                       <td>{this.state.speedMPH}</td>
-                    </tr>                    
+                    </tr>
                     <tr>
                       <th>Speed (KMPS):</th>
                       <td>{this.state.speedKMPS}</td>
-                    </tr>                    
+                    </tr>
                     <tr id="jpltr">
                       <th>JPL URL:</th>
                       <td><a href={this.state.jplURL} target="_blank">{this.state.jplURL}</a></td>
-                    </tr>                    
+                    </tr>
                     <tr>
                       <th>NEO ID:</th>
                       <td>{this.state.astId}</td>
                     </tr>
                   </tbody>
                 </table>
-                
-                                
+
+
                 <div className="pophypo" id="hypopop">
                   <span className="hypopopx" id="hypoclose" onClick={this.hypoClose.bind(this)}>x</span>
                     Click this button to view see what would happen if this Asteroid hit Earth.
@@ -1013,7 +1013,7 @@ aprilAsteroids() {
                     </div>
                   </center>
                 </div>
-               
+
                 <center><button onClick={this.launchModal} id="hypohit">Hypothetical hit</button></center>
 
                     <div id="myModal" className="modal">
@@ -1025,13 +1025,13 @@ aprilAsteroids() {
                         <span id="hitdesc">
 
                           <div className="row">
-                            
+
                             <div className="col-md-6">
                               This asteroid has an estimated diameter of <span className="modalprop">{Math.ceil(this.state.estDiam)}</span> Meters, going
                               at a speed of <span className="modalprop">{Math.ceil(this.state.speedMPH).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} MPH</span>.
                             </div>
 
-                            
+
                             <div className="col-md-6" id="whatYouShouldDo">
                               If you were anywhere close to the impact area, {this.state.damageState}.
                             </div>
@@ -1046,19 +1046,19 @@ aprilAsteroids() {
                         <br />
 
                         <div className="row">
-                          
+
                           <div className="col-md-6">
                               <h1>So where do these Asteroids come from?</h1>
                               <hr id="modalhr"/>
                               Many of these Asteroids come from deep space, light years away from our Solar-System.
-                              Encompassing our solar system, is something known as the Ort Cloud- a giant shell of 
-                              icy debris and comets floating in synchrony. 
+                              Encompassing our solar system, is something known as the Ort Cloud- a giant shell of
+                              icy debris and comets floating in synchrony.
                               <br />
                               <br />
-                              <strong>NASA's formal explanation:</strong> The Oort Cloud is believed to be a thick 
-                              bubble of icy debris that surrounds our solar system. This distant cloud may extend a 
-                              third of the way from our sun to the next star -- between 5,000 and 100,000 astronomical 
-                              units. Earth is about one astronomical unit from the sun (roughly 93 million miles or 
+                              <strong>NASAs formal explanation:</strong> The Oort Cloud is believed to be a thick
+                              bubble of icy debris that surrounds our solar system. This distant cloud may extend a
+                              third of the way from our sun to the next star -- between 5,000 and 100,000 astronomical
+                              units. Earth is about one astronomical unit from the sun (roughly 93 million miles or
                               150 million kilometers).
                           </div>
 
@@ -1077,40 +1077,40 @@ aprilAsteroids() {
                         <h2>Lets break it down- there are 3 types of Asteroids:</h2>
 
                         <div className="row">
-                          
+
                           <div className="col-md-4">
                             <center><h3><strong>C Type</strong></h3></center>
                             <hr />
                             <p>
-                              This class include asteroids that look dark through a telescope and have 
-                              spectra indicating they are composed of carbon compounds.  They are 
-                              therefore called carbonaceous asteroids and are believed to be made of the 
-                              same sort of material as the carbonaceous chondrite meteorites.  The dwarf 
-                              planet Ceres has a spectrum like a carbonaceous asteroid (at least on its 
-                                surface).  C Type accounts for about 75% of all asteroids.  They formed 
-                              in the outer portions of the asteroid belt closer to the frost line where 
-                              it was cooler so carbon compounds could condense.  They also contain hydrated 
-                              minerals so we can get lots of water out of them.  Some estimates are that we 
-                              can get over 20% of the mass of the asteroid out in the form of water.  Since 
-                              chondrites are undifferentiated they also contain primitive metals, sometimes 
-                              as much as 40% by mass.  These would be extremely good asteroids to mine, having 
-                              water, metals, and carbon compounds, all three in one.  Because they are dark, 
+                              This class include asteroids that look dark through a telescope and have
+                              spectra indicating they are composed of carbon compounds.  They are
+                              therefore called carbonaceous asteroids and are believed to be made of the
+                              same sort of material as the carbonaceous chondrite meteorites.  The dwarf
+                              planet Ceres has a spectrum like a carbonaceous asteroid (at least on its
+                                surface).  C Type accounts for about 75% of all asteroids.  They formed
+                              in the outer portions of the asteroid belt closer to the frost line where
+                              it was cooler so carbon compounds could condense.  They also contain hydrated
+                              minerals so we can get lots of water out of them.  Some estimates are that we
+                              can get over 20% of the mass of the asteroid out in the form of water.  Since
+                              chondrites are undifferentiated they also contain primitive metals, sometimes
+                              as much as 40% by mass.  These would be extremely good asteroids to mine, having
+                              water, metals, and carbon compounds, all three in one.  Because they are dark,
                               they are rather hard to find.
                             </p>
                           </div>
 
-                          
+
                           <div className="col-md-4">
                             <center><h3><strong>M Type</strong></h3></center>
                             <hr />
                             <p>
-                              M Type asteroids are moderately bright and are usually metal but sometimes 
-                              metal-stone mixtures. Some of them are surely the same composition as the 
-                              iron meteorites that have fallen to Earth.  They are believed to have come 
-                              from the cores of differentiated planetoids that were later broken apart.  
-                              These asteroids are interesting for mining because a pure metal asteroid is 
-                              a lot of metal and can be made into a lot of spacecraft.  A quick estimate 
-                              shows that the asteroid belt has a billion times more metal than all the high 
+                              M Type asteroids are moderately bright and are usually metal but sometimes
+                              metal-stone mixtures. Some of them are surely the same composition as the
+                              iron meteorites that have fallen to Earth.  They are believed to have come
+                              from the cores of differentiated planetoids that were later broken apart.
+                              These asteroids are interesting for mining because a pure metal asteroid is
+                              a lot of metal and can be made into a lot of spacecraft.  A quick estimate
+                              shows that the asteroid belt has a billion times more metal than all the high
                               grade metal ore in the crust of the Earth.
                             </p>
                             <br />
@@ -1121,23 +1121,23 @@ aprilAsteroids() {
                             </blockquote>
                           </div>
 
-                          
+
                           <div className="col-md-4">
                             <center><h3><strong>S Type</strong></h3></center>
                             <hr />
                             <p>
-                              These asteroids are rather brighter than the C Types and appear to be “stony” 
-                              in composition.  They can be either primitive — having chondrites (usually) — 
-                              or from differentiated bodies — so not having chondrites.  The LL chondrite 
-                              meteorites are especially interesting for platinum mining because, although the 
-                              LL means “Low iron content and Low total metal” they nevertheless are wonderfully 
-                              high in platinum content.  That could be important if we plan to bring the mined 
-                              metals back to Earth to sell on the terrestrial metals market.  If we can find a 
-                              way to reduce the launch and landing costs, then this could be a quick revenue 
-                              stream to support the space mining company.  However, if we plan to use the metal 
-                              in space then there is no need to go after just platinum.  It would make better 
-                              sense to go after a different class of S Type asteroid, those in the H chondrite 
-                              family since H means “high” metal content.  Or better yet we would go after an M 
+                              These asteroids are rather brighter than the C Types and appear to be “stony”
+                              in composition.  They can be either primitive — having chondrites (usually) —
+                              or from differentiated bodies — so not having chondrites.  The LL chondrite
+                              meteorites are especially interesting for platinum mining because, although the
+                              LL means “Low iron content and Low total metal” they nevertheless are wonderfully
+                              high in platinum content.  That could be important if we plan to bring the mined
+                              metals back to Earth to sell on the terrestrial metals market.  If we can find a
+                              way to reduce the launch and landing costs, then this could be a quick revenue
+                              stream to support the space mining company.  However, if we plan to use the metal
+                              in space then there is no need to go after just platinum.  It would make better
+                              sense to go after a different class of S Type asteroid, those in the H chondrite
+                              family since H means “high” metal content.  Or better yet we would go after an M
                               Type asteroid.
                             </p>
                           </div>
@@ -1168,7 +1168,7 @@ aprilAsteroids() {
           // ASTEROID MINING
         }
         <div className="astroMiningDiv">
-          
+
           <div className="row">
 
             <div className="col-md-6" id="benefitsheading">
@@ -1187,15 +1187,15 @@ aprilAsteroids() {
               <p className="benefittagline f">Nickle, Copper & tons of more elements <span className="glyphicon glyphicon-ok"></span></p>
 
             </div>
-            
+
             <div className="col-md-6">
               <span id="intropar">
-                You're probably reading this through a laptop or a smart-phone- one that is metallic by 
-                composition. You may be surprised to learn that many of the elements in these devices are 
+                Youre probably reading this through a laptop or a smart-phone- one that is metallic by
+                composition. You may be surprised to learn that many of the elements in these devices are
                 thought to be brought to Earth by Asteroids which crashed down billions and billions of years
                 ago. You may be <em>even more</em> perplexed by the idea that many scientists think that water
                 was brought to earth by an asteroid.
-              </span> 
+              </span>
             </div>
 
           </div>
@@ -1204,24 +1204,24 @@ aprilAsteroids() {
             <hr />
             <br />
             • According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
-            AstronomySource</a>, there are around 9,000 known asteroids travelling in an orbit close to 
-            Earth- with over 1000s of new ones being discovered every year. Most of the asteroids near Earth are C-type asteroids, which contain the 
-            most water as a part of their composition. C-type asteroids, on average, are more than 20% water. The rest of the 
-            elements are common ones found here on earth. 
+            AstronomySource</a>, there are around 9,000 known asteroids travelling in an orbit close to
+            Earth- with over Thousands of new ones being discovered every year. Most of the asteroids near Earth are C-type asteroids, which contain the
+            most water as a part of their composition. C-type asteroids, on average, are more than 20% water. The rest of the
+            elements are common ones found here on earth.
             <br />
             <br />
             • Since these asteroids are relatively close, and much smaller than the Moon- they are a lot easier
             to mount and un-mount. Because of their smaller size, their compositions are a lot more
             concentrated than found anywhere on Earth. According to <a href="http://www.astronomysource.com/tag/c-type-asteroids/" target="_blank">
-            AstronomySource</a>, for instance, it has been estimated that a one kilometer diameter asteroid 
+            AstronomySource</a>, for instance, it has been estimated that a one kilometer diameter asteroid
             could contain about 7,500 tons of platinum, worth more than $150 billion. Discoveries like these
-            bring enticing opportunities for the global marketplace where resources are becoming 
-            scarce due to comsumption and enviornmental degredation. Asteroid mining could open up the next 
+            bring enticing opportunities for the global marketplace where resources are becoming
+            scarce due to comsumption and enviornmental degredation. Asteroid mining could open up the next
             frontier in driving infrastructural and scientific development here on earth and in space.
           </p>
           <hr />
           <div className="row">
-            
+
             <div className="col-md-6" id="sohow">
               <center>
                 <p>
@@ -1230,7 +1230,7 @@ aprilAsteroids() {
                 <br />
 
                 <p id="gettheresubheading">
-                  There are a growing number of private space agencies in the United States as well as 
+                  There are a growing number of private space agencies in the United States as well as
                   in other countries which are teaming up with NASA and other agencies to begin our venture
                   towards these Asteroids to reap their benefits. These missions will take place in carefully
                   planned phases, of which the beginning phases have already begun.
@@ -1245,13 +1245,13 @@ aprilAsteroids() {
                 <span className="whitespan"><strong>The Arkyd Series 100 – Leo Space Telescope</strong></span>
                 <br />
                 <br />
-                Due for launch within the next two years, 
-                its job will be to analyse NEOs in order to determine the most likely candidates for future 
-                xploitation. Techniques such as spectroscopy and radar technology will be used to determine 
-                properties such as the asteroid’s chemical composition, orbit, rotation, size, shape and metal 
-                concentration. Due to its relatively low cost and its potential usefulness in a vast number of 
-                applications, the Leo will be of interest to the scientist and private citizen alike. The sale of 
-                these crafts will therefore enable Planetary Resources to gain revenue in order to achieve its 
+                Due for launch within the next two years,
+                its job will be to analyse NEOs in order to determine the most likely candidates for future
+                xploitation. Techniques such as spectroscopy and radar technology will be used to determine
+                properties such as the asteroid’s chemical composition, orbit, rotation, size, shape and metal
+                concentration. Due to its relatively low cost and its potential usefulness in a vast number of
+                applications, the Leo will be of interest to the scientist and private citizen alike. The sale of
+                these crafts will therefore enable Planetary Resources to gain revenue in order to achieve its
                 future objectives.
                 <br />
                 <br />
@@ -1259,18 +1259,18 @@ aprilAsteroids() {
                 <br />
                 <br />
                  The intention is for this craft to hitch a ride on
-                 a geostationary satellite in order to analyse asteroids at more close quarters. Future 
-                 advancements in micro-propulsion and imaging techniques will be utilised to enable the craft 
-                 to get close enough to obtain high resolution data. Two or more Interceptors working together 
+                 a geostationary satellite in order to analyse asteroids at more close quarters. Future
+                 advancements in micro-propulsion and imaging techniques will be utilised to enable the craft
+                 to get close enough to obtain high resolution data. Two or more Interceptors working together
                  will ensure that the data is collected as quickly and efficiently as possible.
                 <br />
                 <br />
                 <span className="whitespan"><strong>The Arkyd Series 300 – Rendezvous Prospector</strong></span>
                 <br />
                 <br />
-                This phase of the project will involve focusing on asteroids much deeper in space. Laser communication technology will be used  
-                to determine shape, rotation, density, and surface and sub-surface composition. The Prospector’s 
-                capability as a low cost interplanetary spacecraft should also attract customers such as 
+                This phase of the project will involve focusing on asteroids much deeper in space. Laser communication technology will be used
+                to determine shape, rotation, density, and surface and sub-surface composition. The Prospector’s
+                capability as a low cost interplanetary spacecraft should also attract customers such as
                 NASA and other scientific establishments.
               </p>
 
@@ -1298,25 +1298,25 @@ aprilAsteroids() {
           <hr id="modalhr"/>
 
           <center>
-          
+
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-homepage.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/comet_on_29_september_2016_osiris_wide-angle_camera.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/Dawn_Parting_720.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta-cometimage-1.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19093_r-2.jpg" className="img-responsive astImg" />
-            
+
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19095-main_perihelion-cliff.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia19092_r-1.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/rosetta20170321.gif" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia21259_neowise20161220.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/pia18899.jpg" className="img-responsive astImg" />
-            
+
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/slideshow/PIA14316_835.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/galleries/Vesta_Parting_732X520.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/galleries/Lutetia_Closest_br.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/697015main_pia16211_full_720.jpg" className="img-responsive astImg" />
             <img src="https://i.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.webp" data-src="https://solarsystem.nasa.gov/images/content/Hayabusa_Itokawa_708.jpg" className="img-responsive astImg" />
-            
+
           </center>
 
 

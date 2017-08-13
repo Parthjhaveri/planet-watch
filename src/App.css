@@ -189,7 +189,7 @@ a:visited {
   height: auto;
   /*background-color: #1a1a1a;*/
   background: linear-gradient(to bottom, #1a1a1a, black);
-  padding: 40px 40px 0px 40px; 
+  padding: 40px 40px 0px 40px;
   font-family: 'PT Sans', sans-serif;
 }
 
@@ -410,7 +410,7 @@ a:visited {
 }
 
 .oceantext {
-  /*float: right;*/ 
+  /*float: right;*/
   display: inline-block;
   font-size: 40px;
   font-weight: bolder;
@@ -631,11 +631,11 @@ a:visited {
   /*border-right-color: #00e6ac;*/
 }
 
-#listdiv::-webkit-scrollbar { 
+#listdiv::-webkit-scrollbar {
     background-color: #1a1a1a;
 }
 
-#listdiv::-webkit-scrollbar-thumb { 
+#listdiv::-webkit-scrollbar-thumb {
     background-color: grey;
 }
 
@@ -719,11 +719,11 @@ a:visited {
   overflow-y: scroll;
 }
 
-.buttonBox::-webkit-scrollbar { 
+.buttonBox::-webkit-scrollbar {
     background-color: #1a1a1a;
 }
 
-.buttonBox::-webkit-scrollbar-thumb { 
+.buttonBox::-webkit-scrollbar-thumb {
     background-color: grey;
 }
 
@@ -942,8 +942,8 @@ tr:hover {
 }
 
 .arrone {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-bottom: 25px solid #b30047;
@@ -990,8 +990,8 @@ tr:hover {
 }
 
 .arrhypo {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 25px solid #b30047;
@@ -1081,7 +1081,7 @@ tr:hover {
   background-color: black;
   padding: 40px;
   color: white;
-  font-family: 'Titillium Web', sans-serif; 
+  font-family: 'Titillium Web', sans-serif;
 }
 
 #intropar {
@@ -1099,7 +1099,7 @@ tr:hover {
 #sohow {
   font-size: 50px;
   color: white;
-  font-family: 'Titillium Web', sans-serif; 
+  font-family: 'Titillium Web', sans-serif;
   padding: 100px 40px 40px 40px;
   font-weight: bolder;
 }
@@ -1107,7 +1107,7 @@ tr:hover {
 #sohowdesc {
   font-size: 18px;
   color: white;
-  font-family: 'Titillium Web', sans-serif; 
+  font-family: 'Titillium Web', sans-serif;
   padding: 100px 40px 40px 40px;
   font-weight: bolder;
   text-align: left;
@@ -1142,7 +1142,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeA 8s infinite;
-  -webkit-animation: fadeA 8s infinite;    
+  -webkit-animation: fadeA 8s infinite;
 }
 
 /*KEYFRAME FOR A*/
@@ -1160,7 +1160,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeB 8s infinite;
-  -webkit-animation: fadeB 8s infinite;   
+  -webkit-animation: fadeB 8s infinite;
 }
 
 /*KEYFRAME FOR B*/
@@ -1178,7 +1178,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeC 8s infinite;
-  -webkit-animation: fadeC 8s infinite;  
+  -webkit-animation: fadeC 8s infinite;
 }
 
 /*KEYFRAME FOR C*/
@@ -1196,7 +1196,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeD 8s infinite;
-  -webkit-animation: fadeD 8s infinite;  
+  -webkit-animation: fadeD 8s infinite;
 }
 
 /*KEYFRAME FOR D*/
@@ -1214,7 +1214,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeE 8s infinite;
-  -webkit-animation: fadeE 8s infinite;  
+  -webkit-animation: fadeE 8s infinite;
 }
 
 /*KEYFRAME FOR E*/
@@ -1232,7 +1232,7 @@ tr:hover {
   transition: 1s;
   position: absolute;
   animation: fadeF 8s infinite;
-  -webkit-animation: fadeF 8s infinite; 
+  -webkit-animation: fadeF 8s infinite;
 }
 
 /*KEYFRAME FOR F*/
@@ -1259,13 +1259,13 @@ tr:hover {
 }
 
 #astimgheading {
-  font-family: 'Titillium Web', sans-serif; 
+  font-family: 'Titillium Web', sans-serif;
   color: #1a1a1a;
   font-weight: bolder;
 }
 
 #astimgsubheading {
-  font-family: 'Titillium Web', sans-serif; 
+  font-family: 'Titillium Web', sans-serif;
   color: #00e6ac;
   font-weight: bolder;
 }
@@ -1277,6 +1277,38 @@ tr:hover {
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 20px;
+}
+
+.pollutionMainDiv {
+  width: auto;
+  height: 100vh;
+  background-color: orange;
+  background-image: url('./images/poll.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: 'Titillium Web', sans-serif;
+  padding: 100px 40px 40px 40px;
+  color: black;
+}
+
+#pollheading {
+  font-size: 60px;
+  margin-top: 150px
+}
+
+#pollsubheading {
+  font-size: 20px;
+}
+
+.goTrackPoll {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 100px 5px 100px;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -1293,7 +1325,7 @@ tr:hover {
   .navDiv {
     display: inherit;
   }
-  
+
   .mainbanner {
     background-image: unset;
     padding-top: 50px;
@@ -1325,7 +1357,7 @@ tr:hover {
   }
 
   .contenttwo {
-    background-image: unset;  
+    background-image: unset;
   }
 
   .morefromdev {
@@ -1339,7 +1371,7 @@ tr:hover {
   }
 
   .oceantext {
-    /*float: right;*/ 
+    /*float: right;*/
     display: inline-block;
     font-size: 20px;
     font-weight: bolder;
@@ -1404,6 +1436,15 @@ tr:hover {
     display: none;
   }.f {
     display: none;
+  }
+
+  .pollutionMainDiv {
+    background-image: unset;
+  }
+
+  .goTrackPoll {
+    padding: 20px;
+    font-size: 20px;
   }
 
 }
