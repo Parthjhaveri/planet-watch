@@ -26,6 +26,9 @@ class PollutionTracker extends Component {
 
     // STATISTICS CARD DIV
     const statCardDiv = document.getElementsByClassName('statCard')[0];
+    const aqiHeading = document.getElementById('numHeading');
+    const statHeading = document.getElementById('statHeading');
+    const cityHeading = document.getElementById('cityNameHeading');
 
     statCardDiv.style.display = "inherit";
 
@@ -51,9 +54,45 @@ class PollutionTracker extends Component {
         that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
         that.setState({aqiNumber: that.state.aqiNumber.replace(that.state.aqiNumber, data.data.aqi)});
 
+        // LESS THAN 50
         if (data.data.aqi <= 50) {
           statCardDiv.style.background = colorArray[0];
           that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD")});
+        }
+        else if (data.data.aqi > 50 && data.data.aqi <= 100) {
+          statCardDiv.style.background = colorArray[1];
+          aqiHeading.style.color = "black";
+          cityHeading.style.color = "black";
+          statHeading.style.color = "black";
+          that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE")});
+        }
+        else if (data.data.aqi > 100 && data.data.aqi <= 150) {
+          statCardDiv.style.background = colorArray[2];
+          aqiHeading.style.color = "black";
+          cityHeading.style.color = "black";
+          statHeading.style.color = "black";
+          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY FOR SENSITIVE GROUPS")});
+        }
+        else if (data.data.aqi > 150 && data.data.aqi <= 200) {
+          statCardDiv.style.background = colorArray[3];
+          aqiHeading.style.color = "black";
+          cityHeading.style.color = "black";
+          statHeading.style.color = "black";
+          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY")});
+        }
+        else if (data.data.aqi > 200 && data.data.aqi <= 300) {
+          statCardDiv.style.background = colorArray[4];
+          aqiHeading.style.color = "white";
+          cityHeading.style.color = "white";
+          statHeading.style.color = "white";
+          that.setState({stat: that.state.stat.replace(that.state.stat, "VERY UNHEALTHY")});
+        }
+        else if (data.data.aqi > 300) {
+          statCardDiv.style.background = colorArray[5];
+          aqiHeading.style.color = "white";
+          cityHeading.style.color = "white";
+          statHeading.style.color = "white";
+          that.setState({stat: that.state.stat.replace(that.state.stat, "HAZARDOUS")});
         }
 
     }) // END GET REQ.
@@ -112,7 +151,7 @@ class PollutionTracker extends Component {
                 <div className="statCard">
                   <h1 id="cityNameHeading">{this.state.cityName}</h1>
                   <p id="numHeading">{this.state.aqiNumber}</p>
-                  <p id="numHeading">{this.state.stat}</p>
+                  <p id="statHeading">{this.state.stat}</p>
                 </div>
               </div>
 
