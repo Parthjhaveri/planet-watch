@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
-import $ from 'jquery';
+// import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 class FirstPageCon extends Component {

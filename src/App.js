@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import FirstPageCon from './firstPageContent.js';
-import PollutionTracker from './pollutionTracker.js';
+// import PollutionTracker from './pollutionTracker.js';
 import Footer from './footer.js';
 import Navi from './nav.js';
 import './scripts.js';
-import $ from 'jquery';
+// import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 class App extends Component {

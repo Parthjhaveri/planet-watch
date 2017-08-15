@@ -2,12 +2,39 @@ import React, { Component } from 'react';
 import './App.css';
 import './scripts.js';
 import $ from 'jquery';
-import App from './App';
+// import App from './App';
 import Footer from './footer.js';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 class PollutionTracker extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+
+    }
+
+    this.getCityData = this.getCityData.bind(this)
+  }
+
+  getCityData() {
+
+    // API KEY
+    const apk = '7891941ceeff75cab7d9470aff0938510c443bb4';
+
+    // GET INPUT
+    const userInput = document.getElementById('cityNameInput').value;
+
+    console.log(userInput);
+
+    $.get('http://api.waqi.info/feed/' + userInput + '/?token=' + apk, function(data, status){
+            // alert("Data: " + data + "\nStatus: " + status);
+            console.log(data)
+    })
+
+  }
 
   render() {
     return (
@@ -16,10 +43,11 @@ class PollutionTracker extends Component {
 
           <center>
             <ul className="staticnav">
-              <li className="staticnavli"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
-              <li className="staticnavli"><Link to='/pollution-tracker'>POLLUTION TRACKER</Link></li>
-              <li className="staticnavli">GEOPOLITICAL NEWS</li>
-              <li className="staticnavli">OCEAN CLEANUP</li>
+              <li className="staticnavli pollLi"><Link to='/'>HOME</Link></li>
+              <li className="staticnavli pollLi"><Link to='/neo-tracker'>NEO TRACKER</Link></li>
+              <li className="staticnavli pollLi"><Link to='/pollution-tracker'>POLLUTION TRACKER</Link></li>
+              <li className="staticnavli pollLi">GEOPOLITICAL NEWS</li>
+              <li className="staticnavli pollLi">OCEAN CLEANUP</li>
             </ul>
           </center>
 
@@ -36,6 +64,27 @@ class PollutionTracker extends Component {
           <center><p id="pollsubheading">Track pollution levels in your area, <em>Globally</em></p></center>
           <center><button className="goTrackPoll">Track pollution levels!</button></center>
         </div>
+
+        <div className="pollWidgetDiv">
+
+          <center>
+            <div className="row">
+
+              <div className="col-md-6">
+                <input type="text" placeholder="Enter a city name..." id="cityNameInput" />
+                <br />
+                <button onClick={this.getCityData} id="dataButton">Get City data</button>
+              </div>
+
+
+              <div className="col-md-6">
+              </div>
+
+            </div>
+          </center>
+
+        </div>
+
         <Footer />
       </div>
     );

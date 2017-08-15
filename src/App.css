@@ -48,8 +48,8 @@ button:focus {
   display: block;
   font-size: 20px;
   font-weight: lighter;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
   /*font-family: 'PT Sans', sans-serif;*/
   font-family: 'Titillium Web', sans-serif;
   color: silver;
@@ -58,6 +58,10 @@ button:focus {
   transition: .5s;
   text-decoration: none;
   float: right;
+}
+
+.pollLi {
+  color: black;
 }
 
 .staticnavli:hover {
@@ -1309,6 +1313,38 @@ tr:hover {
   padding: 5px 100px 5px 100px;
   margin-top: 20px;
   font-size: 20px;
+}
+
+.pollWidgetDiv {
+  width: auto;
+  height: 400px;
+  background-color: #1a1a1a;
+  padding: 40px;
+}
+
+#cityNameInput {
+  width: 250px;
+  height: 40px;
+  border: 1px solid #00e6ac;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+  padding: 5px;
+  font-size: 18px;
+}
+
+#dataButton {
+  width: auto;
+  height: auto;
+  background-color: #00e6ac;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  color: #1a1a1a;
+  font-family: 'Titillium Web', sans-serif;
+  padding: 10px 40px ;
+  font-size: 18px;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 1200px) {

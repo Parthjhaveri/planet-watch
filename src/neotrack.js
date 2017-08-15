@@ -104,7 +104,7 @@ class NeoTracker extends Component {
     // AJAX CALL #2 --------------------------------------------------------------------------------
     // ---------------------------------------------------------------------------------------------
 
-    const astListDiv = document.getElementById('listdiv');
+    // const astListDiv = document.getElementById('listdiv');
 
     const myApiKey = "QkkACyxVm5f7Lbp32qPpjeklibnyWHgbFcNd5tuL";
     const that = this;
