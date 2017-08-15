@@ -13,7 +13,7 @@ class PollutionTracker extends Component {
     super(props);
 
     this.state = {
-
+      cityName: ""
     }
 
     this.getCityData = this.getCityData.bind(this)
@@ -26,6 +26,9 @@ class PollutionTracker extends Component {
 
     // GET INPUT
     const userInput = document.getElementById('cityNameInput').value;
+
+    // SET THE STATE
+    this.setState({cityName: this.state.cityName.replace(this.state.cityName, userInput)})
 
     console.log(userInput);
 
@@ -83,6 +86,7 @@ class PollutionTracker extends Component {
               </div>
 
               <div className="col-md-6">
+                <h1 id="cityNameHeading">{this.state.cityName}</h1>
               </div>
 
             </div>
