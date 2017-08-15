@@ -81,7 +81,7 @@ class PollutionTracker extends Component {
           statCardDiv.style.background = colorArray[2];
           statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
           statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundPosition = "center center";
           statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
@@ -92,7 +92,7 @@ class PollutionTracker extends Component {
           statCardDiv.style.background = colorArray[3];
           statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
           statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundPosition = "center center";
           statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";

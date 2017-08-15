@@ -1376,14 +1376,14 @@ tr:hover {
 }
 
 #numHeading {
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
 }
 
 #statHeading {
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
@@ -1395,7 +1395,7 @@ tr:hover {
 
 .statCard {
   width: 90%;
-  height: auto;
+  height: 300px;
   border-radius: 10px;
   display: none;
   padding: 20px 20px 20px 60px;
