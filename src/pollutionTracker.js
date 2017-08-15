@@ -13,13 +13,25 @@ class PollutionTracker extends Component {
     super(props);
 
     this.state = {
-      cityName: ""
+      cityName: "",
+      aqiNumber: "",
+      statCardColor: "",
+      stat: ""
     }
 
     this.getCityData = this.getCityData.bind(this)
   }
 
   getCityData() {
+
+    // STATISTICS CARD DIV
+    const statCardDiv = document.getElementsByClassName('statCard')[0];
+
+    statCardDiv.style.display = "inherit";
+
+    // STAT CARD COLORS
+                        // GREEN,   YELLOW,    ORANGE,      RED,     PURPLE,     MAROON
+    const colorArray = ['#00b300', '#ffff00', '#ff6600', '#ff3300', '#cc33ff', '#990000']
 
     // API KEY
     const apk = '7891941ceeff75cab7d9470aff0938510c443bb4';
@@ -37,7 +49,14 @@ class PollutionTracker extends Component {
         console.log(data.data);
         // SET THE STATE
         that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
-    })
+        that.setState({aqiNumber: that.state.aqiNumber.replace(that.state.aqiNumber, data.data.aqi)});
+
+        if (data.data.aqi <= 50) {
+          statCardDiv.style.background = colorArray[0];
+          that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD")});
+        }
+
+    }) // END GET REQ.
 
   }
 
@@ -90,7 +109,11 @@ class PollutionTracker extends Component {
               </div>
 
               <div className="col-md-6">
-                <h1 id="cityNameHeading">{this.state.cityName}</h1>
+                <div className="statCard">
+                  <h1 id="cityNameHeading">{this.state.cityName}</h1>
+                  <p id="numHeading">{this.state.aqiNumber}</p>
+                  <p id="numHeading">{this.state.stat}</p>
+                </div>
               </div>
 
             </div>
