@@ -1394,12 +1394,11 @@ tr:hover {
 }
 
 .statCard {
-  width: auto;
+  width: 90%;
   height: auto;
   border-radius: 10px;
   display: none;
-  margin-top: 100px;
-  padding: 20px 20px 20px 100px;
+  padding: 20px 20px 20px 60px;
   text-align: left;
 }
 

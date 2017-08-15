@@ -57,6 +57,9 @@ class PollutionTracker extends Component {
         // LESS THAN 50
         if (data.data.aqi <= 50) {
           statCardDiv.style.background = colorArray[0];
+          aqiHeading.style.color = "white";
+          cityHeading.style.color = "white";
+          statHeading.style.color = "white";
           statCardDiv.style.backgroundImage = "url(http://www.clker.com/cliparts/m/N/O/c/u/e/black-oak-tree.svg)";
           statCardDiv.style.backgroundSize = "100%";
           statCardDiv.style.backgroundPosition = "center right";
@@ -76,6 +79,10 @@ class PollutionTracker extends Component {
         }
         else if (data.data.aqi > 100 && data.data.aqi <= 150) {
           statCardDiv.style.background = colorArray[2];
+          statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
+          statCardDiv.style.backgroundSize = "50%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
@@ -83,6 +90,10 @@ class PollutionTracker extends Component {
         }
         else if (data.data.aqi > 150 && data.data.aqi <= 200) {
           statCardDiv.style.background = colorArray[3];
+          statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
+          statCardDiv.style.backgroundSize = "50%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
@@ -90,6 +101,10 @@ class PollutionTracker extends Component {
         }
         else if (data.data.aqi > 200 && data.data.aqi <= 300) {
           statCardDiv.style.background = colorArray[4];
+          statCardDiv.style.backgroundImage = "url(https://cdn2.iconfinder.com/data/icons/pollution-global-warming/601/pollution-006-512.png)";
+          statCardDiv.style.backgroundSize = "50%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
@@ -97,6 +112,10 @@ class PollutionTracker extends Component {
         }
         else if (data.data.aqi > 300) {
           statCardDiv.style.background = colorArray[5];
+          statCardDiv.style.backgroundImage = "url(https://cdn2.iconfinder.com/data/icons/pollution-global-warming/601/pollution-006-512.png)";
+          statCardDiv.style.backgroundSize = "50%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
@@ -143,7 +162,7 @@ class PollutionTracker extends Component {
 
               <div className="col-md-6">
                 <center>
-                  <h2 id="enterHeading">Enter a city name below to find out its current pollution statistics</h2>
+                  <h2 id="enterHeading">Enter a city name below to find out its current air-quality statistics</h2>
                 </center>
                 <br />
                   <input type="text" placeholder="Enter a city name...(Ex. Shanghai)" id="cityNameInput" />
