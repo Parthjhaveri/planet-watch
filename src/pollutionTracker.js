@@ -57,6 +57,10 @@ class PollutionTracker extends Component {
         // LESS THAN 50
         if (data.data.aqi <= 50) {
           statCardDiv.style.background = colorArray[0];
+          statCardDiv.style.backgroundImage = "url(http://www.clker.com/cliparts/m/N/O/c/u/e/black-oak-tree.svg)";
+          statCardDiv.style.backgroundSize = "100%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD")});
         }
         else if (data.data.aqi > 50 && data.data.aqi <= 100) {
@@ -64,6 +68,10 @@ class PollutionTracker extends Component {
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
+          statCardDiv.style.backgroundImage = "url(http://www.clker.com/cliparts/m/N/O/c/u/e/black-oak-tree.svg)";
+          statCardDiv.style.backgroundSize = "50%";
+          statCardDiv.style.backgroundPosition = "center right";
+          statCardDiv.style.backgroundRepeat = "no-repeat";
           that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE")});
         }
         else if (data.data.aqi > 100 && data.data.aqi <= 150) {

@@ -1372,18 +1372,21 @@ tr:hover {
 #cityNameHeading {
   color: white;
   font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
 }
 
 #numHeading {
   font-size: 60px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
 }
 
 #statHeading {
   font-size: 60px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
+  font-weight: bolder;
 }
 
 #creditPollPic {
@@ -1396,7 +1399,8 @@ tr:hover {
   border-radius: 10px;
   display: none;
   margin-top: 100px;
-  padding: 20px;
+  padding: 20px 20px 20px 100px;
+  text-align: left;
 }
 
 @media only screen and (max-width: 1200px) {
