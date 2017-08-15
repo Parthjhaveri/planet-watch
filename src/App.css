@@ -64,6 +64,14 @@ button:focus {
   color: black;
 }
 
+.pollLi a:hover {
+  color: black;
+}
+
+.pollLi a:visited {
+  color: black;
+}
+
 .staticnavli:hover {
   font-weight: bolder;
   transition: .5s;
@@ -1317,13 +1325,13 @@ tr:hover {
 
 .pollWidgetDiv {
   width: auto;
-  height: 400px;
+  height: auto;
   background-color: #1a1a1a;
   padding: 40px;
 }
 
 #cityNameInput {
-  width: 250px;
+  width: 260px;
   height: 40px;
   border: 1px solid #00e6ac;
   background-color: #1a1a1a;
@@ -1332,6 +1340,10 @@ tr:hover {
   font-family: 'Titillium Web', sans-serif;
   padding: 5px;
   font-size: 18px;
+}
+
+#cityNameInput:focus {
+  outline: none;
 }
 
 #dataButton {
@@ -1344,7 +1356,17 @@ tr:hover {
   font-family: 'Titillium Web', sans-serif;
   padding: 10px 40px ;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 40px;
+}
+
+#enterHeading {
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+}
+
+#chartpic {
+  width: 60%;
+  margin-top: 40px;
 }
 
 @media only screen and (max-width: 1200px) {

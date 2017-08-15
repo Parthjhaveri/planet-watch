@@ -71,11 +71,16 @@ class PollutionTracker extends Component {
             <div className="row">
 
               <div className="col-md-6">
-                <input type="text" placeholder="Enter a city name..." id="cityNameInput" />
+                <center>
+                  <h2 id="enterHeading">Enter a city name below to find out its current pollution statistics</h2>
+                </center>
                 <br />
-                <button onClick={this.getCityData} id="dataButton">Get City data</button>
+                  <input type="text" placeholder="Enter a city name...(Ex. Shanghai)" id="cityNameInput" />
+                  <br />
+                  <button onClick={this.getCityData} id="dataButton">Get City data</button>
+                  <br />
+                  <img src="https://userscontent2.emaze.com/images/6609ee87-4411-44a7-a212-d8010ba861f8/150040fc8e9392a0f9997a46cf940303.png" className="img-responsive" id="chartpic" />
               </div>
-
 
               <div className="col-md-6">
               </div>
