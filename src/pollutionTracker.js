@@ -23,18 +23,20 @@ class PollutionTracker extends Component {
 
     // API KEY
     const apk = '7891941ceeff75cab7d9470aff0938510c443bb4';
+    let that = this;
 
     // GET INPUT
     const userInput = document.getElementById('cityNameInput').value;
 
     // SET THE STATE
-    this.setState({cityName: this.state.cityName.replace(this.state.cityName, userInput)})
+    this.setState({cityName: this.state.cityName.replace(this.state.cityName, userInput)});
 
-    console.log(userInput);
-
+    // AJAX REQUEST TO RETREIVE CITY OBJECT
     $.get('http://api.waqi.info/feed/' + userInput + '/?token=' + apk, function(data, status){
-            // alert("Data: " + data + "\nStatus: " + status);
-            console.log(data)
+
+        console.log(data.data);
+        // SET THE STATE
+        that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
     })
 
   }
@@ -83,6 +85,8 @@ class PollutionTracker extends Component {
                   <button onClick={this.getCityData} id="dataButton">Get City data</button>
                   <br />
                   <img src="https://userscontent2.emaze.com/images/6609ee87-4411-44a7-a212-d8010ba861f8/150040fc8e9392a0f9997a46cf940303.png" className="img-responsive" id="chartpic" />
+                  <br />
+                  <a id='creditPollPic' href="https://userscontent2.emaze.com/images/6609ee87-4411-44a7-a212-d8010ba861f8/150040fc8e9392a0f9997a46cf940303.png" target="_blank">IMG Credit</a>
               </div>
 
               <div className="col-md-6">
