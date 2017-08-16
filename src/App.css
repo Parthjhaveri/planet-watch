@@ -1395,11 +1395,22 @@ tr:hover {
 
 .statCard {
   width: 90%;
-  height: 300px;
+  height: auto;
   border-radius: 10px;
   display: none;
-  padding: 20px 20px 20px 60px;
   text-align: left;
+  overflow: hidden;
+}
+
+#cityNameDiv {
+  width: auto;
+  height: auto;
+  background-color: #069;
+  padding: 20px;
+}
+
+#statBody {
+  padding: 40px;
 }
 
 @media only screen and (max-width: 1200px) {

@@ -29,6 +29,7 @@ class PollutionTracker extends Component {
     const aqiHeading = document.getElementById('numHeading');
     const statHeading = document.getElementById('statHeading');
     const cityHeading = document.getElementById('cityNameHeading');
+    const citynameDiv = document.getElementById('cityNameDiv');
 
     statCardDiv.style.display = "inherit";
 
@@ -60,55 +61,35 @@ class PollutionTracker extends Component {
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
-          statCardDiv.style.backgroundImage = "url(http://www.clker.com/cliparts/m/N/O/c/u/e/black-oak-tree.svg)";
-          statCardDiv.style.backgroundSize = "100%";
-          statCardDiv.style.backgroundPosition = "center right";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD 👍")});
         }
         else if (data.data.aqi > 50 && data.data.aqi <= 100) {
           statCardDiv.style.background = colorArray[1];
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
-          statCardDiv.style.backgroundImage = "url(http://www.clker.com/cliparts/m/N/O/c/u/e/black-oak-tree.svg)";
-          statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center right";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE 😐")});
         }
         else if (data.data.aqi > 100 && data.data.aqi <= 150) {
           statCardDiv.style.background = colorArray[2];
-          statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
-          statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center center";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY FOR SENSITIVE GROUPS")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY FOR SENSITIVE GROUPS 😷")});
         }
         else if (data.data.aqi > 150 && data.data.aqi <= 200) {
           statCardDiv.style.background = colorArray[3];
-          statCardDiv.style.backgroundImage = "url(http://4vector.com/i/free-vector-x-icon-clip-art_117159_X_Icon_clip_art_hight.png)";
-          statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center center";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "black";
           cityHeading.style.color = "black";
           statHeading.style.color = "black";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY 🚫")});
         }
         else if (data.data.aqi > 200 && data.data.aqi <= 300) {
           statCardDiv.style.background = colorArray[4];
-          statCardDiv.style.backgroundImage = "url(https://cdn2.iconfinder.com/data/icons/pollution-global-warming/601/pollution-006-512.png)";
-          statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center right";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "VERY UNHEALTHY")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "VERY UNHEALTHY 💀")});
         }
         else if (data.data.aqi > 300) {
           statCardDiv.style.background = colorArray[5];
@@ -119,7 +100,7 @@ class PollutionTracker extends Component {
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "HAZARDOUS")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "HAZARDOUS ⚠️")});
         }
 
     }) // END GET REQ.
@@ -176,9 +157,16 @@ class PollutionTracker extends Component {
 
               <div className="col-md-6">
                 <div className="statCard">
-                  <h1 id="cityNameHeading">{this.state.cityName}</h1>
-                  <p id="numHeading">{this.state.aqiNumber}</p>
-                  <p id="statHeading">{this.state.stat}</p>
+
+                  <div id="cityNameDiv">
+                    <h1 id="cityNameHeading">{this.state.cityName}</h1>
+                  </div>
+
+                  <div id="statBody">
+                    <p id="numHeading">{this.state.aqiNumber}</p>
+                    <p id="statHeading">{this.state.stat}</p>
+                  </div>
+
                 </div>
               </div>
 
