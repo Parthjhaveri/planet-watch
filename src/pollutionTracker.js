@@ -19,7 +19,8 @@ class PollutionTracker extends Component {
       stat: "",
       dateNow: "",
       currentTemp: "",
-      weatherIcon: ""
+      weatherIcon: "",
+      dayNight: ""
     }
 
     this.getCityData = this.getCityData.bind(this)
@@ -147,6 +148,12 @@ class PollutionTracker extends Component {
         that.setState({currentTemp: that.state.currentTemp.replace(that.state.currentTemp, tempInF)});
         that.setState({weatherIcon: that.state.weatherIcon.replace(that.state.weatherIcon, conditionIcon)});
 
+        if (weatherData.current.is_day === 0) {
+          that.setState({dayNight: that.state.dayNight.replace(that.state.dayNight, "Night-time")});
+        } else if (weatherData.current.is_day === 1) {
+          that.setState({dayNight: that.state.dayNight.replace(that.state.dayNight, "Day-time")});
+        }
+
       }
     })
 
@@ -220,6 +227,7 @@ class PollutionTracker extends Component {
 
                       <div className="col-md-6 rightSideWeather">
                         <p className="currWea"><img src={this.state.weatherIcon} /> {this.state.currentTemp} F</p>
+                        <p className="currdaynight">{this.state.dayNight}</p>
                       </div>
 
                     </div>
