@@ -25,7 +25,7 @@ class PollutionTracker extends Component {
 
   getCityData() {
 
-    // GET DATE
+    // GET DATE AND TIME
     let utc = new Date().toLocaleString().slice(0,15);
     let amOrPm = new Date().toLocaleString().slice(19);
     this.setState({dateNow: this.state.dateNow.replace(this.state.dateNow, (utc + " " + amOrPm))});
