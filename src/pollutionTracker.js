@@ -16,13 +16,19 @@ class PollutionTracker extends Component {
       cityName: "",
       aqiNumber: "",
       statCardColor: "",
-      stat: ""
+      stat: "",
+      dateNow: ""
     }
 
     this.getCityData = this.getCityData.bind(this)
   }
 
   getCityData() {
+
+    // GET DATE
+    let utc = new Date().toLocaleString().slice(0,15);
+    let amOrPm = new Date().toLocaleString().slice(19);
+    this.setState({dateNow: this.state.dateNow.replace(this.state.dateNow, (utc + " " + amOrPm))});
 
     // STATISTICS CARD DIV
     const statCardDiv = document.getElementsByClassName('statCard')[0];
@@ -51,10 +57,11 @@ class PollutionTracker extends Component {
         // IF TYPING ERROR
         // ---------------
         if (data.status != "ok") {
-          statCardDiv.style.background = colorArray[3];
+          statCardDiv.style.background = "#cc0000";
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
+          citynameDiv.style.display = "none";
           that.setState({stat: that.state.stat.replace(that.state.stat, "Oops! An error occured. Please try again.")});
         }
 
@@ -176,9 +183,11 @@ class PollutionTracker extends Component {
 
                   <div id="cityNameDiv">
                     <h1 id="cityNameHeading">{this.state.cityName}</h1>
+                    <h3 id="dateHeading">{this.state.dateNow}</h3>
                   </div>
 
                   <div id="statBody">
+                  <h2>Air Quality:</h2>
                     <p id="numHeading">{this.state.aqiNumber}</p>
                     <p id="statHeading">{this.state.stat}</p>
                   </div>

@@ -1373,6 +1373,8 @@ tr:hover {
   color: white;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
+  display: inline-block;
+  /*float: left;*/
 }
 
 #numHeading {
@@ -1411,6 +1413,14 @@ tr:hover {
 
 #statBody {
   padding: 40px;
+}
+
+#dateHeading {
+  margin-top: 30px;
+  float: right;
+  color: pink;
+  font-weight: lighter;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 1200px) {
