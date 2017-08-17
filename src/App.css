@@ -1385,7 +1385,7 @@ tr:hover {
 }
 
 #statHeading {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   font-family: 'Titillium Web', sans-serif;
   font-weight: bolder;
@@ -1428,7 +1428,7 @@ tr:hover {
 }
 
 .currWea {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 @media only screen and (max-width: 1200px) {

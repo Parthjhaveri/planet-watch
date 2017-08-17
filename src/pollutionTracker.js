@@ -141,7 +141,7 @@ class PollutionTracker extends Component {
 
         console.log(weatherData);
 
-        let tempInF = weatherData.current.temp_f;
+        let tempInF = Math.ceil(weatherData.current.temp_f);
         let conditionIcon = weatherData.current.condition.icon;
 
         that.setState({currentTemp: that.state.currentTemp.replace(that.state.currentTemp, tempInF)});
