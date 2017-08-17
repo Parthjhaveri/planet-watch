@@ -44,66 +44,82 @@ class PollutionTracker extends Component {
     // GET INPUT
     const userInput = document.getElementById('cityNameInput').value;
 
-    // SET THE STATE
-    this.setState({cityName: this.state.cityName.replace(this.state.cityName, userInput)});
-
     // AJAX REQUEST TO RETREIVE CITY OBJECT
-    $.get('http://api.waqi.info/feed/' + userInput + '/?token=' + apk, function(data, status){
+    $.get('http://api.waqi.info/feed/' + userInput + '/?token=' + apk, function(data, status) {
 
-        console.log(data.data);
-        // SET THE STATE
-        that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
-        that.setState({aqiNumber: that.state.aqiNumber.replace(that.state.aqiNumber, data.data.aqi)});
-
-        // LESS THAN 50
-        if (data.data.aqi <= 50) {
-          statCardDiv.style.background = colorArray[0];
-          aqiHeading.style.color = "white";
-          cityHeading.style.color = "white";
-          statHeading.style.color = "white";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD 👍")});
-        }
-        else if (data.data.aqi > 50 && data.data.aqi <= 100) {
-          statCardDiv.style.background = colorArray[1];
-          aqiHeading.style.color = "black";
-          cityHeading.style.color = "black";
-          statHeading.style.color = "black";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE 😐")});
-        }
-        else if (data.data.aqi > 100 && data.data.aqi <= 150) {
-          statCardDiv.style.background = colorArray[2];
-          aqiHeading.style.color = "black";
-          cityHeading.style.color = "black";
-          statHeading.style.color = "black";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY FOR SENSITIVE GROUPS 😷")});
-        }
-        else if (data.data.aqi > 150 && data.data.aqi <= 200) {
+        // ---------------
+        // IF TYPING ERROR
+        // ---------------
+        if (data.status != "ok") {
           statCardDiv.style.background = colorArray[3];
-          aqiHeading.style.color = "black";
-          cityHeading.style.color = "black";
-          statHeading.style.color = "black";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY 🚫")});
-        }
-        else if (data.data.aqi > 200 && data.data.aqi <= 300) {
-          statCardDiv.style.background = colorArray[4];
           aqiHeading.style.color = "white";
           cityHeading.style.color = "white";
           statHeading.style.color = "white";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "VERY UNHEALTHY 💀")});
+          that.setState({stat: that.state.stat.replace(that.state.stat, "Oops! An error occured. Please try again.")});
         }
-        else if (data.data.aqi > 300) {
-          statCardDiv.style.background = colorArray[5];
-          statCardDiv.style.backgroundImage = "url(https://cdn2.iconfinder.com/data/icons/pollution-global-warming/601/pollution-006-512.png)";
-          statCardDiv.style.backgroundSize = "50%";
-          statCardDiv.style.backgroundPosition = "center right";
-          statCardDiv.style.backgroundRepeat = "no-repeat";
-          aqiHeading.style.color = "white";
-          cityHeading.style.color = "white";
-          statHeading.style.color = "white";
-          that.setState({stat: that.state.stat.replace(that.state.stat, "HAZARDOUS ⚠️")});
-        }
+
+        // -----------------------------
+        // IF STATUS IS OK, THEN PROCEED
+        // -----------------------------
+        else if (data.status === "ok") {
+
+          console.log(data.data);
+          console.log(data.data.city.name);
+          // SET THE STATE
+          that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
+          that.setState({aqiNumber: that.state.aqiNumber.replace(that.state.aqiNumber, data.data.aqi)});
+
+          // LESS THAN 50 AND SO ON...
+          if (data.data.aqi <= 50) {
+            statCardDiv.style.background = colorArray[0];
+            aqiHeading.style.color = "white";
+            cityHeading.style.color = "white";
+            statHeading.style.color = "white";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "GOOD 👍")});
+          }
+          else if (data.data.aqi > 50 && data.data.aqi <= 100) {
+            statCardDiv.style.background = colorArray[1];
+            aqiHeading.style.color = "black";
+            cityHeading.style.color = "black";
+            statHeading.style.color = "black";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "MODERATE 😐")});
+          }
+          else if (data.data.aqi > 100 && data.data.aqi <= 150) {
+            statCardDiv.style.background = colorArray[2];
+            aqiHeading.style.color = "black";
+            cityHeading.style.color = "black";
+            statHeading.style.color = "black";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY FOR SENSITIVE GROUPS 😷")});
+          }
+          else if (data.data.aqi > 150 && data.data.aqi <= 200) {
+            statCardDiv.style.background = colorArray[3];
+            aqiHeading.style.color = "black";
+            cityHeading.style.color = "black";
+            statHeading.style.color = "black";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "UNHEALTHY 🚫")});
+          }
+          else if (data.data.aqi > 200 && data.data.aqi <= 300) {
+            statCardDiv.style.background = colorArray[4];
+            aqiHeading.style.color = "white";
+            cityHeading.style.color = "white";
+            statHeading.style.color = "white";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "VERY UNHEALTHY 💀")});
+          }
+          else if (data.data.aqi > 300) {
+            statCardDiv.style.background = colorArray[5];
+            statCardDiv.style.backgroundImage = "url(https://cdn2.iconfinder.com/data/icons/pollution-global-warming/601/pollution-006-512.png)";
+            statCardDiv.style.backgroundSize = "50%";
+            statCardDiv.style.backgroundPosition = "center right";
+            statCardDiv.style.backgroundRepeat = "no-repeat";
+            aqiHeading.style.color = "white";
+            cityHeading.style.color = "white";
+            statHeading.style.color = "white";
+            that.setState({stat: that.state.stat.replace(that.state.stat, "HAZARDOUS ⚠️")});
+          }
+      }
 
     }) // END GET REQ.
+
 
   }
 
