@@ -35,3 +35,4 @@ Planet Watch is an educational app that consolidates various global topics and s
 ![](gallery/neofive.png)
 
 ### Pollution Tracker gallery:
+![](gallery/weatherone.png)
