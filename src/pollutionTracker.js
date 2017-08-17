@@ -28,7 +28,7 @@ class PollutionTracker extends Component {
     // GET DATE AND TIME
     let utc = new Date().toLocaleString().slice(0,15);
     let amOrPm = new Date().toLocaleString().slice(19);
-    this.setState({dateNow: this.state.dateNow.replace(this.state.dateNow, (utc + " " + amOrPm))});
+    this.setState({dateNow: this.state.dateNow.replace(this.state.dateNow, (utc + " " + amOrPm + " " + "EST"))});
 
     // STATISTICS CARD DIV
     const statCardDiv = document.getElementsByClassName('statCard')[0];
@@ -41,7 +41,7 @@ class PollutionTracker extends Component {
 
     // STAT CARD COLORS
                         // GREEN,   YELLOW,    ORANGE,      RED,     PURPLE,     MAROON
-    const colorArray = ['#00b300', '#ffff00', '#ff6600', '#ff3300', '#cc33ff', '#990000']
+    const colorArray = ['#00cc66', '#ffff00', '#ff5c33', '#ff3300', '#cc33ff', '#990000']
 
     // API KEY
     const apk = '7891941ceeff75cab7d9470aff0938510c443bb4';
