@@ -1423,6 +1423,14 @@ tr:hover {
   display: inline-block;
 }
 
+.rightSideWeather {
+  text-align: right;
+}
+
+.currWea {
+  font-size: 40px;
+}
+
 @media only screen and (max-width: 1200px) {
 
   #bq {

@@ -17,7 +17,9 @@ class PollutionTracker extends Component {
       aqiNumber: "",
       statCardColor: "",
       stat: "",
-      dateNow: ""
+      dateNow: "",
+      currentTemp: "",
+      weatherIcon: ""
     }
 
     this.getCityData = this.getCityData.bind(this)
@@ -70,8 +72,8 @@ class PollutionTracker extends Component {
         // -----------------------------
         else if (data.status === "ok") {
 
-          console.log(data.data);
-          console.log(data.data.city.name);
+          // console.log(data.data);
+          // console.log(data.data.city.name);
           // SET THE STATE
           that.setState({cityName: that.state.cityName.replace(that.state.cityName, data.data.city.name)});
           that.setState({aqiNumber: that.state.aqiNumber.replace(that.state.aqiNumber, data.data.aqi)});
@@ -127,6 +129,26 @@ class PollutionTracker extends Component {
 
     }) // END GET REQ.
 
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    // API CALL FOR WEATHER
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    const weatherKey = '2e58c6c1ba83421ea8563028171708';
+
+    $.ajax({
+      url:'//api.apixu.com/v1/current.json?key=2e58c6c1ba83421ea8563028171708&q=' + userInput,
+      success: function(weatherData) {
+
+        console.log(weatherData);
+
+        let tempInF = weatherData.current.temp_f;
+        let conditionIcon = weatherData.current.condition.icon;
+
+        that.setState({currentTemp: that.state.currentTemp.replace(that.state.currentTemp, tempInF)});
+        that.setState({weatherIcon: that.state.weatherIcon.replace(that.state.weatherIcon, conditionIcon)});
+
+      }
+    })
 
   }
 
@@ -187,9 +209,21 @@ class PollutionTracker extends Component {
                   </div>
 
                   <div id="statBody">
-                  <h2>Air Quality:</h2>
-                    <p id="numHeading">{this.state.aqiNumber}</p>
-                    <p id="statHeading">{this.state.stat}</p>
+
+                    <div className="row">
+
+                      <div className="col-md-6">
+                        <h2>Air Quality:</h2>
+                        <p id="numHeading">{this.state.aqiNumber}</p>
+                        <p id="statHeading">{this.state.stat}</p>
+                      </div>
+
+                      <div className="col-md-6 rightSideWeather">
+                        <p className="currWea"><img src={this.state.weatherIcon} /> {this.state.currentTemp} F</p>
+                      </div>
+
+                    </div>
+
                   </div>
 
                 </div>
